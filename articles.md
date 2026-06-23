@@ -112,7 +112,7 @@
 
 **📰 報道・公式**
 
-- [コートジボワール 1-0 エクアドル｜ハイライト動画](https://www.fifa.com/ja/watch/4P79SuyJHO3ZGVuRYxjots) — FIFA公式 / FIFA+ 公式ハイライト映像
+- [コートジボワール 1-0 エクアドル｜マッチレポートとハイライト](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/cote-d-ivoire-ecuador-highlights-match-report) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）
 
 ### ドイツ 2-1 コートジボワール（E組 / 第2節 / 2026-06-20）
 
@@ -177,7 +177,7 @@
 
 **📰 報道・公式**
 
-- [イラン 2-2 ニュージーランド｜ハイライト動画](https://www.fifa.com/ja/watch/5c6T3T7Y1XfKrT3aXzJRqL) — FIFA公式 / FIFA+ 公式ハイライト映像
+- [イラン 2-2 ニュージーランド｜マッチレポートとハイライト](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/ir-iran-new-zealand-highlights-match-report) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）
 
 ### ベルギー 0-0 イラン（G組 / 第2節 / 2026-06-21）
 
@@ -201,7 +201,7 @@
 
 **📰 報道・公式**
 
-- [サウジアラビア 1-1 ウルグアイ｜ハイライト動画](https://www.fifa.com/ja/watch/2OO54UvFW7GK8vnsarneGk) — FIFA公式 / FIFA+ 公式ハイライト映像
+- [サウジアラビア 1-1 ウルグアイ｜マッチレポートとハイライト](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/saudi-arabia-uruguay-highlights-match-report) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）
 
 ### スペイン 4-0 サウジアラビア（H組 / 第2節 / 2026-06-21）
 
@@ -237,7 +237,7 @@
 
 **📰 報道・公式**
 
-- [ノルウェー 3-2 セネガル｜ハイライト動画](https://www.fifa.com/ja/watch/2z83J5vynam1wsTQNemf5u) — FIFA公式 / FIFA+ 公式ハイライト映像
+- [ノルウェー 3-2 セネガル｜マッチレポートとハイライト](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/norway-senegal-match-report-highlights) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）
 
 ### アルゼンチン 3-0 アルジェリア（J組 / 第1節 / 2026-06-16）
 
@@ -249,7 +249,7 @@
 
 **📰 報道・公式**
 
-- [オーストリア 3-1 ヨルダン｜ハイライト動画](https://www.fifa.com/ja/watch/77P4VoHiQj3RG3yEQVhGpH) — FIFA公式 / FIFA+ 公式ハイライト映像
+- [オーストリア 3-1 ヨルダン｜マッチレポートとハイライト](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/austria-jordan-highlights-match-report) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）
 
 ### アルゼンチン 2-0 オーストリア（J組 / 第2節 / 2026-06-22）
 
