@@ -625,3 +625,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: L-md2-ENG-GHA
+    group: L
+    md: 2
+    date: 2026-06-23
+    title: "イングランド 0-0 ガーナ"
+    refs:
+      - cat: 報道・公式
+        title: "イングランド 0-0 ガーナ｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/YMV6IJCxemtC0s8HtqPn3"
+        source: FIFA公式
+        lang: ja
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/YMV6IJCxemtC0s8HtqPn3 (タイトル England v Ghana | Group L | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア0-0は FIFA+ESPN+Sky+Al Jazeera+CBS で確認"
