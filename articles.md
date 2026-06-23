@@ -1,0 +1,288 @@
+<!-- ⚠ 生成物: scripts/articles.py が articles.yaml から生成。直接編集しない。
+     articles.yaml を更新したら `python3 scripts/articles.py --write` で再生成。 -->
+
+# 2026 FIFA World Cup — 試合ごとの良記事・リンク集
+
+- 試合数: 44 / リンク数: 52
+- 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
+
+### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
+
+**📰 報道・公式**
+
+- [メキシコ 2-0 南アフリカ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-south-africa-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### 韓国 2-1 チェコ（A組 / 第1節 / 2026-06-11）
+
+**📰 報道・公式**
+
+- [韓国 2-1 チェコ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/korea-republic-czechia-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### チェコ 1-1 南アフリカ（A組 / 第2節 / 2026-06-18）
+
+**📰 報道・公式**
+
+- [チェコ 1-1 南アフリカ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/czechia-south-africa-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### メキシコ 1-0 韓国（A組 / 第2節 / 2026-06-18）
+
+**📰 報道・公式**
+
+- [メキシコ 1-0 韓国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-korea-republic-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### カナダ 1-1 ボスニア・ヘルツェゴビナ（B組 / 第1節 / 2026-06-12）
+
+**📰 報道・公式**
+
+- [カナダ 1-1 ボスニア・ヘルツェゴビナ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/canada-bosnia-and-herzegovina-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### カタール 1-1 スイス（B組 / 第1節 / 2026-06-13）
+
+**📰 報道・公式**
+
+- [カタール 1-1 スイス｜マッチレポートとハイライト](https://www.fifa.com/ja/articles/qatar-switzerland-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### スイス 4-1 ボスニア・ヘルツェゴビナ（B組 / 第2節 / 2026-06-18）
+
+**📰 報道・公式**
+
+- [スイス 4-1 ボスニア・ヘルツェゴビナ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-bosnia-herzegovina-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### カナダ 6-0 カタール（B組 / 第2節 / 2026-06-18）
+
+**📰 報道・公式**
+
+- [カナダ 6-0 カタール｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/canada-qatar-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ブラジル 1-1 モロッコ（C組 / 第1節 / 2026-06-13）
+
+**📰 報道・公式**
+
+- [ブラジル 1-1 モロッコ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-morocco-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ハイチ 0-1 スコットランド（C組 / 第1節 / 2026-06-13）
+
+**📰 報道・公式**
+
+- [ハイチ 0-1 スコットランド｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/haiti-scotland-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### スコットランド 0-1 モロッコ（C組 / 第2節 / 2026-06-19）
+
+**📰 報道・公式**
+
+- [スコットランド 0-1 モロッコ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/scotland-morocco-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ブラジル 3-0 ハイチ（C組 / 第2節 / 2026-06-19）
+
+**📰 報道・公式**
+
+- [ブラジル 3-0 ハイチ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-haiti-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### アメリカ合衆国 4-1 パラグアイ（D組 / 第1節 / 2026-06-12）
+
+**📰 報道・公式**
+
+- [アメリカ合衆国 4-1 パラグアイ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-paraguay-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### オーストラリア 2-0 トルコ（D組 / 第1節 / 2026-06-13）
+
+**📰 報道・公式**
+
+- [オーストラリア 2-0 トルコ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/australia-turkiye-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### アメリカ合衆国 2-0 オーストラリア（D組 / 第2節 / 2026-06-19）
+
+**📰 報道・公式**
+
+- [アメリカ合衆国 2-0 オーストラリア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-australia-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### トルコ 0-1 パラグアイ（D組 / 第2節 / 2026-06-19）
+
+**📰 報道・公式**
+
+- [トルコ 0-1 パラグアイ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/turkiye-paraguay-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ドイツ 7-1 キュラソー（E組 / 第1節 / 2026-06-14）
+
+**📰 報道・公式**
+
+- [ドイツ 7-1 キュラソー｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-curacao-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### コートジボワール 1-0 エクアドル（E組 / 第1節 / 2026-06-14）
+
+**📰 報道・公式**
+
+- [コートジボワール 1-0 エクアドル｜試合詳細（公式マッチセンター）](https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021467) — FIFA公式 / FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信
+
+### ドイツ 2-1 コートジボワール（E組 / 第2節 / 2026-06-20）
+
+**📰 報道・公式**
+
+- [ドイツ 2-1 コートジボワール｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-cote-divoire-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### エクアドル 0-0 キュラソー（E組 / 第2節 / 2026-06-20）
+
+**📰 報道・公式**
+
+- [エクアドル 0-0 キュラソー｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/ecuador-curacao-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### オランダ 2-2 日本（F組 / 第1節 / 2026-06-14）
+
+**📰 報道・公式**
+
+- [オランダ 2-2 日本｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-japan-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### スウェーデン 5-1 チュニジア（F組 / 第1節 / 2026-06-14）
+
+**📰 報道・公式**
+
+- [スウェーデン 5-1 チュニジア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/sweden-tunisia-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### 日本 4-0 チュニジア（F組 / 第2節 / 2026-06-20）
+
+**📰 報道・公式**
+
+- [チュニジア 0-4 日本｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/tunisia-japan-match-report-highlights-ja) — FIFA公式 / 一次情報＋公式ハイライト
+- [W杯 日本がチュニジアに勝利 鎌田 上田 伊東ゴール【詳しく】](https://news.web.nhk/newsweb/na/na-k10015155351000) — NHKニュース / 得点経過を丁寧に
+- [【W杯タイムライン】日本、チュニジアに4―0で快勝 上田綺世2ゴール](https://www.nikkei.com/article/DGXZQODH201B90Q6A620C2000000/) — 日本経済新聞 / 時系列タイムライン形式
+
+**📊 分析・展望**
+
+- [日本代表、チュニジアに4発快勝！ 1勝1分けで最終節へ…決勝T進出条件は？](https://www.soccer-king.jp/news/japan/national/20260621/2175074.html) — サッカーキング / 次節スウェーデン戦の突破条件まで整理
+- [W杯 グループF 第2節 チュニジア vs 日本 — 試合経過](https://soccer.yahoo.co.jp/japan/game/2026062005) — スポーツナビ / スタッツ・出場選手・経過を追える
+- [日本の4-0完勝を世界のメディア称賛「チュニジアを徹底粉砕」「汗かかず翻弄」](https://news.yahoo.co.jp/articles/fc366d4ca35694eed9eee64aeea9385ca23a3ff6) — THE ANSWER (Yahoo!ニュース) / ガーディアン・ABC等の海外評を集約
+
+**🌍 海外の反応**
+
+- [日本が4-0で圧勝したチュニジア戦の海外の反応、当地メキシコ人からも大絶賛](https://www.dimikai.com/2026/06/fifa-japan-4-tunisia-0.html) — 海外の反応 ディミヌート / 開催地モンテレイの現地反応も
+- [外国人「日本が強すぎる」日本代表、衝撃のゴールラッシュ！チュニジアに4発圧勝で海外絶賛](https://nofootynolife.net/blog-entry-9129.html) — No Footy No Life / 海外掲示板コメント翻訳系
+
+**💬 掲示板・まとめ**
+
+- [5chまとめのまとめ（チュニジア戦スレ集約）](https://5chmm.jp/) — 5chまとめのまとめ / 5ch/なんJ系の実況・反応まとめへの入口
+
+### オランダ 5-1 スウェーデン（F組 / 第2節 / 2026-06-20）
+
+**📰 報道・公式**
+
+- [オランダ 5-1 スウェーデン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-sweden-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ベルギー 1-1 エジプト（G組 / 第1節 / 2026-06-15）
+
+**📰 報道・公式**
+
+- [ベルギー 1-1 エジプト｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-egypt-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### イラン 2-2 ニュージーランド（G組 / 第1節 / 2026-06-15）
+
+**📰 報道・公式**
+
+- [イラン 2-2 ニュージーランド｜試合詳細（公式マッチセンター）](https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021476) — FIFA公式 / FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信
+
+### ベルギー 0-0 イラン（G組 / 第2節 / 2026-06-21）
+
+**📰 報道・公式**
+
+- [ベルギー 0-0 イラン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-ir-iran-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ニュージーランド 1-3 エジプト（G組 / 第2節 / 2026-06-21）
+
+**📰 報道・公式**
+
+- [ニュージーランド 1-3 エジプト｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/new-zealand-egypt-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### スペイン 0-0 カーボベルデ（H組 / 第1節 / 2026-06-15）
+
+**📰 報道・公式**
+
+- [スペイン 0-0 カーボベルデ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-cabo-verde-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### サウジアラビア 1-1 ウルグアイ（H組 / 第1節 / 2026-06-15）
+
+**📰 報道・公式**
+
+- [サウジアラビア 1-1 ウルグアイ｜試合詳細（公式マッチセンター）](https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021486) — FIFA公式 / FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信
+
+### スペイン 4-0 サウジアラビア（H組 / 第2節 / 2026-06-21）
+
+**📰 報道・公式**
+
+- [スペイン 4-0 サウジアラビア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-saudi-arabia-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ウルグアイ 2-2 カーボベルデ（H組 / 第2節 / 2026-06-21）
+
+**📰 報道・公式**
+
+- [ウルグアイ 2-2 カーボベルデ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/uruguay-cabo-verde-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### フランス 3-1 セネガル（I組 / 第1節 / 2026-06-16）
+
+**📰 報道・公式**
+
+- [フランス 3-1 セネガル｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-senegal-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### イラク 1-4 ノルウェー（I組 / 第1節 / 2026-06-16）
+
+**📰 報道・公式**
+
+- [イラク 1-4 ノルウェー｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/iraq-norway-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### フランス 3-0 イラク（I組 / 第2節 / 2026-06-22）
+
+**📰 報道・公式**
+
+- [フランス 3-0 イラク｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-iraq-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト。雷雨で前半終了後2時間中断
+
+### ノルウェー 3-2 セネガル（I組 / 第2節 / 2026-06-22）
+
+**📰 報道・公式**
+
+- [ノルウェー 3-2 セネガル｜試合詳細（公式マッチセンター）](https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021491) — FIFA公式 / FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信
+
+### アルゼンチン 3-0 アルジェリア（J組 / 第1節 / 2026-06-16）
+
+**📰 報道・公式**
+
+- [アルゼンチン 3-0 アルジェリア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-algeria-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### オーストリア 3-1 ヨルダン（J組 / 第1節 / 2026-06-16）
+
+**📰 報道・公式**
+
+- [オーストリア 3-1 ヨルダン｜試合詳細（公式マッチセンター）](https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021498) — FIFA公式 / FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信
+
+### アルゼンチン 2-0 オーストリア（J組 / 第2節 / 2026-06-22）
+
+**📰 報道・公式**
+
+- [アルゼンチン 2-0 オーストリア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-austria-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ヨルダン 1-2 アルジェリア（J組 / 第2節 / 2026-06-22）
+
+**📰 報道・公式**
+
+- [ヨルダン 1-2 アルジェリア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/jordan-algeria-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト。アルジェリアがセットプレー二発で逆転
+
+### ポルトガル 1-1 コンゴ民主共和国（K組 / 第1節 / 2026-06-17）
+
+**📰 報道・公式**
+
+- [ポルトガル 1-1 コンゴ民主共和国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-congo-dr-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ウズベキスタン 1-3 コロンビア（K組 / 第1節 / 2026-06-17）
+
+**📰 報道・公式**
+
+- [ウズベキスタン 1-3 コロンビア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/uzbekistan-colombia-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### イングランド 4-2 クロアチア（L組 / 第1節 / 2026-06-17）
+
+**📰 報道・公式**
+
+- [イングランド 4-2 クロアチア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/england-croatia-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ガーナ 1-0 パナマ（L組 / 第1節 / 2026-06-17）
+
+**📰 報道・公式**
+
+- [ガーナ 1-0 パナマ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/ghana-panama-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト

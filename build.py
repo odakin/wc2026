@@ -12,11 +12,16 @@ stdlib + PyYAML のみ。
 順位は FIFA 2026 大会規定 (直接対決 → 全試合得失差 → 全試合総得点 → フェアプレー点 →
 FIFA ランク、 抽選廃止) で決定論算出。 head-to-head は同点サブグループ内で再帰計算。
 """
+import sys
 from pathlib import Path
-from collections import defaultdict
 import yaml
 
 ROOT = Path(__file__).resolve().parent
+# 順位アルゴリズム (compute / rank_group / tiebreak) の正本 = scripts/standings.py。
+# build.py は再実装せず import する (= single source、 grid・順位表・公開ページが必ず一致)。
+sys.path.insert(0, str(ROOT / "scripts"))
+from standings import compute, rank_group, _h2h_stats  # noqa: E402
+
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 GROUP_ORDER = list("ABCDEFGHIJKL")
@@ -145,98 +150,9 @@ STR = {
 }
 
 
-# ============ ranking (FIFA 2026) ============
-def compute(matches):
-    table = defaultdict(lambda: defaultdict(
-        lambda: dict(P=0, W=0, D=0, L=0, GF=0, GA=0, Pts=0)))
-    for m in matches:
-        g = m["group"]
-        for team, gf, ga in ((m["home"], m["hg"], m["ag"]), (m["away"], m["ag"], m["hg"])):
-            s = table[g][team]
-            s["P"] += 1
-            s["GF"] += gf
-            s["GA"] += ga
-            if gf > ga:
-                s["W"] += 1
-                s["Pts"] += 3
-            elif gf == ga:
-                s["D"] += 1
-                s["Pts"] += 1
-            else:
-                s["L"] += 1
-    return table
-
-
-def _h2h_stats(g, S, matches):
-    st = {t: dict(Pts=0, GF=0, GA=0) for t in S}
-    for m in matches:
-        if m["group"] != g or m["home"] not in st or m["away"] not in st:
-            continue
-        for t, gf, ga in ((m["home"], m["hg"], m["ag"]), (m["away"], m["ag"], m["hg"])):
-            st[t]["Pts"] += 3 if gf > ga else (1 if gf == ga else 0)
-            st[t]["GF"] += gf
-            st[t]["GA"] += ga
-    return st
-
-
-def rank_group(g, matches, conduct=None, fifa_rank=None):
-    conduct = conduct or {}
-    fifa_rank = fifa_rank or {}
-    overall = compute(matches)[g]
-    teams = list(overall)
-
-    def gd(d, t):
-        return d[t]["GF"] - d[t]["GA"]
-
-    def h2h_block(S):
-        if len(S) == 1:
-            return [S]
-        h = _h2h_stats(g, set(S), matches)
-        for crit in (lambda t: h[t]["Pts"], lambda t: gd(h, t), lambda t: h[t]["GF"]):
-            vals = {t: crit(t) for t in S}
-            if len(set(vals.values())) > 1:
-                runs = []
-                for v in sorted(set(vals.values()), reverse=True):
-                    sub = [t for t in S if vals[t] == v]
-                    runs.extend(h2h_block(sub) if len(sub) > 1 else [sub])
-                return runs
-        return [S]
-
-    def global_phase(S):
-        crits = (lambda t: gd(overall, t), lambda t: overall[t]["GF"],
-                 lambda t: conduct.get(t),
-                 lambda t: (-fifa_rank[t]) if t in fifa_rank else None)
-
-        def go(S, i):
-            if len(S) == 1:
-                return [(S[0], False)]
-            if i >= len(crits):
-                return [(t, True) for t in sorted(S)]
-            vals = {t: crits[i](t) for t in S}
-            if any(v is None for v in vals.values()):
-                return go(S, i + 1)
-            if len(set(vals.values())) == 1:
-                return go(S, i + 1)
-            out = []
-            for v in sorted(set(vals.values()), reverse=True):
-                sub = [t for t in S if vals[t] == v]
-                out.extend(go(sub, i + 1) if len(sub) > 1 else [(sub[0], False)])
-            return out
-        return go(S, 0)
-
-    def resolve(S):
-        out = []
-        for sub in h2h_block(S):
-            out.extend([(sub[0], False)] if len(sub) == 1 else global_phase(sub))
-        return out
-
-    ordered = []
-    for p in sorted({overall[t]["Pts"] for t in teams}, reverse=True):
-        run = [t for t in teams if overall[t]["Pts"] == p]
-        ordered.extend([(run[0], False)] if len(run) == 1 else resolve(run))
-    return [(t, overall[t], tied) for t, tied in ordered]
-
-
+# ============ ranking ============
+# compute / _h2h_stats / rank_group は scripts/standings.py から import (= 正本 1 つ)。
+# 以下 tie_basis は bilingual の「表示」層のみ (アルゴリズムは上記 import を使う)。
 def tie_basis(g, rows, matches, conduct, fifa_rank, lang):
     L = STR[lang]["tb"]
     notes = []
