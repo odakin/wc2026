@@ -487,6 +487,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: I-md2-FRA-IRQ
+    group: I
+    md: 2
+    date: 2026-06-22
+    title: "フランス 3-0 イラク"
+    refs:
+      - cat: 報道・公式
+        title: "フランス 3-0 イラク｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-iraq-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト。雷雨で前半終了後2時間中断"
+  - key: I-md2-NOR-SEN
+    group: I
+    md: 2
+    date: 2026-06-22
+    title: "ノルウェー 3-2 セネガル"
+    refs:
+      - cat: 報道・公式
+        title: "ノルウェー 3-2 セネガル｜試合詳細（公式マッチセンター）"
+        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021491"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
   # ===== Group J =====
   - key: J-md1-ARG-ALG
     group: J
@@ -524,6 +548,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: J-md2-JOR-ALG
+    group: J
+    md: 2
+    date: 2026-06-22
+    title: "ヨルダン 1-2 アルジェリア"
+    refs:
+      - cat: 報道・公式
+        title: "ヨルダン 1-2 アルジェリア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/jordan-algeria-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト。アルジェリアがセットプレー二発で逆転"
   # ===== Group K =====
   - key: K-md1-POR-COD
     group: K
