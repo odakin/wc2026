@@ -1,0 +1,576 @@
+## 2026 FIFA World Cup — 試合ごとの「良記事・リンク」DB (single source of truth)
+## 試合に紐づく良い記事 / ブログ / 掲示板リンクをここに記録する。
+## 閲覧用ビュー (articles.md) は scripts/articles.py が決定論的に生成する (= 二重管理しない)。
+##
+## 構造: matches[] = 試合ごとのブロック。各ブロックに refs[] (リンク一覧)。
+##   match block: {key, group, md, date, title, refs[]}
+##     key   = 安定キー (例: F-md2-JPN-TUN)。results.yaml の (group, md) と疎結合で照合される。
+##     title = 表示名 (例: "日本 4-0 チュニジア")。
+##   ref:   {cat, title, url, source, lang?, note?}
+##     cat   = 報道・公式 / 分析・展望 / 海外の反応 / 掲示板・まとめ (この4種。順序は script 側)
+##     source= 媒体名 (FIFA公式 / NHK / サッカーキング 等)
+##     note  = 一言メモ (なぜ良いか・何が読めるか)
+## リンクは憶測で足さず、実際に見つけたものを記録する。
+## FIFA公式マッチレポート(日本語)は全消化試合に1本ずつ付与済 (2026-06-23 backfill)。
+##   一部試合は日本語の記事版が未配信のため、公式マッチセンター(スタッツ＋ハイライト)で代替。
+##   全URLは Brave (Claude in Chrome) で実ページをナビゲートしてライブ検証済
+##   (2026-06-23、 41/41 が実在 ∧ 試合一致〔h1見出しが該当カードと整合〕、 404 ゼロ)。
+
+meta:
+  tournament: "2026 FIFA World Cup"
+  note: "試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。"
+
+matches:
+  # ===== Group A =====
+  - key: A-md1-MEX-RSA
+    group: A
+    md: 1
+    date: 2026-06-11
+    title: "メキシコ 2-0 南アフリカ"
+    refs:
+      - cat: 報道・公式
+        title: "メキシコ 2-0 南アフリカ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-south-africa-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: A-md1-KOR-CZE
+    group: A
+    md: 1
+    date: 2026-06-11
+    title: "韓国 2-1 チェコ"
+    refs:
+      - cat: 報道・公式
+        title: "韓国 2-1 チェコ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/korea-republic-czechia-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: A-md2-CZE-RSA
+    group: A
+    md: 2
+    date: 2026-06-18
+    title: "チェコ 1-1 南アフリカ"
+    refs:
+      - cat: 報道・公式
+        title: "チェコ 1-1 南アフリカ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/czechia-south-africa-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: A-md2-MEX-KOR
+    group: A
+    md: 2
+    date: 2026-06-18
+    title: "メキシコ 1-0 韓国"
+    refs:
+      - cat: 報道・公式
+        title: "メキシコ 1-0 韓国｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-korea-republic-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group B =====
+  - key: B-md1-CAN-BIH
+    group: B
+    md: 1
+    date: 2026-06-12
+    title: "カナダ 1-1 ボスニア・ヘルツェゴビナ"
+    refs:
+      - cat: 報道・公式
+        title: "カナダ 1-1 ボスニア・ヘルツェゴビナ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/canada-bosnia-and-herzegovina-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: B-md1-QAT-SUI
+    group: B
+    md: 1
+    date: 2026-06-13
+    title: "カタール 1-1 スイス"
+    refs:
+      - cat: 報道・公式
+        title: "カタール 1-1 スイス｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/articles/qatar-switzerland-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: B-md2-SUI-BIH
+    group: B
+    md: 2
+    date: 2026-06-18
+    title: "スイス 4-1 ボスニア・ヘルツェゴビナ"
+    refs:
+      - cat: 報道・公式
+        title: "スイス 4-1 ボスニア・ヘルツェゴビナ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-bosnia-herzegovina-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: B-md2-CAN-QAT
+    group: B
+    md: 2
+    date: 2026-06-18
+    title: "カナダ 6-0 カタール"
+    refs:
+      - cat: 報道・公式
+        title: "カナダ 6-0 カタール｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/canada-qatar-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group C =====
+  - key: C-md1-BRA-MAR
+    group: C
+    md: 1
+    date: 2026-06-13
+    title: "ブラジル 1-1 モロッコ"
+    refs:
+      - cat: 報道・公式
+        title: "ブラジル 1-1 モロッコ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-morocco-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: C-md1-HAI-SCO
+    group: C
+    md: 1
+    date: 2026-06-13
+    title: "ハイチ 0-1 スコットランド"
+    refs:
+      - cat: 報道・公式
+        title: "ハイチ 0-1 スコットランド｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/haiti-scotland-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: C-md2-SCO-MAR
+    group: C
+    md: 2
+    date: 2026-06-19
+    title: "スコットランド 0-1 モロッコ"
+    refs:
+      - cat: 報道・公式
+        title: "スコットランド 0-1 モロッコ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/scotland-morocco-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: C-md2-BRA-HAI
+    group: C
+    md: 2
+    date: 2026-06-19
+    title: "ブラジル 3-0 ハイチ"
+    refs:
+      - cat: 報道・公式
+        title: "ブラジル 3-0 ハイチ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-haiti-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group D =====
+  - key: D-md1-USA-PAR
+    group: D
+    md: 1
+    date: 2026-06-12
+    title: "アメリカ合衆国 4-1 パラグアイ"
+    refs:
+      - cat: 報道・公式
+        title: "アメリカ合衆国 4-1 パラグアイ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-paraguay-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: D-md1-AUS-TUR
+    group: D
+    md: 1
+    date: 2026-06-13
+    title: "オーストラリア 2-0 トルコ"
+    refs:
+      - cat: 報道・公式
+        title: "オーストラリア 2-0 トルコ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/australia-turkiye-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: D-md2-USA-AUS
+    group: D
+    md: 2
+    date: 2026-06-19
+    title: "アメリカ合衆国 2-0 オーストラリア"
+    refs:
+      - cat: 報道・公式
+        title: "アメリカ合衆国 2-0 オーストラリア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-australia-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: D-md2-TUR-PAR
+    group: D
+    md: 2
+    date: 2026-06-19
+    title: "トルコ 0-1 パラグアイ"
+    refs:
+      - cat: 報道・公式
+        title: "トルコ 0-1 パラグアイ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/turkiye-paraguay-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group E =====
+  - key: E-md1-GER-CUW
+    group: E
+    md: 1
+    date: 2026-06-14
+    title: "ドイツ 7-1 キュラソー"
+    refs:
+      - cat: 報道・公式
+        title: "ドイツ 7-1 キュラソー｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-curacao-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: E-md1-CIV-ECU
+    group: E
+    md: 1
+    date: 2026-06-14
+    title: "コートジボワール 1-0 エクアドル"
+    refs:
+      - cat: 報道・公式
+        title: "コートジボワール 1-0 エクアドル｜試合詳細（公式マッチセンター）"
+        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021467"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+  - key: E-md2-GER-CIV
+    group: E
+    md: 2
+    date: 2026-06-20
+    title: "ドイツ 2-1 コートジボワール"
+    refs:
+      - cat: 報道・公式
+        title: "ドイツ 2-1 コートジボワール｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-cote-divoire-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: E-md2-ECU-CUW
+    group: E
+    md: 2
+    date: 2026-06-20
+    title: "エクアドル 0-0 キュラソー"
+    refs:
+      - cat: 報道・公式
+        title: "エクアドル 0-0 キュラソー｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/ecuador-curacao-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group F =====
+  - key: F-md1-NED-JPN
+    group: F
+    md: 1
+    date: 2026-06-14
+    title: "オランダ 2-2 日本"
+    refs:
+      - cat: 報道・公式
+        title: "オランダ 2-2 日本｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-japan-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: F-md1-SWE-TUN
+    group: F
+    md: 1
+    date: 2026-06-14
+    title: "スウェーデン 5-1 チュニジア"
+    refs:
+      - cat: 報道・公式
+        title: "スウェーデン 5-1 チュニジア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/sweden-tunisia-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group F 第2節: 日本 4-0 チュニジア (現地 2026-06-20 / JST 6/21) =====
+  - key: F-md2-JPN-TUN
+    group: F
+    md: 2
+    date: 2026-06-20
+    title: "日本 4-0 チュニジア"
+    refs:
+      - cat: 報道・公式
+        title: "チュニジア 0-4 日本｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/tunisia-japan-match-report-highlights-ja"
+        source: "FIFA公式"
+        lang: ja
+        note: "一次情報＋公式ハイライト"
+      - cat: 報道・公式
+        title: "W杯 日本がチュニジアに勝利 鎌田 上田 伊東ゴール【詳しく】"
+        url: "https://news.web.nhk/newsweb/na/na-k10015155351000"
+        source: "NHKニュース"
+        lang: ja
+        note: "得点経過を丁寧に"
+      - cat: 報道・公式
+        title: "【W杯タイムライン】日本、チュニジアに4―0で快勝 上田綺世2ゴール"
+        url: "https://www.nikkei.com/article/DGXZQODH201B90Q6A620C2000000/"
+        source: "日本経済新聞"
+        lang: ja
+        note: "時系列タイムライン形式"
+      - cat: 分析・展望
+        title: "日本代表、チュニジアに4発快勝！ 1勝1分けで最終節へ…決勝T進出条件は？"
+        url: "https://www.soccer-king.jp/news/japan/national/20260621/2175074.html"
+        source: "サッカーキング"
+        lang: ja
+        note: "次節スウェーデン戦の突破条件まで整理"
+      - cat: 分析・展望
+        title: "W杯 グループF 第2節 チュニジア vs 日本 — 試合経過"
+        url: "https://soccer.yahoo.co.jp/japan/game/2026062005"
+        source: "スポーツナビ"
+        lang: ja
+        note: "スタッツ・出場選手・経過を追える"
+      - cat: 分析・展望
+        title: "日本の4-0完勝を世界のメディア称賛「チュニジアを徹底粉砕」「汗かかず翻弄」"
+        url: "https://news.yahoo.co.jp/articles/fc366d4ca35694eed9eee64aeea9385ca23a3ff6"
+        source: "THE ANSWER (Yahoo!ニュース)"
+        lang: ja
+        note: "ガーディアン・ABC等の海外評を集約"
+      - cat: 海外の反応
+        title: "日本が4-0で圧勝したチュニジア戦の海外の反応、当地メキシコ人からも大絶賛"
+        url: "https://www.dimikai.com/2026/06/fifa-japan-4-tunisia-0.html"
+        source: "海外の反応 ディミヌート"
+        lang: ja
+        note: "開催地モンテレイの現地反応も"
+      - cat: 海外の反応
+        title: "外国人「日本が強すぎる」日本代表、衝撃のゴールラッシュ！チュニジアに4発圧勝で海外絶賛"
+        url: "https://nofootynolife.net/blog-entry-9129.html"
+        source: "No Footy No Life"
+        lang: ja
+        note: "海外掲示板コメント翻訳系"
+      - cat: 掲示板・まとめ
+        title: "5chまとめのまとめ（チュニジア戦スレ集約）"
+        url: "https://5chmm.jp/"
+        source: "5chまとめのまとめ"
+        lang: ja
+        note: "5ch/なんJ系の実況・反応まとめへの入口"
+  - key: F-md2-NED-SWE
+    group: F
+    md: 2
+    date: 2026-06-20
+    title: "オランダ 5-1 スウェーデン"
+    refs:
+      - cat: 報道・公式
+        title: "オランダ 5-1 スウェーデン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-sweden-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group G =====
+  - key: G-md1-BEL-EGY
+    group: G
+    md: 1
+    date: 2026-06-15
+    title: "ベルギー 1-1 エジプト"
+    refs:
+      - cat: 報道・公式
+        title: "ベルギー 1-1 エジプト｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-egypt-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: G-md1-IRN-NZL
+    group: G
+    md: 1
+    date: 2026-06-15
+    title: "イラン 2-2 ニュージーランド"
+    refs:
+      - cat: 報道・公式
+        title: "イラン 2-2 ニュージーランド｜試合詳細（公式マッチセンター）"
+        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021476"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+  - key: G-md2-BEL-IRN
+    group: G
+    md: 2
+    date: 2026-06-21
+    title: "ベルギー 0-0 イラン"
+    refs:
+      - cat: 報道・公式
+        title: "ベルギー 0-0 イラン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-ir-iran-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: G-md2-NZL-EGY
+    group: G
+    md: 2
+    date: 2026-06-21
+    title: "ニュージーランド 1-3 エジプト"
+    refs:
+      - cat: 報道・公式
+        title: "ニュージーランド 1-3 エジプト｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/new-zealand-egypt-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group H =====
+  - key: H-md1-ESP-CPV
+    group: H
+    md: 1
+    date: 2026-06-15
+    title: "スペイン 0-0 カーボベルデ"
+    refs:
+      - cat: 報道・公式
+        title: "スペイン 0-0 カーボベルデ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-cabo-verde-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: H-md1-KSA-URU
+    group: H
+    md: 1
+    date: 2026-06-15
+    title: "サウジアラビア 1-1 ウルグアイ"
+    refs:
+      - cat: 報道・公式
+        title: "サウジアラビア 1-1 ウルグアイ｜試合詳細（公式マッチセンター）"
+        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021486"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+  - key: H-md2-ESP-KSA
+    group: H
+    md: 2
+    date: 2026-06-21
+    title: "スペイン 4-0 サウジアラビア"
+    refs:
+      - cat: 報道・公式
+        title: "スペイン 4-0 サウジアラビア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-saudi-arabia-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: H-md2-URU-CPV
+    group: H
+    md: 2
+    date: 2026-06-21
+    title: "ウルグアイ 2-2 カーボベルデ"
+    refs:
+      - cat: 報道・公式
+        title: "ウルグアイ 2-2 カーボベルデ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/uruguay-cabo-verde-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group I =====
+  - key: I-md1-FRA-SEN
+    group: I
+    md: 1
+    date: 2026-06-16
+    title: "フランス 3-1 セネガル"
+    refs:
+      - cat: 報道・公式
+        title: "フランス 3-1 セネガル｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-senegal-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: I-md1-IRQ-NOR
+    group: I
+    md: 1
+    date: 2026-06-16
+    title: "イラク 1-4 ノルウェー"
+    refs:
+      - cat: 報道・公式
+        title: "イラク 1-4 ノルウェー｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/iraq-norway-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group J =====
+  - key: J-md1-ARG-ALG
+    group: J
+    md: 1
+    date: 2026-06-16
+    title: "アルゼンチン 3-0 アルジェリア"
+    refs:
+      - cat: 報道・公式
+        title: "アルゼンチン 3-0 アルジェリア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-algeria-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: J-md1-AUT-JOR
+    group: J
+    md: 1
+    date: 2026-06-16
+    title: "オーストリア 3-1 ヨルダン"
+    refs:
+      - cat: 報道・公式
+        title: "オーストリア 3-1 ヨルダン｜試合詳細（公式マッチセンター）"
+        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021498"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+  - key: J-md2-ARG-AUT
+    group: J
+    md: 2
+    date: 2026-06-22
+    title: "アルゼンチン 2-0 オーストリア"
+    refs:
+      - cat: 報道・公式
+        title: "アルゼンチン 2-0 オーストリア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-austria-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group K =====
+  - key: K-md1-POR-COD
+    group: K
+    md: 1
+    date: 2026-06-17
+    title: "ポルトガル 1-1 コンゴ民主共和国"
+    refs:
+      - cat: 報道・公式
+        title: "ポルトガル 1-1 コンゴ民主共和国｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-congo-dr-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: K-md1-UZB-COL
+    group: K
+    md: 1
+    date: 2026-06-17
+    title: "ウズベキスタン 1-3 コロンビア"
+    refs:
+      - cat: 報道・公式
+        title: "ウズベキスタン 1-3 コロンビア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/uzbekistan-colombia-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  # ===== Group L =====
+  - key: L-md1-ENG-CRO
+    group: L
+    md: 1
+    date: 2026-06-17
+    title: "イングランド 4-2 クロアチア"
+    refs:
+      - cat: 報道・公式
+        title: "イングランド 4-2 クロアチア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/england-croatia-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
+  - key: L-md1-GHA-PAN
+    group: L
+    md: 1
+    date: 2026-06-17
+    title: "ガーナ 1-0 パナマ"
+    refs:
+      - cat: 報道・公式
+        title: "ガーナ 1-0 パナマ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/ghana-panama-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト"
