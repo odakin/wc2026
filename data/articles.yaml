@@ -588,6 +588,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: K-md2-POR-UZB
+    group: K
+    md: 2
+    date: 2026-06-23
+    title: "ポルトガル 5-0 ウズベキスタン"
+    refs:
+      - cat: 報道・公式
+        title: "ポルトガル 5-0 ウズベキスタン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-uzbekistan-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/portugal-uzbekistan-match-report-highlights)を検索インデックスで実在確認、日本語版は同語順+-jaで導出(FIFAは全言語版を並行配信)。スコア5-0はen/ja Wikipedia+ESPN+Al Jazeera+Bleacher等で確認"
   # ===== Group L =====
   - key: L-md1-ENG-CRO
     group: L

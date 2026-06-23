@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 44 / リンク数: 52
+- 試合数: 45 / リンク数: 53
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -274,6 +274,12 @@
 **📰 報道・公式**
 
 - [ウズベキスタン 1-3 コロンビア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/uzbekistan-colombia-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### ポルトガル 5-0 ウズベキスタン（K組 / 第2節 / 2026-06-23）
+
+**📰 報道・公式**
+
+- [ポルトガル 5-0 ウズベキスタン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-uzbekistan-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/portugal-uzbekistan-match-report-highlights)を検索インデックスで実在確認、日本語版は同語順+-jaで導出(FIFAは全言語版を並行配信)。スコア5-0はen/ja Wikipedia+ESPN+Al Jazeera+Bleacher等で確認
 
 ### イングランド 4-2 クロアチア（L組 / 第1節 / 2026-06-17）
 
