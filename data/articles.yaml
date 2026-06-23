@@ -12,9 +12,12 @@
 ##     note  = 一言メモ (なぜ良いか・何が読めるか)
 ## リンクは憶測で足さず、実際に見つけたものを記録する。
 ## FIFA公式マッチレポート(日本語)は全消化試合に1本ずつ付与済 (2026-06-23 backfill)。
-##   一部試合は日本語の記事版が未配信のため、公式マッチセンター(スタッツ＋ハイライト)で代替。
-##   全URLは Brave (Claude in Chrome) で実ページをナビゲートしてライブ検証済
-##   (2026-06-23、 41/41 が実在 ∧ 試合一致〔h1見出しが該当カードと整合〕、 404 ゼロ)。
+##   日本語の記事版が未配信の5試合は FIFA公式ハイライト動画(FIFA+ /watch/<id>)で代替
+##   (2026-06-23 差し替え。 以前はマッチセンター=スタッツ頁を貼っていたが「動画ではない」ため動画へ修正)。
+##   記事版URLは Brave (Claude in Chrome) で実ページをナビゲートしてライブ検証済
+##   (2026-06-23、 実在 ∧ 試合一致〔h1見出しが該当カードと整合〕、 404 ゼロ)。
+##   動画URLは web 検索で /en/watch/<id> の実在 ∧ 試合(チーム・スコア)一致を確認。
+##   ja は同一 content ID を ja ロケールで配信(FIFA+ 標準)。 build.py が en へ /ja/→/en/ 変換。
 
 meta:
   tournament: "2026 FIFA World Cup"
@@ -237,11 +240,11 @@ matches:
     title: "コートジボワール 1-0 エクアドル"
     refs:
       - cat: 報道・公式
-        title: "コートジボワール 1-0 エクアドル｜試合詳細（公式マッチセンター）"
-        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021467"
+        title: "コートジボワール 1-0 エクアドル｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/4P79SuyJHO3ZGVuRYxjots"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+        note: "FIFA+ 公式ハイライト映像"
   - key: E-md2-GER-CIV
     group: E
     md: 2
@@ -384,11 +387,11 @@ matches:
     title: "イラン 2-2 ニュージーランド"
     refs:
       - cat: 報道・公式
-        title: "イラン 2-2 ニュージーランド｜試合詳細（公式マッチセンター）"
-        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021476"
+        title: "イラン 2-2 ニュージーランド｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/5c6T3T7Y1XfKrT3aXzJRqL"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+        note: "FIFA+ 公式ハイライト映像"
   - key: G-md2-BEL-IRN
     group: G
     md: 2
@@ -433,11 +436,11 @@ matches:
     title: "サウジアラビア 1-1 ウルグアイ"
     refs:
       - cat: 報道・公式
-        title: "サウジアラビア 1-1 ウルグアイ｜試合詳細（公式マッチセンター）"
-        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021486"
+        title: "サウジアラビア 1-1 ウルグアイ｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/2OO54UvFW7GK8vnsarneGk"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+        note: "FIFA+ 公式ハイライト映像"
   - key: H-md2-ESP-KSA
     group: H
     md: 2
@@ -506,11 +509,11 @@ matches:
     title: "ノルウェー 3-2 セネガル"
     refs:
       - cat: 報道・公式
-        title: "ノルウェー 3-2 セネガル｜試合詳細（公式マッチセンター）"
-        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021491"
+        title: "ノルウェー 3-2 セネガル｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/2z83J5vynam1wsTQNemf5u"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+        note: "FIFA+ 公式ハイライト映像"
   # ===== Group J =====
   - key: J-md1-ARG-ALG
     group: J
@@ -531,11 +534,11 @@ matches:
     title: "オーストリア 3-1 ヨルダン"
     refs:
       - cat: 報道・公式
-        title: "オーストリア 3-1 ヨルダン｜試合詳細（公式マッチセンター）"
-        url: "https://www.fifa.com/ja/match-centre/match/17/285023/289273/400021498"
+        title: "オーストリア 3-1 ヨルダン｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/77P4VoHiQj3RG3yEQVhGpH"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチセンター（スタッツ＋ハイライト動画）。日本語の記事版マッチレポートは未配信"
+        note: "FIFA+ 公式ハイライト映像"
   - key: J-md2-ARG-AUT
     group: J
     md: 2
