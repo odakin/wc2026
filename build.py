@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """wc2026 静的サイト generator (日英 2 言語)。
 
-data/results.yaml (結果 SoT) + data/articles.yaml (FIFA日本語レポート link) から
+data/results.yaml (結果 SoT) + data/articles.yaml (FIFA レポート link、 SoT は日本語 URL) から
 日本語 (docs/{index,standings,links}.html) と英語 (docs/en/...) の 3 ページずつを生成。
-共通の明るいテーマ + ナビ + 日英トグル。 stdlib + PyYAML のみ。
+英語ページの FIFA リンクは fifa_localize() が日本語 URL から決定論変換する (/ja/→/en/、
+記事は語尾 -ja 除去)。 例外は ref の url_en で上書き可。 共通の明るいテーマ + ナビ + 日英トグル。
+stdlib + PyYAML のみ。
 
   python3 build.py
 
@@ -129,8 +131,8 @@ STR = {
         "note_title": "How teams level on points / GD / goals were separated",
         "note_src": "Source",
         "links_head": "FIFA Match Reports",
-        "links_intro": ("FIFA official match reports for every completed match. A few link to the official Match Centre where "
-                        "an article was not available. (Reports open FIFA's Japanese article; FIFA pages have a language switch.)"),
+        "links_intro": ("FIFA official match reports (English) for every completed match. A few link to the official Match "
+                        "Centre where an article was not available."),
         "md": "MD{md}", "report": "Report", "matchcentre": "Match Centre", "pt": "pt",
         "grp": "Group {g}", "jp_badge": "🇯🇵 Japan",
         "foot": ("Results cross-checked against FIFA and major outlets (2+ sources). Tiebreak = <b>FIFA 2026 rules</b> "
@@ -256,14 +258,39 @@ def tie_basis(g, rows, matches, conduct, fifa_rank, lang):
     return notes
 
 
+def fifa_localize(url, lang):
+    """FIFA の URL を lang 言語版に変換する。
+
+    SoT (articles.yaml) は日本語 URL を持つ前提。 en ページ用に決定論変換する:
+      - 記事 URL  /ja/.../articles/<slug>-ja  →  /en/.../articles/<slug>   (語尾 -ja を除去)
+      - match-centre /ja/match-centre/.../<数値ID>  →  /en/match-centre/.../<数値ID>
+    en の記事 slug は「日本語と同一語順 + 言語接尾辞を落とす」 が FIFA の規則 (語順
+    highlights-match-report / match-report-highlights は試合ごとに揺れるが ja/en で一致、
+    -en は付かない)。 = slug 推測ではない。 fifa.com 以外・変換不能・ja はそのまま返す。
+    例外で規則が破れる試合は ref に明示 url_en を置けば derive せず尊重する。"""
+    if "fifa.com" not in url or lang == "ja":
+        return url
+    out = url.replace("/ja/", "/en/", 1)
+    if "/articles/" in out:
+        base = out.rstrip("/")
+        if base.endswith("-ja"):
+            out = base[:-3]
+    return out
+
+
 def url_lookup(arts):
-    def finder(g, home, away):
+    def finder(g, home, away, lang="ja"):
         for a in arts["matches"]:
             if a["group"] != g:
                 continue
             if home in a["title"] and away in a["title"]:
                 fr = next((r for r in a["refs"] if r.get("source") == "FIFA公式"), a["refs"][0])
-                return fr["url"], ("match-centre" in fr["url"])
+                # 明示 url_en があれば derive せず尊重 (推測 slug 禁止の escape hatch)
+                if lang == "en" and fr.get("url_en"):
+                    u = fr["url_en"]
+                else:
+                    u = fifa_localize(fr["url"], lang)
+                return u, ("match-centre" in fr["url"])
         return None, False
     return finder
 
@@ -451,7 +478,7 @@ def links_card(g, matches, find_url, lang):
     rows = []
     for m in res:
         h, a = m["home"], m["away"]
-        url, mc = find_url(g, h, a)
+        url, mc = find_url(g, h, a, lang)
         label = L["matchcentre"] if mc else L["report"]
         vs = (f'<span class="flag">{flag(h)}</span>{esc(short(h, lang))}'
               f'<span class="sc">{m["hg"]}-{m["ag"]}</span>{esc(short(a, lang))}<span class="flag">{flag(a)}</span>')
@@ -483,7 +510,7 @@ def build_lang(lang, matches, table, find_url, conduct, fifa_rank, source, as_of
                     grid[r][c] = ("self", None, None, None)
                 elif (g, r, c) in rmap:
                     rg, cg = rmap[(g, r, c)]
-                    u, _mc = find_url(g, r, c)
+                    u, _mc = find_url(g, r, c, lang)
                     grid[r][c] = ("played", f"{rg}-{cg}", u,
                                   "win" if rg > cg else ("draw" if rg == cg else "loss"))
                 else:
