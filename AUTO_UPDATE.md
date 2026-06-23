@@ -32,14 +32,18 @@
 5. **DB 追記**（確定したものだけ）:
    - `data/results.yaml` の `matches:` に 1 行追記（schema: `{group, md, date(現地開催日), home, away, hg, ag, note?}`、
      チーム名は `fixtures.yaml` と統一）。`meta.as_of` を今日（JST）に、`meta.note` を更新。
-   - **FIFA 日本語マッチレポート URL** を探して `data/articles.yaml` に追記（cat: 報道・公式 / source: FIFA公式）。
-     URL は **実在確認**してから入れる（推測 slug 禁止。記事版が無ければ公式マッチセンター
-     `/ja/match-centre/match/.../<id>` で代替）。fifa.com は SPA で fetch が空シェルを返すため、
-     **検索インデックスのタイトル一致**で確認する（fetch が空 ≠ 確認不能）。
-   - **記録するのは日本語 URL（`url`）だけでよい**。英語ページの FIFA リンクは `build.py` の
-     `fifa_localize()` が日本語 URL から決定論変換する（記事 = `/ja/`→`/en/` かつ語尾 `-ja` 除去・語順は ja と同一 /
-     match-centre = `/ja/`→`/en/` のみで数値 ID 不変）。例外で規則が外れる試合は ref に `url_en: "<英語URL>"`
-     を足して上書きする（実在確認してから）。
+   - **FIFA公式マッチレポート記事の URL** を探して `data/articles.yaml` に追記（cat: 報道・公式 / source: FIFA公式）。
+     **ハイライト動画はこのレポート記事 (`/articles/…`) に埋め込まれている**ので、必ず記事にリンクする。
+     **むき出しの動画頁 (`/watch/<id>`) やマッチセンター (スタッツ頁 `/match-centre/…`) は使わない**
+     （いずれも「レポート記事」ではないため。2026-06-23 方針確定）。
+   - **リンク優先順位**: ① 日本語版記事 `/ja/…/articles/<slug>-ja` が配信済ならそれ（`url` に日本語 URL）。
+     ② 日本語版が未配信なら**英語版記事** `/en/…/articles/<slug>`（`url` に英語 URL を直接入れ、
+     `note` に「日本語版が未配信のため英語記事」と明記）。記事版そのものが見つからない時だけ最終手段を判断する。
+   - URL は **実在確認**してから入れる（推測 slug 禁止）。fifa.com は SPA で fetch が空シェルを返すため、
+     **検索インデックスのタイトル一致**で確認する（fetch が空 ≠ 確認不能）。チーム・スコアが当該カードと一致することも確認。
+   - **英語ページの FIFA リンクは `build.py` の `fifa_localize()` が決定論変換**する: 日本語記事 URL を `url` に入れた場合は
+     `/ja/`→`/en/` かつ語尾 `-ja` 除去（語順は ja と同一）で en を導出。英語記事 URL を `url` に入れた場合はそのまま通り、
+     ja/en とも同じ英語記事を指す。例外で規則が外れる試合は ref に `url_en: "<英語URL>"` を足して上書きする（実在確認してから）。
    - 順位が 1〜5 で決着しない同点が出たら、フェアプレー点を FIFA/Wikipedia で確認し
      `meta.tiebreak.conduct` に出典付きで追加。
 6. **再生成 + 公開**:
