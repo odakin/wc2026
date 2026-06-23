@@ -11,11 +11,13 @@
 ##     source= 媒体名 (FIFA公式 / NHK / サッカーキング 等)
 ##     note  = 一言メモ (なぜ良いか・何が読めるか)
 ## リンクは憶測で足さず、実際に見つけたものを記録する。
-## 全消化試合に FIFA公式マッチレポート記事(/articles/…、ハイライト動画が埋め込まれた記事)を1本ずつ付与。
-##   日本語版が配信済の試合は /ja/…-ja を採用 (Brave〔Claude in Chrome〕で実ページをナビゲートしライブ検証済、
-##   2026-06-23、 実在 ∧ 試合一致〔h1見出しが該当カードと整合〕、 404 ゼロ)。
-##   日本語版が未配信の5試合(CIV-ECU/IRN-NZL/KSA-URU/NOR-SEN/AUT-JOR)は英語版レポート /en/…/articles/<slug> を採用
-##   (2026-06-23、 web 検索で en 記事の実在 ∧ 試合〔チーム・スコア〕一致を確認。 ハイライト動画はこの記事に埋込)。
+## 各試合に FIFA公式リンクを1本ずつ付与。 動画は試合結果レポート記事に埋込まれている。 優先順位:
+##   ① 日本語版マッチレポート記事 /ja/…/articles/<slug>-ja が配信済ならそれ
+##     (Brave〔Claude in Chrome〕で実ページをナビゲートしライブ検証済、 2026-06-23、 実在 ∧ 試合一致〔h1見出し〕、 404 ゼロ)。
+##   ② 日本語版が未配信の試合は FIFA公式ハイライト動画 /ja/watch/<id> にリンク (英語記事より言語非依存の動画を優先)。
+##     現在 ② は5試合(CIV-ECU/IRN-NZL/KSA-URU/NOR-SEN/AUT-JOR)。 動画URLは web 検索で /en/watch/<id> の実在 ∧
+##     試合〔チーム・スコア〕一致を確認 (一部は ja 検索でも /ja/watch/ 実在確認)、 ja は同一 content ID を ja ロケール配信(FIFA+ 標準)。
+##   マッチセンター(スタッツ頁)は使わない。 build.py が en へ /ja/→/en/ 変換。
 
 meta:
   tournament: "2026 FIFA World Cup"
@@ -238,11 +240,11 @@ matches:
     title: "コートジボワール 1-0 エクアドル"
     refs:
       - cat: 報道・公式
-        title: "コートジボワール 1-0 エクアドル｜マッチレポートとハイライト"
-        url: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/cote-d-ivoire-ecuador-highlights-match-report"
+        title: "コートジボワール 1-0 エクアドル｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/4P79SuyJHO3ZGVuRYxjots"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）"
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
   - key: E-md2-GER-CIV
     group: E
     md: 2
@@ -385,11 +387,11 @@ matches:
     title: "イラン 2-2 ニュージーランド"
     refs:
       - cat: 報道・公式
-        title: "イラン 2-2 ニュージーランド｜マッチレポートとハイライト"
-        url: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/ir-iran-new-zealand-highlights-match-report"
+        title: "イラン 2-2 ニュージーランド｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/5c6T3T7Y1XfKrT3aXzJRqL"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）"
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
   - key: G-md2-BEL-IRN
     group: G
     md: 2
@@ -434,11 +436,11 @@ matches:
     title: "サウジアラビア 1-1 ウルグアイ"
     refs:
       - cat: 報道・公式
-        title: "サウジアラビア 1-1 ウルグアイ｜マッチレポートとハイライト"
-        url: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/saudi-arabia-uruguay-highlights-match-report"
+        title: "サウジアラビア 1-1 ウルグアイ｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/2OO54UvFW7GK8vnsarneGk"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）"
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
   - key: H-md2-ESP-KSA
     group: H
     md: 2
@@ -507,11 +509,11 @@ matches:
     title: "ノルウェー 3-2 セネガル"
     refs:
       - cat: 報道・公式
-        title: "ノルウェー 3-2 セネガル｜マッチレポートとハイライト"
-        url: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/norway-senegal-match-report-highlights"
+        title: "ノルウェー 3-2 セネガル｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/2z83J5vynam1wsTQNemf5u"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）"
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
   # ===== Group J =====
   - key: J-md1-ARG-ALG
     group: J
@@ -532,11 +534,11 @@ matches:
     title: "オーストリア 3-1 ヨルダン"
     refs:
       - cat: 報道・公式
-        title: "オーストリア 3-1 ヨルダン｜マッチレポートとハイライト"
-        url: "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/austria-jordan-highlights-match-report"
+        title: "オーストリア 3-1 ヨルダン｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/77P4VoHiQj3RG3yEQVhGpH"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式マッチレポート＋ハイライト（日本語版が未配信のため英語記事）"
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
   - key: J-md2-ARG-AUT
     group: J
     md: 2

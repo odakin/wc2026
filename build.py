@@ -109,8 +109,8 @@ STR = {
         "note_title": "同点で得失差・総得点まで並んだ箇所の確定根拠",
         "note_src": "出典",
         "links_head": "試合別 FIFA マッチレポート",
-        "links_intro": "消化済み全試合の FIFA 公式マッチレポート。 一部は日本語記事版が未配信のため英語版レポートで代替（ハイライト動画は記事に埋込）。",
-        "md": "第{md}節", "report": "レポート", "matchcentre": "マッチセンター", "pt": "pt",
+        "links_intro": "消化済み全試合の FIFA 公式マッチレポート。 日本語記事版が未配信の試合は FIFA 公式ハイライト動画にリンク。",
+        "md": "第{md}節", "report": "レポート", "matchcentre": "マッチセンター", "video": "ハイライト", "pt": "pt",
         "grp": "{g}組", "jp_badge": "🇯🇵 日本",
         "foot": ("結果は FIFA 公式・各紙を 2 ソース以上で確認したもの。 順位 tiebreak = <b>FIFA 2026 規定</b>"
                  "（直接対決〔勝点→得失差→総得点〕→ 全試合得失差 → 全試合総得点 → フェアプレー点 → FIFA ランキング、 抽選は廃止）。"
@@ -136,9 +136,9 @@ STR = {
         "note_title": "How teams level on points / GD / goals were separated",
         "note_src": "Source",
         "links_head": "FIFA Match Reports",
-        "links_intro": ("FIFA official match reports (English) for every completed match "
-                        "(highlights video embedded in each report)."),
-        "md": "MD{md}", "report": "Report", "matchcentre": "Match Centre", "pt": "pt",
+        "links_intro": ("FIFA official match reports for completed matches; matches without a published "
+                        "article link to the official FIFA highlights video instead."),
+        "md": "MD{md}", "report": "Report", "matchcentre": "Match Centre", "video": "Highlights", "pt": "pt",
         "grp": "Group {g}", "jp_badge": "🇯🇵 Japan",
         "foot": ("Results cross-checked against FIFA and major outlets (2+ sources). Tiebreak = <b>FIFA 2026 rules</b> "
                  "(head-to-head [points → GD → goals] → overall GD → overall goals → fair-play points → FIFA Ranking; "
@@ -395,10 +395,15 @@ def links_card(g, matches, find_url, lang):
     for m in res:
         h, a = m["home"], m["away"]
         url, mc = find_url(g, h, a, lang)
-        label = L["matchcentre"] if mc else L["report"]
+        if url and "/watch/" in url:
+            label, icon = L["video"], "▶"
+        elif mc:
+            label, icon = L["matchcentre"], "📄"
+        else:
+            label, icon = L["report"], "📄"
         vs = (f'<span class="flag">{flag(h)}</span>{esc(short(h, lang))}'
               f'<span class="sc">{m["hg"]}-{m["ag"]}</span>{esc(short(a, lang))}<span class="flag">{flag(a)}</span>')
-        rep = (f'<a class="rep" href="{esc(url)}" target="_blank" rel="noopener">📄 {esc(label)}</a>'
+        rep = (f'<a class="rep" href="{esc(url)}" target="_blank" rel="noopener">{icon} {esc(label)}</a>'
                if url else '<span style="color:var(--muted);font-size:11px">—</span>')
         rows.append(f'<div class="matchrow"><span class="md">{esc(L["md"]).format(md=m["md"])}</span>'
                     f'<span class="vs">{vs}</span>{rep}</div>')
