@@ -30,8 +30,12 @@
    （FIFA 公式 + ESPN / Sky Sports / Wikipedia / 各国紙のいずれか）で一致確認。
    - **中断・進行中・1 ソースのみ → 記録しない**（次回に回す）。スコアを憶測で埋めない。
 5. **DB 追記**（確定したものだけ）:
-   - `data/results.yaml` の `matches:` に 1 行追記（schema: `{group, md, date(現地開催日), home, away, hg, ag, note?}`、
+   - `data/results.yaml` の `matches:` に 1 行追記（schema: `{"no", group, md, date(現地開催日), home, away, hg, ag, note?}`、
      チーム名は `fixtures.yaml` と統一）。`meta.as_of` を今日（JST）に、`meta.note` を更新。
+   - **`"no"`（FIFA公式試合番号）も必ず付与**: `fixtures.yaml` の同カード（同 group + 同チーム対）の `no` をそのままコピー
+     （= results と fixtures を no で join できる状態を保つ）。キーは **`no:` でなく `"no":` とクォート**する
+     （PyYAML が `no:` を boolean False キーに解釈する YAML1.1 の罠）。fixtures に無い早期試合は触らない想定だが、
+     念のため §6 の検算ゲートで欠落・不一致を検出する。
    - **FIFA公式リンクの URL** を探して `data/articles.yaml` に追記（cat: 報道・公式 / source: FIFA公式）。
      **リンク優先順位**:
      ① **日本語版マッチレポート記事** `/ja/…/articles/<slug>-ja`（ハイライト動画が埋込まれている）が配信済ならそれ
@@ -51,6 +55,9 @@
    - **記事リンク欠落ゲート（必須）**: `python3 scripts/articles.py --check`。
      finding（記録済みなのに記事リンクが無い試合・欄欠落・URL 重複）が出たら **exit 1**。
      その場合は §5 に戻って欠落試合の FIFA レポート URL を追記してから先へ進む（取りこぼしのまま公開しない）。
+   - **試合番号ゲート（必須）**: `python3 scripts/check-match-numbers.py`。
+     finding（result の `no` 欠落・重複、fixtures との `no` 不一致）が出たら **exit 1**。
+     その場合は §5 に戻って `no` を正す（fixtures の同カードの no と一致させる）。番号がズレたまま公開しない。
    - `python3 build.py`（日英 docs 再生成）。
    - **leak gate**: 差分を `group\.calendar|@gmail|@.*\.ac\.jp|/Users/` 等（個人情報・カレンダー ID・
      個人パス・内部 private リポ名）で grep し、ヒットしたら push 中止して surface（公開リポに出さない）。
