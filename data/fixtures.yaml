@@ -29,8 +29,8 @@ matches:
   - {"no": 40, stage: group, group: G, label: "ニュージーランド × エジプト",          start_jst: "2026-06-22T10:00:00+09:00", venue: "BC Place", city: "バンクーバー"}
 
   - {"no": 43, stage: group, group: J, label: "アルゼンチン × オーストリア",          start_jst: "2026-06-23T02:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)"}
-  - {"no": 41, stage: group, group: I, label: "フランス × イラク",                    start_jst: "2026-06-23T06:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア"}
-  - {"no": 42, stage: group, group: I, label: "ノルウェー × セネガル",                start_jst: "2026-06-23T09:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)"}
+  - {"no": 42, stage: group, group: I, label: "フランス × イラク",                    start_jst: "2026-06-23T06:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア"}
+  - {"no": 41, stage: group, group: I, label: "ノルウェー × セネガル",                start_jst: "2026-06-23T09:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)"}
   - {"no": 44, stage: group, group: J, label: "ヨルダン × アルジェリア",              start_jst: "2026-06-23T12:00:00+09:00", venue: "Levi's Stadium", city: "サンタクララ(SF)"}
 
   - {"no": 47, stage: group, group: K, label: "ポルトガル × ウズベキスタン",          start_jst: "2026-06-24T02:00:00+09:00", venue: "NRG Stadium", city: "ヒューストン"}
@@ -45,8 +45,8 @@ matches:
   - {"no": 53, stage: group, group: A, label: "チェコ × メキシコ",                    start_jst: "2026-06-25T10:00:00+09:00", venue: "Estadio Azteca", city: "メキシコシティ"}
   - {"no": 54, stage: group, group: A, label: "南アフリカ × 韓国",                    start_jst: "2026-06-25T10:00:00+09:00", venue: "Estadio BBVA", city: "グアダルーペ(モンテレイ)"}
 
-  - {"no": 55, stage: group, group: E, label: "エクアドル × ドイツ",                  start_jst: "2026-06-26T05:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)"}
-  - {"no": 56, stage: group, group: E, label: "キュラソー × コートジボワール",        start_jst: "2026-06-26T05:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア"}
+  - {"no": 56, stage: group, group: E, label: "エクアドル × ドイツ",                  start_jst: "2026-06-26T05:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)"}
+  - {"no": 55, stage: group, group: E, label: "キュラソー × コートジボワール",        start_jst: "2026-06-26T05:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア"}
   - {"no": 57, stage: group, group: F, label: "日本 × スウェーデン", jp: true, reconcile: existing, start_jst: "2026-06-26T08:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)"}
   - {"no": 58, stage: group, group: F, label: "チュニジア × オランダ",                start_jst: "2026-06-26T08:00:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ"}
   - {"no": 59, stage: group, group: D, label: "トルコ × アメリカ合衆国",              start_jst: "2026-06-26T11:00:00+09:00", venue: "SoFi Stadium", city: "イングルウッド(LA)"}

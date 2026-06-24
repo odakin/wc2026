@@ -2,9 +2,12 @@
 ## 消化済みの試合の「生の結果」だけをここに記録する。順位表は scripts/standings.py が
 ## ここから計算して導出する (= 順位を手で二重管理しない)。試合が増えたら下に追記。
 ##
-## schema: {group, md(matchday), date, home, away, hg(home goals), ag(away goals), note?}
+## schema: {no, group, md(matchday), date, home, away, hg(home goals), ag(away goals), note?}
+##   no = FIFA公式試合番号 (1-104)。 fixtures.yaml の no と同一の join key (= 突合は名前一致でなく no で堅牢化、 2026-06-25 付与)。
+##     出典: 消化済は FIFA公式レポート PDF ファイル名 PMSR-M<NN> (fifatrainingcentre.com)、 一部は en.wikipedia の Match番号 placeholder。
+##     消去法/規則確定 = M47 (block bijection)・M51/M52 (B組MD3、 slot5<slot6 規則を C/A/E で検証)。 scripts/check-match-numbers.py が fixtures との一致を検算。
 ##   date = 現地(北米)開催日。 JST では遅い試合は翌日 (例: F組 第1節は現地6/14=日本6/15)。
-##   勝敗・順位の判定に使うのは group/home/away/hg/ag のみ。 date/md/note は記録用。
+##   勝敗・順位の判定に使うのは group/home/away/hg/ag のみ。 date/md/note は記録用 (no も判定には未使用、 識別用)。
 ## チーム名は fixtures.yaml と統一 (アメリカ合衆国 / ボスニア・ヘルツェゴビナ / コンゴ民主共和国 等)。
 ## 出典: 英語版 Wikipedia 各グループ + FIFA公式 + 日本各紙 を 2 ソース以上で突合 (2026-06-21 取得)。
 
@@ -25,77 +28,77 @@ meta:
 
 matches:
   # ===== Group A (メキシコ/韓国/チェコ/南アフリカ) =====
-  - {group: A, md: 1, date: 2026-06-11, home: メキシコ,   away: 南アフリカ, hg: 2, ag: 0, note: "開幕戦"}
-  - {group: A, md: 1, date: 2026-06-11, home: 韓国,       away: チェコ,     hg: 2, ag: 1}
-  - {group: A, md: 2, date: 2026-06-18, home: チェコ,     away: 南アフリカ, hg: 1, ag: 1}
-  - {group: A, md: 2, date: 2026-06-18, home: メキシコ,   away: 韓国,       hg: 1, ag: 0, note: "メキシコ2連勝で突破一番乗り"}
+  - {"no":  1, group: A, md: 1, date: 2026-06-11, home: メキシコ,   away: 南アフリカ, hg: 2, ag: 0, note: "開幕戦"}
+  - {"no":  2, group: A, md: 1, date: 2026-06-11, home: 韓国,       away: チェコ,     hg: 2, ag: 1}
+  - {"no": 25, group: A, md: 2, date: 2026-06-18, home: チェコ,     away: 南アフリカ, hg: 1, ag: 1}
+  - {"no": 28, group: A, md: 2, date: 2026-06-18, home: メキシコ,   away: 韓国,       hg: 1, ag: 0, note: "メキシコ2連勝で突破一番乗り"}
 
   # ===== Group B (カナダ/スイス/ボスニア/カタール) =====
-  - {group: B, md: 1, date: 2026-06-12, home: カナダ,     away: ボスニア・ヘルツェゴビナ, hg: 1, ag: 1}
-  - {group: B, md: 1, date: 2026-06-13, home: カタール,   away: スイス,     hg: 1, ag: 1}
-  - {group: B, md: 2, date: 2026-06-18, home: スイス,     away: ボスニア・ヘルツェゴビナ, hg: 4, ag: 1}
-  - {group: B, md: 2, date: 2026-06-18, home: カナダ,     away: カタール,   hg: 6, ag: 0, note: "カナダ6発の大勝"}
-  - {group: B, md: 3, date: 2026-06-24, home: スイス,     away: カナダ,     hg: 2, ag: 1, note: "バルガス46分・マンザンビ57分、デイビッド76分で1点差。スイス逆転首位通過・カナダ2位で史上初突破(バンクーバー)"}
-  - {group: B, md: 3, date: 2026-06-24, home: ボスニア・ヘルツェゴビナ, away: カタール, hg: 3, ag: 1, note: "アライベゴヴィッチ29分・アル＝ブレーキOG34分・マフミッチ80分(アル＝ハイドゥース42分の1点)。ボスニア北中米W杯初勝利・勝点4で3位、カタールは2大会連続GL敗退(シアトル)"}
+  - {"no":  3, group: B, md: 1, date: 2026-06-12, home: カナダ,     away: ボスニア・ヘルツェゴビナ, hg: 1, ag: 1}
+  - {"no":  8, group: B, md: 1, date: 2026-06-13, home: カタール,   away: スイス,     hg: 1, ag: 1}
+  - {"no": 26, group: B, md: 2, date: 2026-06-18, home: スイス,     away: ボスニア・ヘルツェゴビナ, hg: 4, ag: 1}
+  - {"no": 27, group: B, md: 2, date: 2026-06-18, home: カナダ,     away: カタール,   hg: 6, ag: 0, note: "カナダ6発の大勝"}
+  - {"no": 51, group: B, md: 3, date: 2026-06-24, home: スイス,     away: カナダ,     hg: 2, ag: 1, note: "バルガス46分・マンザンビ57分、デイビッド76分で1点差。スイス逆転首位通過・カナダ2位で史上初突破(バンクーバー)"}
+  - {"no": 52, group: B, md: 3, date: 2026-06-24, home: ボスニア・ヘルツェゴビナ, away: カタール, hg: 3, ag: 1, note: "アライベゴヴィッチ29分・アル＝ブレーキOG34分・マフミッチ80分(アル＝ハイドゥース42分の1点)。ボスニア北中米W杯初勝利・勝点4で3位、カタールは2大会連続GL敗退(シアトル)"}
 
   # ===== Group C (ブラジル/モロッコ/スコットランド/ハイチ) =====
-  - {group: C, md: 1, date: 2026-06-13, home: ブラジル,       away: モロッコ,       hg: 1, ag: 1}
-  - {group: C, md: 1, date: 2026-06-13, home: ハイチ,         away: スコットランド, hg: 0, ag: 1}
-  - {group: C, md: 2, date: 2026-06-19, home: スコットランド, away: モロッコ,       hg: 0, ag: 1, note: "モロッコがスコットランド撃破でブラジルと並走"}
-  - {group: C, md: 2, date: 2026-06-19, home: ブラジル,       away: ハイチ,         hg: 3, ag: 0}
+  - {"no":  7, group: C, md: 1, date: 2026-06-13, home: ブラジル,       away: モロッコ,       hg: 1, ag: 1}
+  - {"no":  5, group: C, md: 1, date: 2026-06-13, home: ハイチ,         away: スコットランド, hg: 0, ag: 1}
+  - {"no": 30, group: C, md: 2, date: 2026-06-19, home: スコットランド, away: モロッコ,       hg: 0, ag: 1, note: "モロッコがスコットランド撃破でブラジルと並走"}
+  - {"no": 29, group: C, md: 2, date: 2026-06-19, home: ブラジル,       away: ハイチ,         hg: 3, ag: 0}
 
   # ===== Group D (アメリカ/オーストラリア/パラグアイ/トルコ) =====
-  - {group: D, md: 1, date: 2026-06-12, home: アメリカ合衆国, away: パラグアイ,     hg: 4, ag: 1}
-  - {group: D, md: 1, date: 2026-06-13, home: オーストラリア, away: トルコ,         hg: 2, ag: 0}
-  - {group: D, md: 2, date: 2026-06-19, home: アメリカ合衆国, away: オーストラリア, hg: 2, ag: 0, note: "開催国アメリカ2連勝で突破確定"}
-  - {group: D, md: 2, date: 2026-06-19, home: トルコ,         away: パラグアイ,     hg: 0, ag: 1}
+  - {"no":  4, group: D, md: 1, date: 2026-06-12, home: アメリカ合衆国, away: パラグアイ,     hg: 4, ag: 1}
+  - {"no":  6, group: D, md: 1, date: 2026-06-13, home: オーストラリア, away: トルコ,         hg: 2, ag: 0}
+  - {"no": 32, group: D, md: 2, date: 2026-06-19, home: アメリカ合衆国, away: オーストラリア, hg: 2, ag: 0, note: "開催国アメリカ2連勝で突破確定"}
+  - {"no": 31, group: D, md: 2, date: 2026-06-19, home: トルコ,         away: パラグアイ,     hg: 0, ag: 1}
 
   # ===== Group E (ドイツ/コートジボワール/エクアドル/キュラソー) =====
-  - {group: E, md: 1, date: 2026-06-14, home: ドイツ,           away: キュラソー,       hg: 7, ag: 1, note: "ドイツ初戦7発"}
-  - {group: E, md: 1, date: 2026-06-14, home: コートジボワール, away: エクアドル,       hg: 1, ag: 0}
-  - {group: E, md: 2, date: 2026-06-20, home: ドイツ,           away: コートジボワール, hg: 2, ag: 1, note: "ドイツ2連勝でほぼ当確"}
-  - {group: E, md: 2, date: 2026-06-20, home: エクアドル,       away: キュラソー,       hg: 0, ag: 0}
+  - {"no": 10, group: E, md: 1, date: 2026-06-14, home: ドイツ,           away: キュラソー,       hg: 7, ag: 1, note: "ドイツ初戦7発"}
+  - {"no":  9, group: E, md: 1, date: 2026-06-14, home: コートジボワール, away: エクアドル,       hg: 1, ag: 0}
+  - {"no": 33, group: E, md: 2, date: 2026-06-20, home: ドイツ,           away: コートジボワール, hg: 2, ag: 1, note: "ドイツ2連勝でほぼ当確"}
+  - {"no": 34, group: E, md: 2, date: 2026-06-20, home: エクアドル,       away: キュラソー,       hg: 0, ag: 0}
 
   # ===== Group F (日本/オランダ/スウェーデン/チュニジア) =====
-  - {group: F, md: 1, date: 2026-06-14, home: オランダ,     away: 日本,         hg: 2, ag: 2, note: "鎌田が後半44分(89')に同点弾、2度の劣勢を追いつく"}
-  - {group: F, md: 1, date: 2026-06-14, home: スウェーデン, away: チュニジア,   hg: 5, ag: 1}
-  - {group: F, md: 2, date: 2026-06-20, home: チュニジア,   away: 日本,         hg: 0, ag: 4, note: "日本が4-0で快勝、勝点4の2位に"}
-  - {group: F, md: 2, date: 2026-06-20, home: オランダ,     away: スウェーデン, hg: 5, ag: 1}
+  - {"no": 11, group: F, md: 1, date: 2026-06-14, home: オランダ,     away: 日本,         hg: 2, ag: 2, note: "鎌田が後半44分(89')に同点弾、2度の劣勢を追いつく"}
+  - {"no": 12, group: F, md: 1, date: 2026-06-14, home: スウェーデン, away: チュニジア,   hg: 5, ag: 1}
+  - {"no": 36, group: F, md: 2, date: 2026-06-20, home: チュニジア,   away: 日本,         hg: 0, ag: 4, note: "日本が4-0で快勝、勝点4の2位に"}
+  - {"no": 35, group: F, md: 2, date: 2026-06-20, home: オランダ,     away: スウェーデン, hg: 5, ag: 1}
 
   # ===== Group G (ベルギー/イラン/ニュージーランド/エジプト) — 第2節まで =====
-  - {group: G, md: 1, date: 2026-06-15, home: ベルギー, away: エジプト,         hg: 1, ag: 1, note: "本命ベルギーがオウンゴールで追いつかれ取りこぼし"}
-  - {group: G, md: 1, date: 2026-06-15, home: イラン,   away: ニュージーランド, hg: 2, ag: 2}
-  - {group: G, md: 2, date: 2026-06-21, home: ベルギー,           away: イラン,     hg: 0, ag: 0, note: "ベルギーNgoyが66分退場で10人、イランGKベイランバンドが7セーブ完封ドロー"}
-  - {group: G, md: 2, date: 2026-06-21, home: ニュージーランド, away: エジプト,   hg: 1, ag: 3, note: "サーマン15分先制もエジプトが逆転、サラー1G1A、エジプトが勝点4で首位浮上"}
+  - {"no": 16, group: G, md: 1, date: 2026-06-15, home: ベルギー, away: エジプト,         hg: 1, ag: 1, note: "本命ベルギーがオウンゴールで追いつかれ取りこぼし"}
+  - {"no": 15, group: G, md: 1, date: 2026-06-15, home: イラン,   away: ニュージーランド, hg: 2, ag: 2}
+  - {"no": 39, group: G, md: 2, date: 2026-06-21, home: ベルギー,           away: イラン,     hg: 0, ag: 0, note: "ベルギーNgoyが66分退場で10人、イランGKベイランバンドが7セーブ完封ドロー"}
+  - {"no": 40, group: G, md: 2, date: 2026-06-21, home: ニュージーランド, away: エジプト,   hg: 1, ag: 3, note: "サーマン15分先制もエジプトが逆転、サラー1G1A、エジプトが勝点4で首位浮上"}
 
   # ===== Group H (スペイン/ウルグアイ/サウジアラビア/カーボベルデ) — 第2節まで =====
-  - {group: H, md: 1, date: 2026-06-15, home: スペイン,       away: カーボベルデ, hg: 0, ag: 0, note: "W杯初出場カーボベルデがスペインと無失点ドローの金星"}
-  - {group: H, md: 1, date: 2026-06-15, home: サウジアラビア, away: ウルグアイ,   hg: 1, ag: 1}
-  - {group: H, md: 2, date: 2026-06-21, home: スペイン,       away: サウジアラビア, hg: 4, ag: 0, note: "ヤマルW杯初ゴール、オヤルサバル2発、前半30分以内に3点"}
-  - {group: H, md: 2, date: 2026-06-21, home: ウルグアイ,     away: カーボベルデ,   hg: 2, ag: 2, note: "カーボベルデが2度追いついて価値あるドロー"}
+  - {"no": 14, group: H, md: 1, date: 2026-06-15, home: スペイン,       away: カーボベルデ, hg: 0, ag: 0, note: "W杯初出場カーボベルデがスペインと無失点ドローの金星"}
+  - {"no": 13, group: H, md: 1, date: 2026-06-15, home: サウジアラビア, away: ウルグアイ,   hg: 1, ag: 1}
+  - {"no": 38, group: H, md: 2, date: 2026-06-21, home: スペイン,       away: サウジアラビア, hg: 4, ag: 0, note: "ヤマルW杯初ゴール、オヤルサバル2発、前半30分以内に3点"}
+  - {"no": 37, group: H, md: 2, date: 2026-06-21, home: ウルグアイ,     away: カーボベルデ,   hg: 2, ag: 2, note: "カーボベルデが2度追いついて価値あるドロー"}
 
   # ===== Group I (フランス/ノルウェー/セネガル/イラク) — 第2節まで =====
-  - {group: I, md: 1, date: 2026-06-16, home: フランス, away: セネガル,   hg: 3, ag: 1, note: "エムバペ2得点"}
-  - {group: I, md: 1, date: 2026-06-16, home: イラク,   away: ノルウェー, hg: 1, ag: 4, note: "ハーランド2発"}
-  - {group: I, md: 2, date: 2026-06-22, home: フランス,   away: イラク,     hg: 3, ag: 0, note: "ムバッペ2発+デンベレ、雷雨で前半終了後2時間中断(W杯初の悪天候中断、フィラデルフィア)。仏が突破決定"}
-  - {group: I, md: 2, date: 2026-06-22, home: ノルウェー, away: セネガル,   hg: 3, ag: 2, note: "ハーランド2発の打ち合い、ノルウェーが突破決定"}
+  - {"no": 17, group: I, md: 1, date: 2026-06-16, home: フランス, away: セネガル,   hg: 3, ag: 1, note: "エムバペ2得点"}
+  - {"no": 18, group: I, md: 1, date: 2026-06-16, home: イラク,   away: ノルウェー, hg: 1, ag: 4, note: "ハーランド2発"}
+  - {"no": 42, group: I, md: 2, date: 2026-06-22, home: フランス,   away: イラク,     hg: 3, ag: 0, note: "ムバッペ2発+デンベレ、雷雨で前半終了後2時間中断(W杯初の悪天候中断、フィラデルフィア)。仏が突破決定"}
+  - {"no": 41, group: I, md: 2, date: 2026-06-22, home: ノルウェー, away: セネガル,   hg: 3, ag: 2, note: "ハーランド2発の打ち合い、ノルウェーが突破決定"}
 
   # ===== Group J (アルゼンチン/オーストリア/ヨルダン/アルジェリア) — 第2節まで =====
-  - {group: J, md: 1, date: 2026-06-16, home: アルゼンチン, away: アルジェリア, hg: 3, ag: 0, note: "メッシがハットトリック"}
-  - {group: J, md: 1, date: 2026-06-16, home: オーストリア, away: ヨルダン,     hg: 3, ag: 1}
-  - {group: J, md: 2, date: 2026-06-22, home: アルゼンチン, away: オーストリア, hg: 2, ag: 0, note: "メッシが38分・90+5分に2得点、W杯通算17・18点目で最多得点記録を更新"}
-  - {group: J, md: 2, date: 2026-06-22, home: ヨルダン,     away: アルジェリア, hg: 1, ag: 2, note: "ヨルダン先制(アル＝ラシュダン)もベンブアリ・グイリで逆転、ヨルダンは敗退決定(サンタクララ)"}
+  - {"no": 19, group: J, md: 1, date: 2026-06-16, home: アルゼンチン, away: アルジェリア, hg: 3, ag: 0, note: "メッシがハットトリック"}
+  - {"no": 20, group: J, md: 1, date: 2026-06-16, home: オーストリア, away: ヨルダン,     hg: 3, ag: 1}
+  - {"no": 43, group: J, md: 2, date: 2026-06-22, home: アルゼンチン, away: オーストリア, hg: 2, ag: 0, note: "メッシが38分・90+5分に2得点、W杯通算17・18点目で最多得点記録を更新"}
+  - {"no": 44, group: J, md: 2, date: 2026-06-22, home: ヨルダン,     away: アルジェリア, hg: 1, ag: 2, note: "ヨルダン先制(アル＝ラシュダン)もベンブアリ・グイリで逆転、ヨルダンは敗退決定(サンタクララ)"}
 
   # ===== Group K (ポルトガル/コロンビア/ウズベキスタン/コンゴ民主) — 第2節 完了 =====
-  - {group: K, md: 1, date: 2026-06-17, home: ポルトガル,     away: コンゴ民主共和国, hg: 1, ag: 1, note: "本命ポルトガルが初出場コンゴ民主と引き分け取りこぼし"}
-  - {group: K, md: 1, date: 2026-06-17, home: ウズベキスタン, away: コロンビア,       hg: 1, ag: 3}
+  - {"no": 23, group: K, md: 1, date: 2026-06-17, home: ポルトガル,     away: コンゴ民主共和国, hg: 1, ag: 1, note: "本命ポルトガルが初出場コンゴ民主と引き分け取りこぼし"}
+  - {"no": 24, group: K, md: 1, date: 2026-06-17, home: ウズベキスタン, away: コロンビア,       hg: 1, ag: 3}
 
-  - {group: K, md: 2, date: 2026-06-23, home: ポルトガル,     away: ウズベキスタン,   hg: 5, ag: 0, note: "ロナウド2発・メンデス・レオン+OG。ポルトガル大勝で突破前進(ヒューストン)"}
-  - {group: K, md: 2, date: 2026-06-23, home: コロンビア,     away: コンゴ民主共和国, hg: 1, ag: 0, note: "ムニョス76分の決勝点(コルドバの起点)。コロンビア2連勝で突破確定、ディアスは2度オフサイドで取消(サポパン/グアダラハラ)"}
+  - {"no": 47, group: K, md: 2, date: 2026-06-23, home: ポルトガル,     away: ウズベキスタン,   hg: 5, ag: 0, note: "ロナウド2発・メンデス・レオン+OG。ポルトガル大勝で突破前進(ヒューストン)"}
+  - {"no": 48, group: K, md: 2, date: 2026-06-23, home: コロンビア,     away: コンゴ民主共和国, hg: 1, ag: 0, note: "ムニョス76分の決勝点(コルドバの起点)。コロンビア2連勝で突破確定、ディアスは2度オフサイドで取消(サポパン/グアダラハラ)"}
 
   # ===== Group L (イングランド/クロアチア/パナマ/ガーナ) — 第2節 完了 =====
-  - {group: L, md: 1, date: 2026-06-17, home: イングランド, away: クロアチア, hg: 4, ag: 2, note: "ケイン2発の打ち合い、クロアチアは黒星発進"}
-  - {group: L, md: 1, date: 2026-06-17, home: ガーナ,       away: パナマ,     hg: 1, ag: 0, note: "ガーナが後半ATの決勝点で金星"}
+  - {"no": 22, group: L, md: 1, date: 2026-06-17, home: イングランド, away: クロアチア, hg: 4, ag: 2, note: "ケイン2発の打ち合い、クロアチアは黒星発進"}
+  - {"no": 21, group: L, md: 1, date: 2026-06-17, home: ガーナ,       away: パナマ,     hg: 1, ag: 0, note: "ガーナが後半ATの決勝点で金星"}
 
-  - {group: L, md: 2, date: 2026-06-23, home: イングランド, away: ガーナ,     hg: 0, ag: 0, note: "ガーナが5バックの堅守でイングランドを完封、両者勝点4で並走(ボストン/フォックスボロ)"}
-  - {group: L, md: 2, date: 2026-06-23, home: パナマ,       away: クロアチア, hg: 0, ag: 1, note: "ブディミルが交代9分で決勝点、モドリッチ200キャップ。クロアチアは勝点維持・パナマは2連敗で敗退決定(トロント)"}
+  - {"no": 45, group: L, md: 2, date: 2026-06-23, home: イングランド, away: ガーナ,     hg: 0, ag: 0, note: "ガーナが5バックの堅守でイングランドを完封、両者勝点4で並走(ボストン/フォックスボロ)"}
+  - {"no": 46, group: L, md: 2, date: 2026-06-23, home: パナマ,       away: クロアチア, hg: 0, ag: 1, note: "ブディミルが交代9分で決勝点、モドリッチ200キャップ。クロアチアは勝点維持・パナマは2連敗で敗退決定(トロント)"}
