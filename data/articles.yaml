@@ -122,6 +122,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: B-md3-SUI-CAN
+    group: B
+    md: 3
+    date: 2026-06-24
+    title: "スイス 2-1 カナダ"
+    refs:
+      - cat: 報道・公式
+        title: "スイス 2-1 カナダ｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/1KiU2uFEKhMDYVNebmF5Zg"
+        source: FIFA公式
+        lang: ja
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/1KiU2uFEKhMDYVNebmF5Zg (タイトル Switzerland v Canada | Group B | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア2-1は FIFA+CBC+olympics.com で確認"
   # ===== Group C =====
   - key: C-md1-BRA-MAR
     group: C
