@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 49 / リンク数: 57
+- 試合数: 50 / リンク数: 58
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -59,6 +59,12 @@
 **📰 報道・公式**
 
 - [スイス 2-1 カナダ｜ハイライト動画](https://www.fifa.com/ja/watch/1KiU2uFEKhMDYVNebmF5Zg) — FIFA公式 / 日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/1KiU2uFEKhMDYVNebmF5Zg (タイトル Switzerland v Canada | Group B | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア2-1は FIFA+CBC+olympics.com で確認
+
+### ボスニア・ヘルツェゴビナ 3-1 カタール（B組 / 第3節 / 2026-06-24）
+
+**📰 報道・公式**
+
+- [ボスニア・ヘルツェゴビナ 3-1 カタール｜ハイライト動画](https://www.fifa.com/ja/watch/5CVV8X8QSnZDr6uKOh31ff) — FIFA公式 / 日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/5CVV8X8QSnZDr6uKOh31ff (タイトル Bosnia and Herzegovina v Qatar | Group B | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア3-1は FIFA+ESPN+FOX+サッカーキング+スポーツナビ で確認
 
 ### ブラジル 1-1 モロッコ（C組 / 第1節 / 2026-06-13）
 

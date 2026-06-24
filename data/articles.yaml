@@ -134,6 +134,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/1KiU2uFEKhMDYVNebmF5Zg (タイトル Switzerland v Canada | Group B | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア2-1は FIFA+CBC+olympics.com で確認"
+  - key: B-md3-BIH-QAT
+    group: B
+    md: 3
+    date: 2026-06-24
+    title: "ボスニア・ヘルツェゴビナ 3-1 カタール"
+    refs:
+      - cat: 報道・公式
+        title: "ボスニア・ヘルツェゴビナ 3-1 カタール｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/5CVV8X8QSnZDr6uKOh31ff"
+        source: FIFA公式
+        lang: ja
+        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/5CVV8X8QSnZDr6uKOh31ff (タイトル Bosnia and Herzegovina v Qatar | Group B | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア3-1は FIFA+ESPN+FOX+サッカーキング+スポーツナビ で確認"
   # ===== Group C =====
   - key: C-md1-BRA-MAR
     group: C
