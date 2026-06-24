@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 46 / リンク数: 54
+- 試合数: 47 / リンク数: 55
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -298,3 +298,9 @@
 **📰 報道・公式**
 
 - [イングランド 0-0 ガーナ｜ハイライト動画](https://www.fifa.com/ja/watch/YMV6IJCxemtC0s8HtqPn3) — FIFA公式 / 日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/YMV6IJCxemtC0s8HtqPn3 (タイトル England v Ghana | Group L | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア0-0は FIFA+ESPN+Sky+Al Jazeera+CBS で確認
+
+### パナマ 0-1 クロアチア（L組 / 第2節 / 2026-06-23）
+
+**📰 報道・公式**
+
+- [パナマ 0-1 クロアチア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-croatia-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/panama-croatia-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Panama 0-1 Croatia | Match report and highlights』、モドリッチ200キャップ・ブディミル決勝点)、日本語版は同語順+-jaで導出。スコア0-1はESPN+FIFA+VAVEL+Outlookで確認

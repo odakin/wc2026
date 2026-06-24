@@ -637,3 +637,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/YMV6IJCxemtC0s8HtqPn3 (タイトル England v Ghana | Group L | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア0-0は FIFA+ESPN+Sky+Al Jazeera+CBS で確認"
+  - key: L-md2-PAN-CRO
+    group: L
+    md: 2
+    date: 2026-06-23
+    title: "パナマ 0-1 クロアチア"
+    refs:
+      - cat: 報道・公式
+        title: "パナマ 0-1 クロアチア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-croatia-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/panama-croatia-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Panama 0-1 Croatia | Match report and highlights』、モドリッチ200キャップ・ブディミル決勝点)、日本語版は同語順+-jaで導出。スコア0-1はESPN+FIFA+VAVEL+Outlookで確認"
