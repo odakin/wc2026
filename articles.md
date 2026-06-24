@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 47 / リンク数: 55
+- 試合数: 48 / リンク数: 56
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -280,6 +280,12 @@
 **📰 報道・公式**
 
 - [ポルトガル 5-0 ウズベキスタン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-uzbekistan-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/portugal-uzbekistan-match-report-highlights)を検索インデックスで実在確認、日本語版は同語順+-jaで導出(FIFAは全言語版を並行配信)。スコア5-0はen/ja Wikipedia+ESPN+Al Jazeera+Bleacher等で確認
+
+### コロンビア 1-0 コンゴ民主共和国（K組 / 第2節 / 2026-06-23）
+
+**📰 報道・公式**
+
+- [コロンビア 1-0 コンゴ民主共和国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-congo-dr-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/colombia-congo-dr-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Colombia 1-0 Congo DR | Match report and highlights』、ムニョス76分決勝点・グアダラハラ)、日本語版は同語順+-jaで導出。スコア1-0はESPN+FIFA+FOX+VAVEL+Outlookで確認
 
 ### イングランド 4-2 クロアチア（L組 / 第1節 / 2026-06-17）
 
