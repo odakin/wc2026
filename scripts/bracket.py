@@ -191,6 +191,37 @@ def build_rounds(results_matches, conduct=None, fifa_rank=None):
     return rounds, third
 
 
+def third_place_race(results_matches, conduct=None, fifa_rank=None):
+    """各組3位を集め、FIFA ベスト3位ランキング順（点→得失差→総得点→フェアプレー）に並べる。
+    上位 8 が決勝T進出、下位 4 が敗退。 返り値の各 row:
+      {rank, group, team, P, Pts, GF, GA, GD, final(組が全6試合消化), qualified(上位8), tied_next}
+    ⚠️ 組未確定なら 3位チーム自体が変わり得る（final=False=暫定）。 推測の確率は出さない。"""
+    conduct = conduct or {}
+    fifa_rank = fifa_rank or {}
+    played = {g: 0 for g in GROUPS}
+    for m in results_matches:
+        g = m.get("group")
+        if g in played:
+            played[g] += 1
+    rows = []
+    for g in GROUPS:
+        gr = rank_group(g, results_matches, conduct, fifa_rank)
+        if len(gr) < 3:
+            continue
+        t, s, _ = gr[2]
+        rows.append({"group": g, "team": t, "P": s["P"], "Pts": s["Pts"],
+                     "GF": s["GF"], "GA": s["GA"], "GD": s["GF"] - s["GA"],
+                     "final": played[g] >= 6})
+    rows.sort(key=lambda r: (-r["Pts"], -r["GD"], -r["GF"], -conduct.get(r["team"], 0)))
+    for i, r in enumerate(rows):
+        r["rank"] = i + 1
+        r["qualified"] = i < 8
+        nxt = rows[i + 1] if i + 1 < len(rows) else None
+        r["tied_next"] = bool(nxt and (r["Pts"], r["GD"], r["GF"]) == (nxt["Pts"], nxt["GD"], nxt["GF"])
+                              and conduct.get(r["team"], 0) == conduct.get(nxt["team"], 0))
+    return rows
+
+
 def _selftest():
     # group-pos / best-third / winner-of の解決と未解決ラベルを最小確認
     finals = {"A": {1: "X", 2: "Y", 3: "Z", 4: "W"}, "B": None}

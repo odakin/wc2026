@@ -130,6 +130,31 @@ table.s tbody tr:last-child td{border-bottom:none}
 .ko-third{margin-top:26px}
 .ko-third>h3{font-size:14px;font-weight:800;margin:0 0 10px}
 .ko-third .ko-match{max-width:240px}
+/* ベスト3位 race 表 */
+.tp{margin:22px 0 26px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px 10px;box-shadow:var(--shadow)}
+.tp h2{font-size:16px;margin:0 0 5px;font-weight:800;display:flex;align-items:center;gap:8px}
+.tp .tp-sub{color:var(--muted);font-size:13px;margin:0 0 13px;max-width:78ch;line-height:1.7}
+.tp .tp-sub b{color:var(--ink)}
+.tp table{border-collapse:separate;border-spacing:0;width:100%;font-size:13px}
+.tp th,.tp td{padding:7px 7px;text-align:center;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+.tp thead th{color:var(--muted);font-weight:600;font-size:11px;border-bottom:1px solid var(--line)}
+.tp td.team,.tp th.team{text-align:left;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.tp td.pts{font-weight:800}
+.tp .rk{font-weight:800}
+.tp tr.in .rk{color:var(--adv)} .tp tr.out .rk{color:var(--out)}
+.tp tr.in td:first-child{box-shadow:inset 3px 0 0 var(--adv)}
+.tp tr.out td:first-child{box-shadow:inset 3px 0 0 var(--out)}
+.tp tr.out td{color:var(--muted)}
+.tp tr.out td.team{color:var(--ink)}
+.tp tbody tr:last-child td{border-bottom:none}
+.tp .gtag{display:inline-block;background:var(--accent-soft);color:var(--accent-ink);border-radius:6px;font-size:11px;font-weight:800;padding:1px 7px}
+.tp .badge{font-size:10px;font-weight:800;border-radius:6px;padding:2px 7px;white-space:nowrap}
+.tp .badge.set{background:var(--accent-soft);color:var(--accent-ink)}
+.tp .badge.live{background:#fff3e0;color:var(--mid)}
+.tp .badge.tie{background:var(--draw-bg);color:var(--draw-ink);margin-left:3px}
+.tp tr.cut td{padding:3px 0;border:none}
+.tp .cutbar{display:flex;align-items:center;gap:9px;color:var(--adv);font-size:11px;font-weight:800;letter-spacing:.02em}
+.tp .cutbar::before,.tp .cutbar::after{content:"";height:2px;background:var(--adv);flex:1;border-radius:2px;opacity:.55}
 </style></head>
 <body>
 <div class="topbar"><div class="inner">
