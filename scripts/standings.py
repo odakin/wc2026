@@ -36,7 +36,9 @@ def compute(matches):
     table = defaultdict(lambda: defaultdict(
         lambda: dict(P=0, W=0, D=0, L=0, GF=0, GA=0, Pts=0)))
     for m in matches:
-        g = m["group"]
+        g = m.get("group")
+        if not g:          # knockout 結果 (group 無し・no が鍵) は順位集計の対象外
+            continue
         for team, gf, ga in ((m["home"], m["hg"], m["ag"]),
                              (m["away"], m["ag"], m["hg"])):
             s = table[g][team]
@@ -58,7 +60,7 @@ def _h2h_stats(g, S, matches):
     """サブグループ S 内の対戦だけで集計した {team: {Pts,GF,GA}}。"""
     st = {t: dict(Pts=0, GF=0, GA=0) for t in S}
     for m in matches:
-        if m["group"] != g or m["home"] not in st or m["away"] not in st:
+        if m.get("group") != g or m["home"] not in st or m["away"] not in st:
             continue
         for t, gf, ga in ((m["home"], m["hg"], m["ag"]),
                           (m["away"], m["ag"], m["hg"])):
@@ -169,7 +171,7 @@ def fmt_group(g, matches, conduct, fifa_rank):
                    f"{s['GF']} | {s['GA']} | {gd:+d} | **{s['Pts']}** |")
     for n in tie_basis(g, rows, matches, conduct, fifa_rank):
         out.append(f"- ⚖️ {n}")
-    res = [m for m in matches if m["group"] == g]
+    res = [m for m in matches if m.get("group") == g]
     out.append("")
     for m in sorted(res, key=lambda x: (x["md"], str(x.get("date", "")))):
         line = f"- 第{m['md']}節: {m['home']} {m['hg']}-{m['ag']} {m['away']}"

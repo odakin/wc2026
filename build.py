@@ -578,18 +578,19 @@ def main():
     conduct = tb.get("conduct", {}) or {}
     fifa_rank = tb.get("fifa_ranking", {}) or {}
     source = tb.get("source", "")
-    table = compute(matches)
+    gmatches = [m for m in matches if m.get("group")]   # グループ戦のみ（knockout 結果は bracket 専用）
+    table = compute(gmatches)
     find_url = url_lookup(arts)
     import bracket
     rounds, third = bracket.build_rounds(matches, conduct, fifa_rank)
 
     DOCS.mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("")
-    build_lang("ja", matches, table, find_url, conduct, fifa_rank, source, as_of, DOCS, rounds, third)
-    build_lang("en", matches, table, find_url, conduct, fifa_rank, source, as_of, DOCS / "en", rounds, third)
+    build_lang("ja", gmatches, table, find_url, conduct, fifa_rank, source, as_of, DOCS, rounds, third)
+    build_lang("en", gmatches, table, find_url, conduct, fifa_rank, source, as_of, DOCS / "en", rounds, third)
     n_ko = sum(len(r["matches"]) for r in rounds) + (1 if third else 0)
     print(f"built docs/ (ja) + docs/en/ (en): index+standings+links+bracket  "
-          f"({sum(1 for g in GROUP_ORDER if g in table)} groups, {len(matches)} matches, {n_ko} KO)")
+          f"({sum(1 for g in GROUP_ORDER if g in table)} groups, {len(gmatches)} group, {n_ko} KO)")
 
 
 if __name__ == "__main__":

@@ -81,6 +81,8 @@ def validate(matches, rkeys, rmatches):
                     seen_urls[u] = key
     # 逆方向: results に記録済みなのに articles に対応リンクが無い試合 (= リンク取りこぼし検知)
     for m in rmatches:
+        if not m.get("group"):   # knockout 結果 (group 無し・no が鍵) は当面リンク必須対象外
+            continue
         if not _covered(m, matches):
             warns.append(
                 f"記事リンク欠落: {m.get('group')}組 第{m.get('md')}節 "
