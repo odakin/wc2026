@@ -12,6 +12,7 @@ stdlib + PyYAML のみ。
 順位は FIFA 2026 大会規定 (直接対決 → 全試合得失差 → 全試合総得点 → フェアプレー点 →
 FIFA ランク、 抽選廃止) で決定論算出。 head-to-head は同点サブグループ内で再帰計算。
 """
+import datetime
 import sys
 from pathlib import Path
 import yaml
@@ -95,7 +96,7 @@ def esc(s):
 STR = {
     "ja": {
         "html_lang": "ja", "brand": "2026 W杯 観戦表", "other_lang": "English", "other_code": "en",
-        "nav": {"index.html": "クロス表", "standings.html": "順位表", "links.html": "記事リンク"},
+        "nav": {"index.html": "クロス表", "standings.html": "順位表", "links.html": "記事リンク", "bracket.html": "決勝T"},
         "site_title": "2026 W杯 観戦表",
         "sub": "並びは暫定順位（FIFA 2026 規定）。 as_of {as_of} JST · 非公式",
         "idx_head": "グループ別クロス表",
@@ -112,6 +113,11 @@ STR = {
         "links_intro": "消化済み全試合の FIFA 公式マッチレポート。 日本語記事版が未配信の試合は FIFA 公式ハイライト動画にリンク。",
         "md": "第{md}節", "report": "レポート", "matchcentre": "マッチセンター", "video": "ハイライト", "pt": "pt",
         "grp": "{g}組", "jp_badge": "🇯🇵 日本",
+        "ko_head": "決勝トーナメント",
+        "ko_intro": ("ノックアウト全 32 試合のブラケット。 グループ確定後に各スロットへ実チームが入る"
+                     "（確定した組から順に表示、 未確定はスロット名のまま）。 時刻は JST。 スコア・PK は"
+                     "試合消化後に反映。 横スクロールで全ラウンド。 🇯🇵 日本が絡む試合は枠を強調。"),
+        "ko_third": "3位決定戦",
         "foot": ("結果は FIFA 公式・各紙を 2 ソース以上で確認したもの。 順位 tiebreak = <b>FIFA 2026 規定</b>"
                  "（直接対決〔勝点→得失差→総得点〕→ 全試合得失差 → 全試合総得点 → フェアプレー点 → FIFA ランキング、 抽選は廃止）。"
                  " 本サイトは個人運営の非公式ファンページで、 FIFA とは無関係です。"),
@@ -121,7 +127,7 @@ STR = {
     },
     "en": {
         "html_lang": "en", "brand": "2026 World Cup Tables", "other_lang": "日本語", "other_code": "ja",
-        "nav": {"index.html": "Cross-table", "standings.html": "Standings", "links.html": "Reports"},
+        "nav": {"index.html": "Cross-table", "standings.html": "Standings", "links.html": "Reports", "bracket.html": "Knockout"},
         "site_title": "2026 World Cup Tables",
         "sub": "Ordered by current standings (FIFA 2026 rules). As of {as_of} JST · unofficial",
         "idx_head": "Group Cross-Tables",
@@ -140,6 +146,12 @@ STR = {
                         "article link to the official FIFA highlights video instead."),
         "md": "MD{md}", "report": "Report", "matchcentre": "Match Centre", "video": "Highlights", "pt": "pt",
         "grp": "Group {g}", "jp_badge": "🇯🇵 Japan",
+        "ko_head": "Knockout Bracket",
+        "ko_intro": ("Full 32-match knockout bracket. Real teams fill each slot once groups are decided "
+                     "(resolved group by group; unresolved slots keep their seed label). Times are JST; "
+                     "scores / penalties appear after each match. Scroll sideways for all rounds. "
+                     "Matches involving 🇯🇵 Japan are highlighted."),
+        "ko_third": "Third place",
         "foot": ("Results cross-checked against FIFA and major outlets (2+ sources). Tiebreak = <b>FIFA 2026 rules</b> "
                  "(head-to-head [points → GD → goals] → overall GD → overall goals → fair-play points → FIFA Ranking; "
                  "drawing of lots abolished). This is an unofficial personal fan page, not affiliated with FIFA."),
@@ -307,6 +319,37 @@ table.s tbody tr:last-child td{border-bottom:none}
 .notesrc{color:var(--muted);font-size:11.5px;margin:9px 0 0}
 .foot{color:var(--muted);font-size:12.5px;margin-top:26px;line-height:1.75}
 .foot b{color:var(--ink)} .foot a{color:var(--accent-ink)}
+.ko-intro{color:var(--muted);font-size:14px;margin:6px 0 16px;max-width:76ch}
+.ko-scroll{overflow:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.bracket{display:flex;align-items:stretch;min-width:max-content;min-height:1240px;padding:2px 2px 10px}
+.ko-round{display:flex;flex-direction:column;width:174px}
+.ko-round+.ko-round{margin-left:36px}
+.ko-round>h3{font-size:12px;font-weight:800;color:var(--accent-ink);margin:0 0 6px;height:18px;
+  display:flex;align-items:center;gap:7px;letter-spacing:.01em}
+.ko-round>h3 .ko-cnt{color:var(--muted);font-weight:600;font-size:11px}
+.ko-col{flex:1;display:flex;flex-direction:column}
+.ko-match{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative}
+.ko-card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:7px 9px;box-shadow:var(--shadow-sm)}
+.ko-card.jp{border-color:var(--jp);box-shadow:inset 0 0 0 1px var(--jp),var(--shadow-sm)}
+.ko-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.ko-no{font-size:9.5px;font-weight:800;color:var(--muted);background:var(--line-soft);border-radius:5px;padding:1px 5px}
+.ko-dt{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ko-team{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:12.5px;padding:2px 0}
+.ko-team .kt{display:flex;align-items:center;gap:2px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ko-team.adv{font-weight:800}
+.ko-team.adv .ko-sc{color:var(--win-ink)}
+.ko-team.lbl .kt{color:var(--muted);font-size:11.5px}
+.ko-sc{font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);flex-shrink:0}
+.ko-pens{font-size:10px;color:var(--muted);text-align:right;margin-top:1px}
+.ko-venue{font-size:9.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* 接続線: 横スタブ + ペアの縦結線（flex:1 で全カード等高なので縦線 height:100% が隣カード中心に届く）*/
+.ko-round:not(:first-of-type) .ko-match::before{content:"";position:absolute;right:100%;top:50%;width:18px;height:2px;background:var(--line)}
+.ko-round:not(:last-of-type) .ko-match:nth-child(odd)::after{content:"";position:absolute;left:100%;top:50%;width:18px;height:100%;
+  border-right:2px solid var(--line);border-top:2px solid var(--line)}
+.ko-round:not(:last-of-type) .ko-match:nth-child(even)::after{content:"";position:absolute;left:100%;top:50%;width:18px;height:2px;background:var(--line)}
+.ko-third{margin-top:26px}
+.ko-third>h3{font-size:14px;font-weight:800;margin:0 0 10px}
+.ko-third .ko-match{max-width:240px}
 """
 
 
@@ -410,7 +453,58 @@ def links_card(g, matches, find_url, lang):
     return f'<div class="card pad">{h2}{"".join(rows)}</div>'
 
 
-def build_lang(lang, matches, table, find_url, conduct, fifa_rank, source, as_of, outdir):
+JP_WD = "月火水木金土日"
+
+
+def ko_dt(iso, lang):
+    if not iso:
+        return ""
+    d = datetime.datetime.fromisoformat(iso)
+    if lang == "ja":
+        return f"{d.month}/{d.day}({JP_WD[d.weekday()]}) {d.hour:02d}:{d.minute:02d}"
+    return f"{d.month}/{d.day} {d.hour:02d}:{d.minute:02d}"
+
+
+def _ko_slot(slot, lang):
+    if slot.get("team"):
+        t = slot["team"]
+        return f'<span class="flag">{flag(t)}</span>{esc(short(t, lang))}', True
+    return esc(slot["label_ja"] if lang == "ja" else slot["label_en"]), False
+
+
+def ko_match(m, lang):
+    sc = m.get("score")
+    jp = m["home"].get("team") == "日本" or m["away"].get("team") == "日本"
+    rows = []
+    for side in ("home", "away"):
+        txt, resolved = _ko_slot(m[side], lang)
+        scv = f'<span class="ko-sc">{sc["hg"] if side == "home" else sc["ag"]}</span>' if sc else ""
+        cls = "ko-team" + (" adv" if m.get("winner") == side else "") + ("" if resolved else " lbl")
+        rows.append(f'<div class="{cls}"><span class="kt">{txt}</span>{scv}</div>')
+    pens = f'<div class="ko-pens">PK {sc["pens"][0]}-{sc["pens"][1]}</div>' if sc and sc.get("pens") else ""
+    head = (f'<div class="ko-head"><span class="ko-no">M{m["no"]}</span>'
+            f'<span class="ko-dt">{esc(ko_dt(m["dt"], lang))}</span></div>')
+    venue = f'<div class="ko-venue">{esc(m["city"])}</div>' if m.get("city") else ""
+    card = f'<div class="ko-card{" jp" if jp else ""}">{head}{"".join(rows)}{pens}{venue}</div>'
+    return f'<div class="ko-match">{card}</div>'
+
+
+def bracket_page(rounds, third, lang):
+    L = STR[lang]
+    cols = []
+    for r in rounds:
+        title = r["title_ja"] if lang == "ja" else r["title_en"]
+        cards = "".join(ko_match(m, lang) for m in r["matches"])
+        cols.append(f'<div class="ko-round"><h3>{esc(title)}'
+                    f'<span class="ko-cnt">{len(r["matches"])}</span></h3>'
+                    f'<div class="ko-col">{cards}</div></div>')
+    third_html = (f'<div class="ko-third"><h3>🥉 {esc(L["ko_third"])}</h3>{ko_match(third, lang)}</div>'
+                  if third else "")
+    return (f'<p class="ko-intro">{esc(L["ko_intro"])}</p>'
+            f'<div class="ko-scroll"><div class="bracket">{"".join(cols)}</div></div>{third_html}')
+
+
+def build_lang(lang, matches, table, find_url, conduct, fifa_rank, source, as_of, outdir, rounds, third):
     L = STR[lang]
     grid_cards, stand_cards, link_cards, notes = [], [], [], []
     rmap = {}
@@ -469,6 +563,9 @@ def build_lang(lang, matches, table, find_url, conduct, fifa_rank, source, as_of
     links_body = (f'<p class="sub" style="margin:6px 0 18px">{esc(L["links_intro"])}</p>'
                   f'<div class="grid">{"".join(link_cards)}</div>')
     (outdir / "links.html").write_text(shell(lang, "links.html", L["links_head"], links_body, as_of))
+    # bracket (knockout)
+    (outdir / "bracket.html").write_text(
+        shell(lang, "bracket.html", L["ko_head"], bracket_page(rounds, third, lang), as_of))
 
 
 def main():
@@ -483,13 +580,16 @@ def main():
     source = tb.get("source", "")
     table = compute(matches)
     find_url = url_lookup(arts)
+    import bracket
+    rounds, third = bracket.build_rounds(matches, conduct, fifa_rank)
 
     DOCS.mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("")
-    build_lang("ja", matches, table, find_url, conduct, fifa_rank, source, as_of, DOCS)
-    build_lang("en", matches, table, find_url, conduct, fifa_rank, source, as_of, DOCS / "en")
-    print(f"built docs/ (ja) + docs/en/ (en): index+standings+links  "
-          f"({sum(1 for g in GROUP_ORDER if g in table)} groups, {len(matches)} matches)")
+    build_lang("ja", matches, table, find_url, conduct, fifa_rank, source, as_of, DOCS, rounds, third)
+    build_lang("en", matches, table, find_url, conduct, fifa_rank, source, as_of, DOCS / "en", rounds, third)
+    n_ko = sum(len(r["matches"]) for r in rounds) + (1 if third else 0)
+    print(f"built docs/ (ja) + docs/en/ (en): index+standings+links+bracket  "
+          f"({sum(1 for g in GROUP_ORDER if g in table)} groups, {len(matches)} matches, {n_ko} KO)")
 
 
 if __name__ == "__main__":

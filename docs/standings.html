@@ -99,11 +99,42 @@ table.s tbody tr:last-child td{border-bottom:none}
 .notesrc{color:var(--muted);font-size:11.5px;margin:9px 0 0}
 .foot{color:var(--muted);font-size:12.5px;margin-top:26px;line-height:1.75}
 .foot b{color:var(--ink)} .foot a{color:var(--accent-ink)}
+.ko-intro{color:var(--muted);font-size:14px;margin:6px 0 16px;max-width:76ch}
+.ko-scroll{overflow:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.bracket{display:flex;align-items:stretch;min-width:max-content;min-height:1240px;padding:2px 2px 10px}
+.ko-round{display:flex;flex-direction:column;width:174px}
+.ko-round+.ko-round{margin-left:36px}
+.ko-round>h3{font-size:12px;font-weight:800;color:var(--accent-ink);margin:0 0 6px;height:18px;
+  display:flex;align-items:center;gap:7px;letter-spacing:.01em}
+.ko-round>h3 .ko-cnt{color:var(--muted);font-weight:600;font-size:11px}
+.ko-col{flex:1;display:flex;flex-direction:column}
+.ko-match{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative}
+.ko-card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:7px 9px;box-shadow:var(--shadow-sm)}
+.ko-card.jp{border-color:var(--jp);box-shadow:inset 0 0 0 1px var(--jp),var(--shadow-sm)}
+.ko-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.ko-no{font-size:9.5px;font-weight:800;color:var(--muted);background:var(--line-soft);border-radius:5px;padding:1px 5px}
+.ko-dt{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ko-team{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:12.5px;padding:2px 0}
+.ko-team .kt{display:flex;align-items:center;gap:2px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.ko-team.adv{font-weight:800}
+.ko-team.adv .ko-sc{color:var(--win-ink)}
+.ko-team.lbl .kt{color:var(--muted);font-size:11.5px}
+.ko-sc{font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);flex-shrink:0}
+.ko-pens{font-size:10px;color:var(--muted);text-align:right;margin-top:1px}
+.ko-venue{font-size:9.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* 接続線: 横スタブ + ペアの縦結線（flex:1 で全カード等高なので縦線 height:100% が隣カード中心に届く）*/
+.ko-round:not(:first-of-type) .ko-match::before{content:"";position:absolute;right:100%;top:50%;width:18px;height:2px;background:var(--line)}
+.ko-round:not(:last-of-type) .ko-match:nth-child(odd)::after{content:"";position:absolute;left:100%;top:50%;width:18px;height:100%;
+  border-right:2px solid var(--line);border-top:2px solid var(--line)}
+.ko-round:not(:last-of-type) .ko-match:nth-child(even)::after{content:"";position:absolute;left:100%;top:50%;width:18px;height:2px;background:var(--line)}
+.ko-third{margin-top:26px}
+.ko-third>h3{font-size:14px;font-weight:800;margin:0 0 10px}
+.ko-third .ko-match{max-width:240px}
 </style></head>
 <body>
 <div class="topbar"><div class="inner">
 <span class="brand"><span class="ball">⚽️</span>2026 W杯 観戦表</span>
-<nav class="tabs"><a href="index.html">クロス表</a><a href="standings.html" class="on">順位表</a><a href="links.html">記事リンク</a></nav>
+<nav class="tabs"><a href="index.html">クロス表</a><a href="standings.html" class="on">順位表</a><a href="links.html">記事リンク</a><a href="bracket.html">決勝T</a></nav>
 <a class="lang" href="en/standings.html">English</a>
 </div></div>
 <div class="wrap">
