@@ -195,6 +195,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: C-md3-SCO-BRA
+    group: C
+    md: 3
+    date: 2026-06-24
+    title: "スコットランド 0-3 ブラジル"
+    refs:
+      - cat: 報道・公式
+        title: "スコットランド 0-3 ブラジル｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/scotland-brazil-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/scotland-brazil-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Scotland 0-3 Brazil | Match report and highlights』、ヴィニシウス2発・クーニャ・マイアミ)、日本語版は同語順+-jaで導出。スコア0-3はFIFA+ESPN+FOX+VAVEL+Outlookで確認"
+  - key: C-md3-MAR-HAI
+    group: C
+    md: 3
+    date: 2026-06-24
+    title: "モロッコ 4-2 ハイチ"
+    refs:
+      - cat: 報道・公式
+        title: "モロッコ 4-2 ハイチ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/morocco-haiti-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/morocco-haiti-match-report-highlights)を検索インデックスで実在∧試合一致確認(home-away順slug、ハキミ・サイバリ・ラヒミ・ヤシンの4発、アトランタ)、日本語版は同語順+-jaで導出。スコア4-2はFIFA得点者内訳+ESPN+France24+Outlookで確認"
   # ===== Group D =====
   - key: D-md1-USA-PAR
     group: D

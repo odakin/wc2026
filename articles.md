@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 50 / リンク数: 58
+- 試合数: 52 / リンク数: 60
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -89,6 +89,18 @@
 **📰 報道・公式**
 
 - [ブラジル 3-0 ハイチ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-haiti-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### スコットランド 0-3 ブラジル（C組 / 第3節 / 2026-06-24）
+
+**📰 報道・公式**
+
+- [スコットランド 0-3 ブラジル｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/scotland-brazil-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/scotland-brazil-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Scotland 0-3 Brazil | Match report and highlights』、ヴィニシウス2発・クーニャ・マイアミ)、日本語版は同語順+-jaで導出。スコア0-3はFIFA+ESPN+FOX+VAVEL+Outlookで確認
+
+### モロッコ 4-2 ハイチ（C組 / 第3節 / 2026-06-24）
+
+**📰 報道・公式**
+
+- [モロッコ 4-2 ハイチ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/morocco-haiti-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/morocco-haiti-match-report-highlights)を検索インデックスで実在∧試合一致確認(home-away順slug、ハキミ・サイバリ・ラヒミ・ヤシンの4発、アトランタ)、日本語版は同語順+-jaで導出。スコア4-2はFIFA得点者内訳+ESPN+France24+Outlookで確認
 
 ### アメリカ合衆国 4-1 パラグアイ（D組 / 第1節 / 2026-06-12）
 
