@@ -85,7 +85,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "英語版記事(.../articles/south-africa-korea-republic-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『South Africa 1-0 Korea Republic | Match report and highlights』、マセコ63分決勝点・モンテレイ)、日本語版は同語順+-jaで導出。スコア1-0はFIFA+ESPN+SI+Outlook+VAVELで確認"
-  # ===== Group B =====
+  - key: A-md3-CZE-MEX
+    group: A
+    md: 3
+    date: 2026-06-24
+    title: "チェコ 0-3 メキシコ"
+    refs:
+      - cat: 報道・公式
+        title: "チェコ 0-3 メキシコ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/czechia-mexico-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/czechia-mexico-match-report-highlights)を検索インデックスで実在確認(4回の検索でURL一致、 slugは同節 south-africa-korea-republic-match-report-highlights と同型)、日本語版は同語順+-jaで導出。試合終了直後で英語タイトルがindex上まだgeneric表示(スコア未反映)のため、スコア0-3はESPN(Czechia 0-3 Mexico)+FIFAマッチセンター(Czechia v Mexico 0-3)+Wikipedia+Fox+Bleacherの5ソースで確認。チャベス55分・キニョネス61分・フィダルゴ90+4分"
   - key: B-md1-CAN-BIH
     group: B
     md: 1

@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 53 / リンク数: 61
+- 試合数: 54 / リンク数: 62
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -35,6 +35,12 @@
 **📰 報道・公式**
 
 - [南アフリカ 1-0 韓国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/south-africa-korea-republic-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/south-africa-korea-republic-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『South Africa 1-0 Korea Republic | Match report and highlights』、マセコ63分決勝点・モンテレイ)、日本語版は同語順+-jaで導出。スコア1-0はFIFA+ESPN+SI+Outlook+VAVELで確認
+
+### チェコ 0-3 メキシコ（A組 / 第3節 / 2026-06-24）
+
+**📰 報道・公式**
+
+- [チェコ 0-3 メキシコ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/czechia-mexico-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/czechia-mexico-match-report-highlights)を検索インデックスで実在確認(4回の検索でURL一致、 slugは同節 south-africa-korea-republic-match-report-highlights と同型)、日本語版は同語順+-jaで導出。試合終了直後で英語タイトルがindex上まだgeneric表示(スコア未反映)のため、スコア0-3はESPN(Czechia 0-3 Mexico)+FIFAマッチセンター(Czechia v Mexico 0-3)+Wikipedia+Fox+Bleacherの5ソースで確認。チャベス55分・キニョネス61分・フィダルゴ90+4分
 
 ### カナダ 1-1 ボスニア・ヘルツェゴビナ（B組 / 第1節 / 2026-06-12）
 
