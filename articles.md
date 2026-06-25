@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 52 / リンク数: 60
+- 試合数: 53 / リンク数: 61
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -29,6 +29,12 @@
 **📰 報道・公式**
 
 - [メキシコ 1-0 韓国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-korea-republic-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### 南アフリカ 1-0 韓国（A組 / 第3節 / 2026-06-24）
+
+**📰 報道・公式**
+
+- [南アフリカ 1-0 韓国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/south-africa-korea-republic-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/south-africa-korea-republic-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『South Africa 1-0 Korea Republic | Match report and highlights』、マセコ63分決勝点・モンテレイ)、日本語版は同語順+-jaで導出。スコア1-0はFIFA+ESPN+SI+Outlook+VAVELで確認
 
 ### カナダ 1-1 ボスニア・ヘルツェゴビナ（B組 / 第1節 / 2026-06-12）
 

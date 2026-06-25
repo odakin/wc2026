@@ -73,6 +73,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: A-md3-RSA-KOR
+    group: A
+    md: 3
+    date: 2026-06-24
+    title: "南アフリカ 1-0 韓国"
+    refs:
+      - cat: 報道・公式
+        title: "南アフリカ 1-0 韓国｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/south-africa-korea-republic-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/south-africa-korea-republic-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『South Africa 1-0 Korea Republic | Match report and highlights』、マセコ63分決勝点・モンテレイ)、日本語版は同語順+-jaで導出。スコア1-0はFIFA+ESPN+SI+Outlook+VAVELで確認"
   # ===== Group B =====
   - key: B-md1-CAN-BIH
     group: B
