@@ -16,6 +16,18 @@
 - このリポが clone 済み・`gh` 認証済（push 可）・PyYAML 利用可。
 - 期間: 大会の対象期間中のみ 30 分ごと。終了日以降は自分で停止する（§6）。
 
+## このジョブの登録（再登録）
+
+別マシン（iMac 等）でこのジョブを 30 分ごとに走らせる登録 spec。Claude はこの通りに
+`create_scheduled_task` を呼ぶ（重複防止に、先に `list_scheduled_tasks` で同 taskId が無いか確認）:
+
+- taskId: `wc2026-auto-update`
+- cronExpression: `*/30 * * * *`
+- notifyOnCompletion: false
+- prompt: 「`~/Claude/wc2026` の `AUTO_UPDATE.md` を読み、その手順を最初から最後まで実行する。fresh session 前提なので全て self-contained に進める。」
+
+> アカウント切替後など登録が消えたら、この spec で登録し直すだけでよい。
+
 ## 毎回の手順
 
 1. **期間チェック（最優先）**: 今が**停止日以降**なら、この scheduled task を
