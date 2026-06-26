@@ -14,7 +14,8 @@
 ## 前提
 
 - このリポが clone 済み・`gh` 認証済（push 可）・PyYAML 利用可。
-- 期間: 大会の対象期間中のみ 30 分ごと。終了日以降は自分で停止する（§6）。
+- 期間: 大会の対象期間中のみ 30 分ごと。**停止日 = 2026-07-20**（W杯決勝 2026-07-19 の翌日）。
+  それ以降は自分で停止する（§6）。⚠️ 決勝トーナメントは 7 月まで続くので、停止日を前倒しして大会途中で止めないこと。
 
 ## このジョブの登録（再登録）
 
@@ -30,8 +31,8 @@
 
 ## 毎回の手順
 
-1. **期間チェック（最優先）**: 今が**停止日以降**なら、この scheduled task を
-   `scheduled-tasks` MCP で**削除して終了**（§6）。それ以前なら続行。
+1. **期間チェック（最優先）**: 今が**停止日（2026-07-20）以降**なら §6 に従い停止して終了。
+   それ以前なら続行。
 2. **同期**: `git fetch` → clean かつ ff 可能なら `git pull --ff-only`。
    diverged/dirty なら surface して**この回は中断**（壊さない）。
 3. **未記録の消化済み試合を洗い出す**: `data/results.yaml` の `meta.as_of` と既存 matches を読み、
@@ -82,13 +83,19 @@
      （= no-op を理由に打刻を飛ばすと「試合が無いだけ」か「ジョブが死んだ」かが区別できなくなる。
      2026-06-26 に実際にこれで 6 試合を取りこぼした）。閾値超で `--check` は exit 1。
 
-## §6 終了（対象期間後）
+## §6 終了（対象期間後 = 2026-07-20 以降）
 
-停止日以降の最初の実行で、自分（この scheduled task）を `scheduled-tasks` MCP の delete で消し、
-最後に最終結果を反映して終わる。
+停止日（2026-07-20）以降の最初の実行で、最後に最終結果を反映してから、自分（この自動更新ジョブ）を停止する。
+このジョブが **scheduled task** か **launchd cron** かで止め方が違う:
 
-> ⚠️ **削除対象はこの scheduled task のみ**。公開サイト（`docs/` / GitHub Pages）とリポは**削除しない**。
-> 止めるのは 30 分ごとの更新だけで、サイトは最終結果を表示したまま残す。
+- **launchd cron 版**（= `install-claude-cron-routines.sh` 登録、現行の標準）: そのマシンの terminal で
+  `launchctl bootout gui/$(id -u)/com.odakin.claude-cron.wc2026-auto-update` を実行し、
+  `~/Library/LaunchAgents/com.odakin.claude-cron.wc2026-auto-update.plist` を削除する。
+  ジョブ自身（headless 実行中）は止め方を出力に書き残すだけにして、無理に自分を kill しない。
+- **scheduled task 版**（旧経路）: `scheduled-tasks` MCP の delete で自分を消す。
+
+> ⚠️ **止めるのは 30 分ごとの更新ジョブだけ**。公開サイト（`docs/` / GitHub Pages）とリポは**削除しない**。
+> サイトは最終結果を表示したまま残す。
 
 ## 注意 / 限界
 
