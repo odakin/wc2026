@@ -669,6 +669,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "英語版記事(.../en/articles/norway-france-match-highlights-report、タイトル『Norway 1-4 France | Match report and highlights』、デンベレ前半ハットトリック)を検索インデックスで実在∧試合一致確認、日本語版は同語順+-jaで導出(build.pyのfifa_localizeが決定論変換)。スコア1-4はESPN+FIFA+Wikipedia+Yahooで確認"
+  - key: I-md3-SEN-IRQ
+    group: I
+    md: 3
+    date: 2026-06-26
+    title: "セネガル 5-0 イラク"
+    refs:
+      - cat: 報道・公式
+        title: "セネガル 5-0 イラク｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/senegal-iraq-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../en/tournaments/mens/worldcup/canadamexicousa2026/articles/senegal-iraq-match-report-highlights)を検索インデックスで実在∧試合一致確認(FIFA公式、Senegal v Iraq・5-0)、日本語版は同語順+-jaで導出(build.pyのfifa_localizeが決定論変換)。スコア5-0はWikipedia+ESPN+Sky Sportsで確認、得点ディアラ4'/サール56'/ゲイェ59'71'/ンディアイ82'"
   # ===== Group J =====
   - key: J-md1-ARG-ALG
     group: J
