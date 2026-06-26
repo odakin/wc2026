@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 60 / リンク数: 68
+- 試合数: 61 / リンク数: 69
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -310,6 +310,12 @@
 **📰 報道・公式**
 
 - [ノルウェー 3-2 セネガル｜ハイライト動画](https://www.fifa.com/ja/watch/2z83J5vynam1wsTQNemf5u) — FIFA公式 / 日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）
+
+### ノルウェー 1-4 フランス（I組 / 第3節 / 2026-06-26）
+
+**📰 報道・公式**
+
+- [ノルウェー 1-4 フランス｜マッチレポートとハイライト](https://www.fifa.com/ja/articles/norway-france-match-highlights-report-ja) — FIFA公式 / 英語版記事(.../en/articles/norway-france-match-highlights-report、タイトル『Norway 1-4 France | Match report and highlights』、デンベレ前半ハットトリック)を検索インデックスで実在∧試合一致確認、日本語版は同語順+-jaで導出(build.pyのfifa_localizeが決定論変換)。スコア1-4はESPN+FIFA+Wikipedia+Yahooで確認
 
 ### アルゼンチン 3-0 アルジェリア（J組 / 第1節 / 2026-06-16）
 

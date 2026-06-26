@@ -657,6 +657,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
+  - key: I-md3-NOR-FRA
+    group: I
+    md: 3
+    date: 2026-06-26
+    title: "ノルウェー 1-4 フランス"
+    refs:
+      - cat: 報道・公式
+        title: "ノルウェー 1-4 フランス｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/articles/norway-france-match-highlights-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../en/articles/norway-france-match-highlights-report、タイトル『Norway 1-4 France | Match report and highlights』、デンベレ前半ハットトリック)を検索インデックスで実在∧試合一致確認、日本語版は同語順+-jaで導出(build.pyのfifa_localizeが決定論変換)。スコア1-4はESPN+FIFA+Wikipedia+Yahooで確認"
   # ===== Group J =====
   - key: J-md1-ARG-ALG
     group: J
