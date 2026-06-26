@@ -291,6 +291,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: D-md3-TUR-USA
+    group: D
+    md: 3
+    date: 2026-06-25
+    title: "トルコ 3-2 アメリカ合衆国"
+    refs:
+      - cat: 報道・公式
+        title: "トルコ 3-2 アメリカ合衆国｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/turkiye-usa-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/turkiye-usa-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。スコア3-2はFIFA公式記事+ESPN+CBS+NPRで一致(アイハン90+8分の決勝点)"
+  - key: D-md3-PAR-AUS
+    group: D
+    md: 3
+    date: 2026-06-25
+    title: "パラグアイ 0-0 オーストラリア"
+    refs:
+      - cat: 報道・公式
+        title: "パラグアイ 0-0 オーストラリア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/paraguay-australia-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/paraguay-australia-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。0-0スコアレスドローはFIFA公式記事+ESPN+Yahooで一致"
   # ===== Group E =====
   - key: E-md1-GER-CUW
     group: E
@@ -340,6 +364,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: E-md3-CUW-CIV
+    group: E
+    md: 3
+    date: 2026-06-25
+    title: "キュラソー 0-2 コートジボワール"
+    refs:
+      - cat: 報道・公式
+        title: "キュラソー 0-2 コートジボワール｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/curacao-cote-divoire-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/curacao-cote-divoire-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。0-2はFIFA公式記事+ESPN+Outlookで一致(ペペが7分にブレース皮切り)"
+  - key: E-md3-ECU-GER
+    group: E
+    md: 3
+    date: 2026-06-25
+    title: "エクアドル 2-1 ドイツ"
+    refs:
+      - cat: 報道・公式
+        title: "エクアドル 2-1 ドイツ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/ecuador-germany-highlights-match-report-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/ecuador-germany-highlights-match-report)をFIFA.com検索で実在確認。slug語順が他試合と逆(highlights-match-report)である点も確認済。日本語版は同slug+-jaで導出。2-1はFIFA公式記事+ESPN+Yahoo+Wikipediaで一致(サネ2分先制→アングロ7分・プラタ77分で逆転)"
   # ===== Group F =====
   - key: F-md1-NED-JPN
     group: F
@@ -438,6 +486,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: F-md3-JPN-SWE
+    group: F
+    md: 3
+    date: 2026-06-25
+    title: "日本 1-1 スウェーデン"
+    refs:
+      - cat: 報道・公式
+        title: "日本 1-1 スウェーデン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/japan-sweden-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/japan-sweden-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。1-1はFIFA公式記事+Sky+ESPN+Opta+olympics.comで一致(前田大然56分→エランガ62分)。日本は2位で3大会連続突破(R32ブラジル戦)"
+  - key: F-md3-TUN-NED
+    group: F
+    md: 3
+    date: 2026-06-25
+    title: "チュニジア 1-3 オランダ"
+    refs:
+      - cat: 報道・公式
+        title: "チュニジア 1-3 オランダ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/tunisia-netherlands-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/tunisia-netherlands-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。1-3はFIFA公式記事+ESPN+TNT+Outlookで一致(オランダが早い時間に2点、マストゥーリ54分の1点のみ)。オランダがF組首位(R32モロッコ戦)"
   # ===== Group G =====
   - key: G-md1-BEL-EGY
     group: G

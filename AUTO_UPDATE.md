@@ -59,10 +59,16 @@
      finding（result の `no` 欠落・重複、fixtures との `no` 不一致）が出たら **exit 1**。
      その場合は §5 に戻って `no` を正す（fixtures の同カードの no と一致させる）。番号がズレたまま公開しない。
    - `python3 build.py`（日英 docs 再生成）。
+   - **死活打刻（必須）**: `python3 scripts/heartbeat.py --beat`。`heartbeat.json` を今の時刻で更新する
+     （= ジョブが生きている証跡。`commit` に必ず含める）。
    - **leak gate**: 差分を `group\.calendar|@gmail|@.*\.ac\.jp|/Users/` 等（個人情報・カレンダー ID・
      個人パス・内部 private リポ名）で grep し、ヒットしたら push 中止して surface（公開リポに出さない）。
    - commit + push（main）。GitHub Pages が自動反映。
-7. **何も新規が無い回**: commit せず終了（no-op で良い）。
+7. **何も新規が無い回**: それでも **死活打刻だけは必ず行う** —
+   `python3 scripts/heartbeat.py --beat` → `heartbeat.json` のみを commit + push して終了。
+   - これを毎回やることで、別マシンから `python3 scripts/heartbeat.py --check` でジョブの死活が判る
+     （= no-op を理由に打刻を飛ばすと「試合が無いだけ」か「ジョブが死んだ」かが区別できなくなる。
+     2026-06-26 に実際にこれで 6 試合を取りこぼした）。閾値超で `--check` は exit 1。
 
 ## §6 終了（対象期間後）
 

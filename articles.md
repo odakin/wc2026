@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 54 / リンク数: 62
+- 試合数: 60 / リンク数: 68
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -138,6 +138,18 @@
 
 - [トルコ 0-1 パラグアイ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/turkiye-paraguay-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
 
+### トルコ 3-2 アメリカ合衆国（D組 / 第3節 / 2026-06-25）
+
+**📰 報道・公式**
+
+- [トルコ 3-2 アメリカ合衆国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/turkiye-usa-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/turkiye-usa-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。スコア3-2はFIFA公式記事+ESPN+CBS+NPRで一致(アイハン90+8分の決勝点)
+
+### パラグアイ 0-0 オーストラリア（D組 / 第3節 / 2026-06-25）
+
+**📰 報道・公式**
+
+- [パラグアイ 0-0 オーストラリア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/paraguay-australia-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/paraguay-australia-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。0-0スコアレスドローはFIFA公式記事+ESPN+Yahooで一致
+
 ### ドイツ 7-1 キュラソー（E組 / 第1節 / 2026-06-14）
 
 **📰 報道・公式**
@@ -161,6 +173,18 @@
 **📰 報道・公式**
 
 - [エクアドル 0-0 キュラソー｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/ecuador-curacao-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### キュラソー 0-2 コートジボワール（E組 / 第3節 / 2026-06-25）
+
+**📰 報道・公式**
+
+- [キュラソー 0-2 コートジボワール｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/curacao-cote-divoire-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/curacao-cote-divoire-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。0-2はFIFA公式記事+ESPN+Outlookで一致(ペペが7分にブレース皮切り)
+
+### エクアドル 2-1 ドイツ（E組 / 第3節 / 2026-06-25）
+
+**📰 報道・公式**
+
+- [エクアドル 2-1 ドイツ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/ecuador-germany-highlights-match-report-ja) — FIFA公式 / 英語版記事(.../articles/ecuador-germany-highlights-match-report)をFIFA.com検索で実在確認。slug語順が他試合と逆(highlights-match-report)である点も確認済。日本語版は同slug+-jaで導出。2-1はFIFA公式記事+ESPN+Yahoo+Wikipediaで一致(サネ2分先制→アングロ7分・プラタ77分で逆転)
 
 ### オランダ 2-2 日本（F組 / 第1節 / 2026-06-14）
 
@@ -202,6 +226,18 @@
 **📰 報道・公式**
 
 - [オランダ 5-1 スウェーデン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-sweden-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### 日本 1-1 スウェーデン（F組 / 第3節 / 2026-06-25）
+
+**📰 報道・公式**
+
+- [日本 1-1 スウェーデン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/japan-sweden-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/japan-sweden-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。1-1はFIFA公式記事+Sky+ESPN+Opta+olympics.comで一致(前田大然56分→エランガ62分)。日本は2位で3大会連続突破(R32ブラジル戦)
+
+### チュニジア 1-3 オランダ（F組 / 第3節 / 2026-06-25）
+
+**📰 報道・公式**
+
+- [チュニジア 1-3 オランダ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/tunisia-netherlands-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/tunisia-netherlands-match-report-highlights)をFIFA.com検索で実在確認、日本語版は同slug+-jaで導出。1-3はFIFA公式記事+ESPN+TNT+Outlookで一致(オランダが早い時間に2点、マストゥーリ54分の1点のみ)。オランダがF組首位(R32モロッコ戦)
 
 ### ベルギー 1-1 エジプト（G組 / 第1節 / 2026-06-15）
 
