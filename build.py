@@ -567,9 +567,9 @@ def bracket_page(race, rounds, third, lang):
                     f'<div class="ko-col">{cards}</div></div>')
     third_html = (f'<div class="ko-third"><h3>🥉 {esc(L["ko_third"])}</h3>{ko_match(third, lang)}</div>'
                   if third else "")
-    return (f'{third_race_section(race, lang)}'
-            f'<p class="ko-intro">{esc(L["ko_intro"])}</p>'
-            f'<div class="ko-scroll"><div class="bracket">{"".join(cols)}</div></div>{third_html}')
+    return (f'<p class="ko-intro">{esc(L["ko_intro"])}</p>'
+            f'<div class="ko-scroll"><div class="bracket">{"".join(cols)}</div></div>{third_html}'
+            f'{third_race_section(race, lang)}')
 
 
 def build_lang(lang, matches, table, find_url, conduct, fifa_rank, source, as_of, outdir, rounds, third, race):
