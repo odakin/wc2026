@@ -89,9 +89,9 @@
 このジョブが **scheduled task** か **launchd cron** かで止め方が違う:
 
 - **launchd cron 版**（= `install-claude-cron-routines.sh` 登録、現行の標準）: そのマシンの terminal で
-  `launchctl bootout gui/$(id -u)/com.odakin.claude-cron.wc2026-auto-update` を実行し、
-  `~/Library/LaunchAgents/com.odakin.claude-cron.wc2026-auto-update.plist` を削除する。
-  ジョブ自身（headless 実行中）は止め方を出力に書き残すだけにして、無理に自分を kill しない。
+  `zsh ~/Claude/odakin-prefs/scripts/install-claude-cron-routines.sh --uninstall-one wc2026-auto-update`
+  を実行する（= plist の bootout + 削除）。ジョブ自身（headless 実行中）は止め方を出力に書き残すだけにして、
+  無理に自分を kill しない。
 - **scheduled task 版**（旧経路）: `scheduled-tasks` MCP の delete で自分を消す。
 
 > ⚠️ **止めるのは 30 分ごとの更新ジョブだけ**。公開サイト（`docs/` / GitHub Pages）とリポは**削除しない**。
