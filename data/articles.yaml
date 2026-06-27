@@ -559,6 +559,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: G-md3-EGY-IRN
+    group: G
+    md: 3
+    date: 2026-06-26
+    title: "エジプト 1-1 イラン"
+    refs:
+      - cat: 報道・公式
+        title: "エジプト 1-1 イラン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/egypt-ir-iran-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/egypt-ir-iran-match-report-highlights)を検索インデックスで実在∧試合一致確認(FIFA公式)、日本語版は同語順+-jaで導出。スコア1-1はFIFA+ESPN+Wikipedia で確認(マフムード・サーベル5分・レザエイアン14分)"
+  - key: G-md3-NZL-BEL
+    group: G
+    md: 3
+    date: 2026-06-26
+    title: "ニュージーランド 1-5 ベルギー"
+    refs:
+      - cat: 報道・公式
+        title: "ニュージーランド 1-5 ベルギー｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/new-zealand-belgium-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/new-zealand-belgium-match-report-highlights)を検索インデックスで実在∧試合一致確認(FIFA公式)、日本語版は同語順+-jaで導出。スコア1-5はFIFA+ESPN+Wikipedia で確認(デ・ブライネ・トロサール2発・ルカク・サエレマケルス/ジャスト1点)"
   # ===== Group H =====
   - key: H-md1-ESP-CPV
     group: H

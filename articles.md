@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 64 / リンク数: 72
+- 試合数: 66 / リンク数: 74
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -262,6 +262,18 @@
 **📰 報道・公式**
 
 - [ニュージーランド 1-3 エジプト｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/new-zealand-egypt-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### エジプト 1-1 イラン（G組 / 第3節 / 2026-06-26）
+
+**📰 報道・公式**
+
+- [エジプト 1-1 イラン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/egypt-ir-iran-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/egypt-ir-iran-match-report-highlights)を検索インデックスで実在∧試合一致確認(FIFA公式)、日本語版は同語順+-jaで導出。スコア1-1はFIFA+ESPN+Wikipedia で確認(マフムード・サーベル5分・レザエイアン14分)
+
+### ニュージーランド 1-5 ベルギー（G組 / 第3節 / 2026-06-26）
+
+**📰 報道・公式**
+
+- [ニュージーランド 1-5 ベルギー｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/new-zealand-belgium-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/new-zealand-belgium-match-report-highlights)を検索インデックスで実在∧試合一致確認(FIFA公式)、日本語版は同語順+-jaで導出。スコア1-5はFIFA+ESPN+Wikipedia で確認(デ・ブライネ・トロサール2発・ルカク・サエレマケルス/ジャスト1点)
 
 ### スペイン 0-0 カーボベルデ（H組 / 第1節 / 2026-06-15）
 
