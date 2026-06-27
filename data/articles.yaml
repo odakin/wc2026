@@ -608,6 +608,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト"
+  - key: H-md3-CPV-KSA
+    group: H
+    md: 3
+    date: 2026-06-26
+    title: "カーボベルデ 0-0 サウジアラビア"
+    refs:
+      - cat: 報道・公式
+        title: "カーボベルデ 0-0 サウジアラビア｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/6cEIYSaBZmtelEG6H679Pu"
+        source: FIFA公式
+        lang: ja
+        note: "英語版 /en/watch/6cEIYSaBZmtelEG6H679Pu (タイトル『Cabo Verde v Saudi Arabia | Group H | FIFA World Cup 2026™ | Highlights』) を検索インデックスで実在∧試合一致確認、動画IDは言語非依存。日本語記事版が未配信のためハイライト動画にリンク。スコア0-0はFIFA+ESPN+Fox Sports+Outlookで確認"
+  - key: H-md3-URU-ESP
+    group: H
+    md: 3
+    date: 2026-06-26
+    title: "ウルグアイ 0-1 スペイン"
+    refs:
+      - cat: 報道・公式
+        title: "ウルグアイ 0-1 スペイン｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/2Iw0XHRZ4pZhQeVyekPApR"
+        source: FIFA公式
+        lang: ja
+        note: "英語版 /en/watch/2Iw0XHRZ4pZhQeVyekPApR (タイトル『Uruguay v Spain | Group H | FIFA World Cup 2026™ | Highlights』) を検索インデックスで実在∧試合一致確認、動画IDは言語非依存。日本語記事版が未配信のためハイライト動画にリンク。スコア0-1(バエナ42分)はFIFA+ESPN+Al Jazeera+CBS+Outlookで確認"
   # ===== Group I =====
   - key: I-md1-FRA-SEN
     group: I

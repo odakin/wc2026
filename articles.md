@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 62 / リンク数: 70
+- 試合数: 64 / リンク数: 72
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -286,6 +286,18 @@
 **📰 報道・公式**
 
 - [ウルグアイ 2-2 カーボベルデ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/uruguay-cabo-verde-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
+
+### カーボベルデ 0-0 サウジアラビア（H組 / 第3節 / 2026-06-26）
+
+**📰 報道・公式**
+
+- [カーボベルデ 0-0 サウジアラビア｜ハイライト動画](https://www.fifa.com/ja/watch/6cEIYSaBZmtelEG6H679Pu) — FIFA公式 / 英語版 /en/watch/6cEIYSaBZmtelEG6H679Pu (タイトル『Cabo Verde v Saudi Arabia | Group H | FIFA World Cup 2026™ | Highlights』) を検索インデックスで実在∧試合一致確認、動画IDは言語非依存。日本語記事版が未配信のためハイライト動画にリンク。スコア0-0はFIFA+ESPN+Fox Sports+Outlookで確認
+
+### ウルグアイ 0-1 スペイン（H組 / 第3節 / 2026-06-26）
+
+**📰 報道・公式**
+
+- [ウルグアイ 0-1 スペイン｜ハイライト動画](https://www.fifa.com/ja/watch/2Iw0XHRZ4pZhQeVyekPApR) — FIFA公式 / 英語版 /en/watch/2Iw0XHRZ4pZhQeVyekPApR (タイトル『Uruguay v Spain | Group H | FIFA World Cup 2026™ | Highlights』) を検索インデックスで実在∧試合一致確認、動画IDは言語非依存。日本語記事版が未配信のためハイライト動画にリンク。スコア0-1(バエナ42分)はFIFA+ESPN+Al Jazeera+CBS+Outlookで確認
 
 ### フランス 3-1 セネガル（I組 / 第1節 / 2026-06-16）
 
