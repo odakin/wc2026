@@ -88,10 +88,11 @@
 停止日（2026-07-20）以降の最初の実行で、最後に最終結果を反映してから、自分（この自動更新ジョブ）を停止する。
 このジョブが **scheduled task** か **launchd cron** かで止め方が違う:
 
-- **launchd cron 版**（= `install-claude-cron-routines.sh` 登録、現行の標準）: そのマシンの terminal で
-  `zsh ~/Claude/odakin-prefs/scripts/install-claude-cron-routines.sh --uninstall-one wc2026-auto-update`
-  を実行する（= plist の bootout + 削除）。ジョブ自身（headless 実行中）は止め方を出力に書き残すだけにして、
-  無理に自分を kill しない。
+- **launchd cron 版**（現行の標準）: そのマシンの terminal で `--uninstall-one wc2026-auto-update`
+  （= plist の bootout + 削除）を実行する。launchd cron の登録機構（plist 生成・`--uninstall-one` 等）は
+  公開リポ claude-config の `scripts/install-launchd-cron.sh` が SoT:
+  `zsh ~/Claude/claude-config/scripts/install-launchd-cron.sh --label-prefix com.odakin.claude-cron --uninstall-one wc2026-auto-update`
+  ジョブ自身（headless 実行中）は止め方を出力に書き残すだけにして、無理に自分を kill しない。
 - **scheduled task 版**（旧経路）: `scheduled-tasks` MCP の delete で自分を消す。
 
 > ⚠️ **止めるのは 30 分ごとの更新ジョブだけ**。公開サイト（`docs/` / GitHub Pages）とリポは**削除しない**。
