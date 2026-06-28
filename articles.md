@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 66 / リンク数: 74
+- 試合数: 68 / リンク数: 76
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -418,3 +418,15 @@
 **📰 報道・公式**
 
 - [パナマ 0-1 クロアチア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-croatia-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/panama-croatia-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Panama 0-1 Croatia | Match report and highlights』、モドリッチ200キャップ・ブディミル決勝点)、日本語版は同語順+-jaで導出。スコア0-1はESPN+FIFA+VAVEL+Outlookで確認
+
+### パナマ 0-2 イングランド（L組 / 第3節 / 2026-06-27）
+
+**📰 報道・公式**
+
+- [パナマ 0-2 イングランド｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/panama-england-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/panama-england-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Panama 0-2 England | Match report and highlights』、ベリンガム62分・ケイン67分)、日本語版は同語順+-jaで導出。スコア0-2はFIFA+ESPN+FOX Sportsで確認
+
+### クロアチア 2-1 ガーナ（L組 / 第3節 / 2026-06-27）
+
+**📰 報道・公式**
+
+- [クロアチア 2-1 ガーナ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/croatia-ghana-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/croatia-ghana-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Croatia 2-1 Ghana | Match report and highlights』、スチッチ31分・ヴラシッチ83分/ラカッセン73分)、日本語版は同語順+-jaで導出。スコア2-1はFIFA+ESPN+FOX Sportsで確認
