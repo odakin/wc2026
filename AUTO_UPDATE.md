@@ -70,7 +70,9 @@
    - **英語ページの FIFA リンクは `build.py` の `fifa_localize()` が決定論変換**する: `/ja/`→`/en/`（記事は語尾 `-ja` 除去・
      語順は ja と同一 / `/watch/` は ID 不変）。例外で規則が外れる試合は ref に `url_en: "<英語URL>"` を足して上書きする（実在確認してから）。
    - 順位が 1〜5 で決着しない同点が出たら、フェアプレー点を FIFA/Wikipedia で確認し
-     `meta.tiebreak.conduct` に出典付きで追加。
+     `meta.tiebreak.conduct` に出典付きで追加。**逆に、後の節で同点が解消し criterion 1〜5 で
+     決着したら、その組の conduct エントリは削除する**（追加するルールだけだと決着後も残って
+     stale な順位注記になる。2026-06-28 に K組で実際に発生＝「(コンゴが上位)」が決着後も残存）。
 6. **再生成 + 公開**:
    - `python3 scripts/standings.py --write`（順位表 + `standings.md`）。
    - `python3 scripts/articles.py --write`（`articles.md`）。
