@@ -827,6 +827,30 @@ matches:
         source: FIFA公式
         lang: ja
         note: "英語版記事(.../articles/colombia-congo-dr-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Colombia 1-0 Congo DR | Match report and highlights』、ムニョス76分決勝点・グアダラハラ)、日本語版は同語順+-jaで導出。スコア1-0はESPN+FIFA+FOX+VAVEL+Outlookで確認"
+  - key: K-md3-COL-POR
+    group: K
+    md: 3
+    date: 2026-06-27
+    title: "コロンビア 0-0 ポルトガル"
+    refs:
+      - cat: 報道・公式
+        title: "コロンビア 0-0 ポルトガル｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-portugal-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/colombia-portugal-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Colombia 0-0 Portugal | Match report and highlights』)、日本語版は同語順+-jaで導出。スコア0-0はFIFA+ESPN+FOX Sportsで確認"
+  - key: K-md3-COD-UZB
+    group: K
+    md: 3
+    date: 2026-06-27
+    title: "コンゴ民主共和国 3-1 ウズベキスタン"
+    refs:
+      - cat: 報道・公式
+        title: "コンゴ民主共和国 3-1 ウズベキスタン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/congo-dr-uzbekistan-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "英語版記事(.../articles/congo-dr-uzbekistan-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Congo DR 3-1 Uzbekistan | Match report and highlights』)、日本語版は同語順+-jaで導出。スコア3-1はFIFA+ESPN+FOX Sportsで確認"
   # ===== Group L =====
   - key: L-md1-ENG-CRO
     group: L

@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 68 / リンク数: 76
+- 試合数: 70 / リンク数: 78
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -394,6 +394,18 @@
 **📰 報道・公式**
 
 - [コロンビア 1-0 コンゴ民主共和国｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-congo-dr-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/colombia-congo-dr-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Colombia 1-0 Congo DR | Match report and highlights』、ムニョス76分決勝点・グアダラハラ)、日本語版は同語順+-jaで導出。スコア1-0はESPN+FIFA+FOX+VAVEL+Outlookで確認
+
+### コロンビア 0-0 ポルトガル（K組 / 第3節 / 2026-06-27）
+
+**📰 報道・公式**
+
+- [コロンビア 0-0 ポルトガル｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-portugal-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/colombia-portugal-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Colombia 0-0 Portugal | Match report and highlights』)、日本語版は同語順+-jaで導出。スコア0-0はFIFA+ESPN+FOX Sportsで確認
+
+### コンゴ民主共和国 3-1 ウズベキスタン（K組 / 第3節 / 2026-06-27）
+
+**📰 報道・公式**
+
+- [コンゴ民主共和国 3-1 ウズベキスタン｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/congo-dr-uzbekistan-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/congo-dr-uzbekistan-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Congo DR 3-1 Uzbekistan | Match report and highlights』)、日本語版は同語順+-jaで導出。スコア3-1はFIFA+ESPN+FOX Sportsで確認
 
 ### イングランド 4-2 クロアチア（L組 / 第1節 / 2026-06-17）
 
