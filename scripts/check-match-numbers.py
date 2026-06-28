@@ -80,9 +80,11 @@ def check(results_doc, fixtures_doc):
             findings.append(f"[fixtures no重複] M{n}: {fno_seen[n]} と {m['label']}")
         fno_seen[n] = m["label"]
 
-    # (3) overlap で no 一致
+    # (3) overlap で no 一致 (knockout は group 無しのためスキップ)
     overlap = 0
     for m in rmatches:
+        if not m.get("group"):
+            continue
         key = (m["group"], frozenset({_norm(m["home"]), _norm(m["away"])}))
         if key in fmap:
             overlap += 1
