@@ -56,6 +56,11 @@
      （= results と fixtures を no で join できる状態を保つ）。キーは **`no:` でなく `"no":` とクォート**する
      （PyYAML が `no:` を boolean False キーに解釈する YAML1.1 の罠）。fixtures に無い早期試合は触らない想定だが、
      念のため §6 の検算ゲートで欠落・不一致を検出する。
+   - **決勝T（knockout）の結果は `winner:`（チーム名）も記録する**（= 延長・PK では score だけで勝者が
+     出ないため）。**PK 戦は `winner` 必須** + `note` に「PK ○-○ で◯◯勝利」を 2 ソースで明記（hg/ag は
+     延長終了時のスコア）。score 決着でも `winner` を付けると伝播が確実（無ければ hg/ag から導出、引き分け
+     かつ `winner` 無しは未解決扱い）。knockout は `group` を付けない（順位計算対象外）。`winner` は home/away
+     のどちらかに一致させる。次ラウンドの対戦カードは §6 の伝播ステップが自動で埋めるので手で書かない。
    - **記事リンクは best-effort（見つかれば追記、無ければ配信待ちのまま先へ）**: FIFA公式リンクの URL を探して
      `data/articles.yaml` に追記（cat: 報道・公式 / source: FIFA公式）。**見つからなければ追記しないだけ**で、
      スコアは上で記録済み（= 順位は反映済）。そのリンクは次回 run の §3 backfill 候補として再探索される。
@@ -84,6 +89,11 @@
    - **試合番号ゲート（必須）**: `python3 scripts/check-match-numbers.py`。
      finding（result の `no` 欠落・重複、fixtures との `no` 不一致）が出たら **exit 1**。
      その場合は §5 に戻って `no` を正す（fixtures の同カードの no と一致させる）。番号がズレたまま公開しない。
+   - **決勝T 伝播（knockout の対戦カード自動進行）**: `python3 scripts/propagate-knockout.py --apply`。
+     記録済み knockout 結果から、次ラウンドの `fixtures.yaml` の slot label（`M<no>勝者`/`M<no>敗者`）を
+     実チーム名に決定論的に解決する（冪等。R32 結果→R16、R16 結果→QF、… と 1 段ずつ自動で埋まる）。
+     **変更があれば `data/fixtures.yaml` を commit に含める**（build はこの後なので bracket に反映される）。
+     ⚠ 出力に「引き分けだが winner 未記録」警告が出たら §5 に戻り PK 勝者を `winner:` に追記して再実行。
    - `python3 build.py`（日英 docs 再生成）。
    - **死活打刻（必須）**: `python3 scripts/heartbeat.py --beat`。`heartbeat.json` を今の時刻で更新する
      （= ジョブが生きている証跡。`commit` に必ず含める）。

@@ -3,6 +3,10 @@
 ## ここから計算して導出する (= 順位を手で二重管理しない)。試合が増えたら下に追記。
 ##
 ## schema: {no, group, md(matchday), date, home, away, hg(home goals), ag(away goals), note?}
+##   決勝T(knockout)の entry は group を付けない(順位計算対象外) + winner(チーム名) を記録する。
+##   延長・PK では score だけで勝者が出ないため、PK 戦は winner 必須 + note に「PK ○-○」を明記。
+##   winner は home/away のどちらかに一致。次ラウンドの対戦カードは scripts/propagate-knockout.py が
+##   この winner から fixtures.yaml の slot label(M<no>勝者/敗者) を自動解決する(= 手で書かない)。
 ##   no = FIFA公式試合番号 (1-104)。 fixtures.yaml の no と同一の join key (= 突合は名前一致でなく no で堅牢化、 2026-06-25 付与)。
 ##     出典: 消化済は FIFA公式レポート PDF ファイル名 PMSR-M<NN> (fifatrainingcentre.com)、 一部は en.wikipedia の Match番号 placeholder。
 ##     消去法/規則確定 = M47 (block bijection)・M51/M52 (B組MD3、 slot5<slot6 規則を C/A/E で検証)。 scripts/check-match-numbers.py が fixtures との一致を検算。
