@@ -778,6 +778,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト。アルジェリアがセットプレー二発で逆転"
+  - key: J-md3-ALG-AUT
+    group: J
+    md: 3
+    date: 2026-06-27
+    title: "アルジェリア 3-3 オーストリア"
+    refs:
+      - cat: 報道・公式
+        title: "アルジェリア 3-3 オーストリア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/algeria-austria-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト。検索インデックスでタイトル『アルジェリア 3-3 オーストリア | マッチレポートとハイライト』実在∧試合一致確認"
   # ===== Group K =====
   - key: K-md1-POR-COD
     group: K
