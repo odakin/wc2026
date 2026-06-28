@@ -790,6 +790,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト。検索インデックスでタイトル『アルジェリア 3-3 オーストリア | マッチレポートとハイライト』実在∧試合一致確認"
+  - key: J-md3-JOR-ARG
+    group: J
+    md: 3
+    date: 2026-06-27
+    title: "ヨルダン 1-3 アルゼンチン"
+    refs:
+      - cat: 報道・公式
+        title: "ヨルダン 1-3 アルゼンチン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/jordan-argentina-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト。検索インデックスでタイトル『途中出場メッシが1ゴール！アルゼンチンが...』実在∧試合一致確認。途中出場メッシ含むアルゼンチンが1-3勝利"
   # ===== Group K =====
   - key: K-md1-POR-COD
     group: K
