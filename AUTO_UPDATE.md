@@ -39,17 +39,26 @@
    `data/fixtures.yaml` の対戦カードのうち **キックオフ済みなのに `results.yaml` 未記録**のものを候補にする。
    - 日付の鉄則: `results.yaml` の `date` は**現地（北米）開催日**、`fixtures.yaml` の時刻は **JST**。
      両者は最大 1 日ずれる（JST が進む。夜の試合は JST だと翌日昼）。突合前に必ず時差変換する。
+   - **もう一つの候補 = 配信待ちの backfill**: 既に `results.yaml` に記録済みだが `articles.yaml` に
+     FIFA リンクが無い試合（= 前回スコアだけ先に入れた「配信待ち」）も候補に含める。FIFA 記事は
+     時間差で配信されるので、**止めずに毎回もういちどリンクを探しに行く**（出るまで毎 run 再探索）。
+     対象は `python3 scripts/articles.py --check` の ⏳ 配信待ちリスト。
 4. **裏取り（厳格・推測禁止）**: 各候補について web 検索で最終スコアを **2 ソース以上**
    （FIFA 公式 + ESPN / Sky Sports / Wikipedia / 各国紙のいずれか）で一致確認。
    - **中断・進行中・1 ソースのみ → 記録しない**（次回に回す）。スコアを憶測で埋めない。
-5. **DB 追記**（確定したものだけ）:
+5. **スコアを追記**（確定したものだけ・**記事リンクの有無に関わらず即記録する**）:
+   - スコアと記事リンクは**分離**する。スコアが 2 ソースで確定したら、FIFA 記事がまだ無くても
+     `results.yaml` に記録する → 順位表・公開サイトは即反映される（`standings.py` は results のみ駆動）。
+     記事リンクは下の best-effort で、**スコア記録の前提条件ではない**（2026-06-28 方針）。
    - `data/results.yaml` の `matches:` に 1 行追記（schema: `{"no", group, md, date(現地開催日), home, away, hg, ag, note?}`、
      チーム名は `fixtures.yaml` と統一）。`meta.as_of` を今日（JST）に、`meta.note` を更新。
    - **`"no"`（FIFA公式試合番号）も必ず付与**: `fixtures.yaml` の同カード（同 group + 同チーム対）の `no` をそのままコピー
      （= results と fixtures を no で join できる状態を保つ）。キーは **`no:` でなく `"no":` とクォート**する
      （PyYAML が `no:` を boolean False キーに解釈する YAML1.1 の罠）。fixtures に無い早期試合は触らない想定だが、
      念のため §6 の検算ゲートで欠落・不一致を検出する。
-   - **FIFA公式リンクの URL** を探して `data/articles.yaml` に追記（cat: 報道・公式 / source: FIFA公式）。
+   - **記事リンクは best-effort（見つかれば追記、無ければ配信待ちのまま先へ）**: FIFA公式リンクの URL を探して
+     `data/articles.yaml` に追記（cat: 報道・公式 / source: FIFA公式）。**見つからなければ追記しないだけ**で、
+     スコアは上で記録済み（= 順位は反映済）。そのリンクは次回 run の §3 backfill 候補として再探索される。
      **リンク優先順位**:
      ① **日本語版マッチレポート記事** `/ja/…/articles/<slug>-ja`（ハイライト動画が埋込まれている）が配信済ならそれ
         （`url` に日本語 URL）。
@@ -65,9 +74,11 @@
 6. **再生成 + 公開**:
    - `python3 scripts/standings.py --write`（順位表 + `standings.md`）。
    - `python3 scripts/articles.py --write`（`articles.md`）。
-   - **記事リンク欠落ゲート（必須）**: `python3 scripts/articles.py --check`。
-     finding（記録済みなのに記事リンクが無い試合・欄欠落・URL 重複）が出たら **exit 1**。
-     その場合は §5 に戻って欠落試合の FIFA レポート URL を追記してから先へ進む（取りこぼしのまま公開しない）。
+   - **記事ゲート（必須・ただしリンク未着では止めない）**: `python3 scripts/articles.py --check`。
+     **blocking finding（ref 欄欠落・未知 cat・URL 重複・実在しない結果を指す記事ブロック）が出たら exit 1**
+     → §5 に戻って `articles.yaml` を直す。**リンク未着は ⏳ 配信待ちとして surface されるだけで止まらない**
+     （スコア・順位は既に公開、リンクは次回 run で再探索 backfill。グローバルゲートで全公開を人質に取らない）。
+     ⚠ マーク付き（猶予日数超過）の配信待ちは「日本語記事が出ない試合かも」の合図 → 動画②へのフォールバックを検討。
    - **試合番号ゲート（必須）**: `python3 scripts/check-match-numbers.py`。
      finding（result の `no` 欠落・重複、fixtures との `no` 不一致）が出たら **exit 1**。
      その場合は §5 に戻って `no` を正す（fixtures の同カードの no と一致させる）。番号がズレたまま公開しない。
