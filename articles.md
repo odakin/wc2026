@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 72 / リンク数: 80
+- 試合数: 73 / リンク数: 81
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -454,3 +454,9 @@
 **📰 報道・公式**
 
 - [クロアチア 2-1 ガーナ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/croatia-ghana-match-report-highlights-ja) — FIFA公式 / 英語版記事(.../articles/croatia-ghana-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Croatia 2-1 Ghana | Match report and highlights』、スチッチ31分・ヴラシッチ83分/ラカッセン73分)、日本語版は同語順+-jaで導出。スコア2-1はFIFA+ESPN+FOX Sportsで確認
+
+### 南アフリカ 0-1 カナダ（2026-06-28）
+
+**📰 報道・公式**
+
+- [南アフリカ v カナダ | ラウンド32 | 2026 FIFAワールドカップ™ | ハイライト](https://www.fifa.com/ja/watch/6dFyzSCghyabYGJRQk8RYB) — FIFA公式 / 日本語記事版が未配信のため動画にリンク(2026-06-29 09:31 JST時点)。EN動画 /en/watch/6dFyzSCghyabYGJRQk8RYB を検索インデックスで実在∧試合一致確認(タイトル『South Africa v Canada | Round of 32 | FIFA World Cup 2026™ | Highlights』、エウスタキオ90+2分)。スコア0-1はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)

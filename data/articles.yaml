@@ -948,3 +948,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "英語版記事(.../articles/croatia-ghana-match-report-highlights)を検索インデックスで実在∧試合一致確認(タイトル『Croatia 2-1 Ghana | Match report and highlights』、スチッチ31分・ヴラシッチ83分/ラカッセン73分)、日本語版は同語順+-jaで導出。スコア2-1はFIFA+ESPN+FOX Sportsで確認"
+
+  # ===== 決勝トーナメント (R32) =====
+  - key: r32-RSA-CAN
+    date: 2026-06-28
+    title: "南アフリカ 0-1 カナダ"
+    refs:
+      - cat: 報道・公式
+        title: "南アフリカ v カナダ | ラウンド32 | 2026 FIFAワールドカップ™ | ハイライト"
+        url: "https://www.fifa.com/ja/watch/6dFyzSCghyabYGJRQk8RYB"
+        source: FIFA公式
+        lang: ja
+        note: "日本語記事版が未配信のため動画にリンク(2026-06-29 09:31 JST時点)。EN動画 /en/watch/6dFyzSCghyabYGJRQk8RYB を検索インデックスで実在∧試合一致確認(タイトル『South Africa v Canada | Round of 32 | FIFA World Cup 2026™ | Highlights』、エウスタキオ90+2分)。スコア0-1はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)"
