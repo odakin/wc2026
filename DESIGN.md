@@ -25,10 +25,9 @@
 - リンク方針: 日本語版 FIFA マッチレポート記事 (`/ja/…/articles/<slug>-ja`、動画埋込) を優先し、
   未配信の試合は FIFA公式ハイライト動画 (`/ja/watch/<id>`) にリンク（英語記事より言語非依存の動画を優先）。
   マッチセンター頁は使わない。2026-06-23 確定。
-- **スコアと記事リンクの分離 (2026-06-28)**: 順位表・クロス表・bracket は `results.yaml` のスコアだけで
-  決まる。`articles.yaml` のリンクは best-effort で、未着 (⏳ 配信待ち) でも公開を止めない
-  （= 1 件の未着リンクで 73 件の確定スコア公開を人質に取らない）。`articles.py --check` は
-  blocking finding（ref 欄欠落・未知 cat・URL 重複等）のみ exit 1、未着は毎 run の §3 backfill で再探索。
+- **スコアと記事リンクの分離 (2026-06-28)**: 順位は `results.yaml` のスコアだけで決まり、
+  `articles.yaml` のリンク未着では公開を止めない。原則の正本は
+  [`scripts/articles.py`](scripts/articles.py) docstring「スコアと記事リンクの分離」 節。
 - 英語ページの FIFA リンクは `fifa_localize()` で決定論変換（記事は語尾 `-ja` 除去 + `/ja/`→`/en/` /
   `/watch/` は `/ja/`→`/en/` で ID 不変）。規則から外れる試合は ref の `url_en` で明示上書き。
 

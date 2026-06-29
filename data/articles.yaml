@@ -17,12 +17,8 @@
 ##     source= 媒体名 (FIFA公式 / NHK / サッカーキング 等)
 ##     note  = 一言メモ (なぜ良いか・何が読めるか)
 ## リンクは憶測で足さず、実際に見つけたものを記録する。
-##
-## スコアと記事リンクは分離 (2026-06-28 方針): リンク未着 (⏳ 配信待ち) でも結果が
-## 確定したら results.yaml に記録 → 順位表・クロス表・bracket は即公開する。 articles.yaml の
-## リンクは best-effort で、 グローバルゲートが「1 件の未着リンクで 73 件の確定スコア公開を
-## 止める」 のを避けるため blocking には昇格させない (= scripts/articles.py --check は
-## ref 欄欠落・未知 cat・URL 重複等のみ exit 1、 リンク欠落は毎 run の §3 backfill 候補)。
+## リンクは best-effort: 未着でも公開を止めない (= scripts/articles.py docstring「スコアと
+## 記事リンクの分離」 節が canonical SoT、 本ヘッダはそれを pointer 参照するだけ)。
 ##
 ## 各試合に FIFA公式リンクを1本ずつ付与。 動画は試合結果レポート記事に埋込まれている。 優先順位:
 ##   ① 日本語版マッチレポート記事 /ja/…/articles/<slug>-ja が配信済ならそれ

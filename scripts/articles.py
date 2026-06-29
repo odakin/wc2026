@@ -6,7 +6,8 @@ articles.yaml = 試合に紐づく記事 / ブログ / 掲示板リンクの SoT
 results.yaml (結果 DB) とは疎結合: 各 match.key の (group, md) が results.yaml に
 あるかを軽く照合する (lag 時は warn のみで block しない)。
 
-スコアと記事リンクの分離 (2026-06-28): スコアが確定したら記事リンクの有無に関わらず
+スコアと記事リンクの分離 (2026-06-28、 この節が本原則の canonical SoT、
+他 doc は本節を pointer 参照): スコアが確定したら記事リンクの有無に関わらず
 results.yaml に記録され、 順位表・公開サイトは即反映される (standings.py は results.yaml
 のみ駆動)。 記事リンクは「配信待ち」として後続 run で backfill する。 そのため --check は
 finding を 2 段階に分ける:
