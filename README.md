@@ -58,7 +58,7 @@ wc2026/
 ```bash
 python3 scripts/standings.py --write   # 順位表 + standings.md
 python3 scripts/articles.py  --write   # articles.md
-python3 scripts/articles.py  --check   # 記録済みなのにリンクが無い試合を検出（CI ゲート）
+python3 scripts/articles.py  --check   # 記事ゲート（blocking のみ exit 1: ref 欄欠落・未知 cat・URL 重複等。リンク未着は ⏳ 配信待ちで止めない）
 python3 build.py                       # docs/（日英）を再生成
 ```
 
@@ -71,7 +71,7 @@ python3 build.py                       # docs/（日英）を再生成
 1. `fixtures.yaml` と `results.yaml` を突き合わせ、**キックオフ済みなのに未記録の試合**を洗い出す
 2. 各試合のスコアを web 検索で **2 ソース以上**裏取り（中断・進行中・1 ソースのみは記録しない＝憶測で埋めない）
 3. `results.yaml` / `articles.yaml` に追記 → 順位・記事ビューを再生成 → `build.py` で日英ページを生成
-4. リンク欠落ゲート（`articles.py --check`）と leak gate を通してから commit + push（Pages が自動反映）
+4. 記事ゲート（`articles.py --check`、blocking finding〔ref 欄欠落・未知 cat・URL 重複等〕のみ exit 1。**リンク欠落は ⏳ 配信待ちで公開を止めない**、 2026-06-28 方針）と leak gate を通してから commit + push（Pages が自動反映）
 
 決定論的な部分（順位計算・日英変換・ビルド）はスクリプトに閉じ込め、判断が要る部分（結果の裏取り・記事 URL の確認）だけを毎回の実行で行う設計です。
 
