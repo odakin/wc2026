@@ -68,8 +68,13 @@ def _group_finals(results_matches, conduct, fifa_rank):
     return finals
 
 
-def _resolve_token(tok, finals, resolved):
-    """スロット票 1 つを {team} か {label_ja,label_en} に解決する。"""
+def _resolve_token(tok, finals, resolved, known_teams=None):
+    """スロット票 1 つを {team} か {label_ja,label_en} に解決する。
+
+    known_teams: グループ戦に登場した実チーム名の集合。 fixtures.yaml の knockout label
+    が事前に実チーム名で書かれているケース（例 R32 「南アフリカ × カナダ」）を team として
+    正しく分類するために使う。 渡されない場合はフォールバックで label 扱い（後方互換）。
+    """
     m = _GROUP_POS.match(tok)
     if m:
         g, pos = m.group(1), int(m.group(2))
@@ -94,7 +99,21 @@ def _resolve_token(tok, finals, resolved):
         if ls:
             return {"team": ls}
         return {"label_ja": f"M{n} 敗者", "label_en": f"M{n} loser"}
+    if known_teams and tok in known_teams:
+        return {"team": tok}
     return {"label_ja": tok, "label_en": tok}
+
+
+def _known_teams(fixtures):
+    """fixtures のグループ戦に登場した実チーム名の集合を返す。"""
+    teams = set()
+    for f in fixtures:
+        if f.get("stage") != "group":
+            continue
+        parts = [p.strip() for p in re.split(r"[×x✕]", f.get("label", ""))]
+        if len(parts) == 2:
+            teams.update(parts)
+    return teams
 
 
 def _winner_side(score):
@@ -118,14 +137,15 @@ def build_rounds(results_matches, conduct=None, fifa_rank=None):
     fixtures = yaml.safe_load(FIXTURES.read_text(encoding="utf-8"))["matches"]
     finals = _group_finals(results_matches, conduct, fifa_rank)
     res_by_no = {m["no"]: m for m in results_matches if m.get("no")}
+    known = _known_teams(fixtures)
 
     ko = sorted((f for f in fixtures if f.get("stage") in STAGE_TITLE), key=lambda x: x["no"])
     resolved = {}   # no -> {home, away, winner_team, loser_team}
     built = {}      # no -> match dict（出力用）
     for f in ko:
         parts = [p.strip() for p in re.split(r"[×x✕]", f["label"])]
-        home = _resolve_token(parts[0], finals, resolved) if len(parts) == 2 else {"label_ja": f["label"], "label_en": f["label"]}
-        away = _resolve_token(parts[1], finals, resolved) if len(parts) == 2 else {"label_ja": "", "label_en": ""}
+        home = _resolve_token(parts[0], finals, resolved, known) if len(parts) == 2 else {"label_ja": f["label"], "label_en": f["label"]}
+        away = _resolve_token(parts[1], finals, resolved, known) if len(parts) == 2 else {"label_ja": "", "label_en": ""}
 
         r = res_by_no.get(f["no"])
         score = None
@@ -232,6 +252,11 @@ def _selftest():
     assert _resolve_token("M73勝者", finals, res) == {"team": "X"}
     assert _resolve_token("M73敗者", finals, res) == {"team": "Y"}
     assert _resolve_token("M99勝者", finals, {})["label_en"] == "M99 winner"
+    # 実チーム名（fixtures に登場するもの）は known_teams で team として解決される
+    assert _resolve_token("カナダ", finals, {}, {"カナダ", "南アフリカ"}) == {"team": "カナダ"}
+    # known_teams 未指定 or 未登録は label のまま（後方互換）
+    assert _resolve_token("カナダ", finals, {})["label_ja"] == "カナダ"
+    assert _resolve_token("謎チーム", finals, {}, {"カナダ"})["label_en"] == "謎チーム"
     assert _winner_side({"hg": 1, "ag": 0}) == "home"
     assert _winner_side({"hg": 1, "ag": 1, "pens": [4, 2]}) == "home"
     assert _winner_side({"hg": 1, "ag": 1}) is None
