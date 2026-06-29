@@ -20,13 +20,16 @@
 ## リンクは best-effort: 未着でも公開を止めない (= scripts/articles.py docstring「スコアと
 ## 記事リンクの分離」 節が canonical SoT、 本ヘッダはそれを pointer 参照するだけ)。
 ##
-## 各試合に FIFA公式リンクを1本ずつ付与。 動画は試合結果レポート記事に埋込まれている。 優先順位:
+## リンク優先順位 (本ヘッダが canonical SoT、 他 doc は本節を pointer 参照):
 ##   ① 日本語版マッチレポート記事 /ja/…/articles/<slug>-ja が配信済ならそれ
 ##     (Brave〔Claude in Chrome〕で実ページをナビゲートしライブ検証済、 2026-06-23、 実在 ∧ 試合一致〔h1見出し〕、 404 ゼロ)。
-##   ② 日本語版が未配信の試合は FIFA公式ハイライト動画 /ja/watch/<id> にリンク (英語記事より言語非依存の動画を優先)。
-##     現在 ② は5試合(CIV-ECU/IRN-NZL/KSA-URU/NOR-SEN/AUT-JOR)。 動画URLは web 検索で /en/watch/<id> の実在 ∧
-##     試合〔チーム・スコア〕一致を確認 (一部は ja 検索でも /ja/watch/ 実在確認)、 ja は同一 content ID を ja ロケール配信(FIFA+ 標準)。
-##   マッチセンター(スタッツ頁)は使わない。 build.py が en へ /ja/→/en/ 変換。
+##   ② 日本語版が未配信の試合は FIFA公式ハイライト動画 /ja/watch/<id> にリンク (英語記事より言語非依存の動画を優先、 2026-06-23 方針確定)。
+##     現在 ② は 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/NOR-SEN/AUT-JOR、 snapshot 時点、 ja 記事配信で随時消える)。
+##     動画 URL は web 検索で /en/watch/<id> の実在 ∧ 試合〔チーム・スコア〕一致を確認、
+##     ja は同一 content ID を ja ロケール配信 (FIFA+ 標準)。
+##   マッチセンター (スタッツ頁) は使わない (レポートでも動画でもないため)。
+##   en ページの URL 変換は build.py の fifa_localize() が決定論的に行う (/ja/→/en/、 記事は語尾 -ja 除去、
+##   /watch/ は ID 不変)。 規則破れは ref の url_en で明示上書き。
 
 meta:
   tournament: "2026 FIFA World Cup"

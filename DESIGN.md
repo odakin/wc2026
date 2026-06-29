@@ -22,14 +22,11 @@
 - 順位 tiebreak は FIFA 2026 大会規定（直接対決優先・抽選廃止）を実装。
   フェアプレーポイント等の計算不能な criterion は results.yaml の meta.tiebreak にデータで持つ。
 - 国旗は ISO コードから生成（ソースに絵文字リテラルを埋めない）。
-- リンク方針: 日本語版 FIFA マッチレポート記事 (`/ja/…/articles/<slug>-ja`、動画埋込) を優先し、
-  未配信の試合は FIFA公式ハイライト動画 (`/ja/watch/<id>`) にリンク（英語記事より言語非依存の動画を優先）。
-  マッチセンター頁は使わない。2026-06-23 確定。
+- リンク選定基準（① ja 記事 → ② 動画 fallback / マッチセンター不使用 / en は `fifa_localize()` 決定論変換）
+  の正本は [`data/articles.yaml`](data/articles.yaml) ヘッダ「リンク優先順位」 節（2026-06-23 確定）。
 - **スコアと記事リンクの分離 (2026-06-28)**: 順位は `results.yaml` のスコアだけで決まり、
   `articles.yaml` のリンク未着では公開を止めない。原則の正本は
   [`scripts/articles.py`](scripts/articles.py) docstring「スコアと記事リンクの分離」 節。
-- 英語ページの FIFA リンクは `fifa_localize()` で決定論変換（記事は語尾 `-ja` 除去 + `/ja/`→`/en/` /
-  `/watch/` は `/ja/`→`/en/` で ID 不変）。規則から外れる試合は ref の `url_en` で明示上書き。
 
 ## 試合番号 `no` = 堅牢化の join key（2026-06-25 / 背後の思想）
 
