@@ -974,3 +974,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "日本語記事版が未配信のため動画にリンク(2026-06-29 09:31 JST時点)。EN動画 /en/watch/6dFyzSCghyabYGJRQk8RYB を検索インデックスで実在∧試合一致確認(タイトル『South Africa v Canada | Round of 32 | FIFA World Cup 2026™ | Highlights』、エウスタキオ90+2分)。スコア0-1はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)"
+  - key: M76-BRA-JPN
+    "no": 76
+    stage: r32
+    date: 2026-06-29
+    title: "ブラジル 2-1 日本"
+    refs:
+      - cat: 報道・公式
+        title: "ブラジル 2-1 日本 | マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-japan-review-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認(タイトル『ブラジル 2-1 日本 | マッチレポート＆ハイライト』)。英語版 .../articles/brazil-japan-review-highlights も同時確認。スコア2-1はFIFA(佐野29'/カゼミーロ55'/マルティネッリ90+6')"
