@@ -93,24 +93,25 @@ VENUE_TZ = {
     "SoFi Stadium": "America/Los_Angeles",     # Inglewood CA (LA)
 }
 
-# チーム名 → FIFA 公式チーム紹介ページ teamId。
-# URL は https://www.fifa.com/{ja|en}/tournaments/mens/worldcup/canadamexicousa2026/teams/<id>
-# (Wikipedia 経由で発見した canonical pattern、 1998 大会 URL の pattern と同型)。
-# teamId は FIFA 公式 API (cxm-api.fifa.com/fifaplusweb/api/teams/<query>) で FIFA Trigramme
-# (3 文字国コード) と照合して確定 (48/48 verified)。
-TEAM_FIFA_ID = {
-    "メキシコ": "43911", "韓国": "43822", "チェコ": "43995", "南アフリカ": "43883",
-    "カナダ": "43899", "スイス": "43971", "ボスニア・ヘルツェゴビナ": "44037", "カタール": "43834",
-    "ブラジル": "43924", "モロッコ": "43872", "ハイチ": "43908", "スコットランド": "43967",
-    "アメリカ合衆国": "1882884", "オーストラリア": "43976", "パラグアイ": "43928", "トルコ": "1888299",
-    "ドイツ": "43948", "コートジボワール": "43854", "エクアドル": "43927", "キュラソー": "1895293",
-    "日本": "43819", "オランダ": "43960", "スウェーデン": "43970", "チュニジア": "43888",
-    "ベルギー": "43935", "イラン": "43817", "ニュージーランド": "43978", "エジプト": "1885030",
-    "スペイン": "43969", "ウルグアイ": "43930", "サウジアラビア": "43835", "カーボベルデ": "43850",
-    "フランス": "43946", "ノルウェー": "43961", "セネガル": "43879", "イラク": "43818",
-    "アルゼンチン": "43922", "オーストリア": "43934", "ヨルダン": "43820", "アルジェリア": "43843",
-    "ポルトガル": "43963", "コロンビア": "43926", "ウズベキスタン": "44005", "コンゴ民主共和国": "20014",
-    "クロアチア": "43938", "パナマ": "43914", "ガーナ": "43860", "イングランド": "43942",
+# チーム名 → FIFA 公式チーム紹介ページの英語 slug。
+# URL は https://www.fifa.com/{ja|en}/tournaments/mens/worldcup/canadamexicousa2026/teams/<slug>
+# (Web 検索で確認した実 URL pattern。 同 pattern の article URL に
+# "cote-divoire" "bosnia-and-herzegovina" "korea-republic" "south-africa" 等が登場、
+# /teams/<slug>/squad と /teams/<slug>/fixtures とサブパス無しの bare URL が併存、
+# 既定 tab は bare URL)。 値は FIFA の team 名を lowercase + ASCII + hyphen 化。
+TEAM_FIFA_SLUG = {
+    "メキシコ": "mexico", "韓国": "korea-republic", "チェコ": "czechia", "南アフリカ": "south-africa",
+    "カナダ": "canada", "スイス": "switzerland", "ボスニア・ヘルツェゴビナ": "bosnia-and-herzegovina", "カタール": "qatar",
+    "ブラジル": "brazil", "モロッコ": "morocco", "ハイチ": "haiti", "スコットランド": "scotland",
+    "アメリカ合衆国": "usa", "オーストラリア": "australia", "パラグアイ": "paraguay", "トルコ": "turkey",
+    "ドイツ": "germany", "コートジボワール": "cote-divoire", "エクアドル": "ecuador", "キュラソー": "curacao",
+    "日本": "japan", "オランダ": "netherlands", "スウェーデン": "sweden", "チュニジア": "tunisia",
+    "ベルギー": "belgium", "イラン": "iran", "ニュージーランド": "new-zealand", "エジプト": "egypt",
+    "スペイン": "spain", "ウルグアイ": "uruguay", "サウジアラビア": "saudi-arabia", "カーボベルデ": "cabo-verde",
+    "フランス": "france", "ノルウェー": "norway", "セネガル": "senegal", "イラク": "iraq",
+    "アルゼンチン": "argentina", "オーストリア": "austria", "ヨルダン": "jordan", "アルジェリア": "algeria",
+    "ポルトガル": "portugal", "コロンビア": "colombia", "ウズベキスタン": "uzbekistan", "コンゴ民主共和国": "congo-dr",
+    "クロアチア": "croatia", "パナマ": "panama", "ガーナ": "ghana", "イングランド": "england",
 }
 FIFA_TOURNAMENT_PATH = "tournaments/mens/worldcup/canadamexicousa2026"
 
@@ -142,10 +143,10 @@ def team_chip(t, lang, flag_side="left"):
     f_html = f'<span class="flag">{flag(t)}</span>'
     n_html = esc(short(t, lang))
     inner = (f_html + n_html) if flag_side == "left" else (n_html + f_html)
-    tid = TEAM_FIFA_ID.get(t)
-    if not tid:
+    slug = TEAM_FIFA_SLUG.get(t)
+    if not slug:
         return inner
-    href = f"https://www.fifa.com/{lang}/{FIFA_TOURNAMENT_PATH}/teams/{tid}"
+    href = f"https://www.fifa.com/{lang}/{FIFA_TOURNAMENT_PATH}/teams/{slug}"
     return f'<a class="team-link" href="{href}" target="_blank" rel="noopener">{inner}</a>'
 
 
