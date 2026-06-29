@@ -282,7 +282,7 @@ def fifa_localize(url, lang):
 def url_lookup(arts):
     def finder(g, home, away, lang="ja"):
         for a in arts["matches"]:
-            if a["group"] != g:
+            if a.get("group") != g:
                 continue
             if home in a["title"] and away in a["title"]:
                 fr = next((r for r in a["refs"] if r.get("source") == "FIFA公式"), a["refs"][0])
@@ -292,6 +292,26 @@ def url_lookup(arts):
                 else:
                     u = fifa_localize(fr["url"], lang)
                 return u, ("match-centre" in fr["url"])
+        return None, False
+    return finder
+
+
+def url_lookup_no(arts):
+    """knockout 試合のリンク照合 (= no が鍵)。 articles.yaml の match block で
+    no: フィールドを持つ entry のみが対象。 group stage と共存可 (group は無視)。"""
+    def finder(no, lang="ja"):
+        for a in arts["matches"]:
+            if a.get("no") != no:
+                continue
+            refs = a.get("refs") or []
+            if not refs:
+                return None, False
+            fr = next((r for r in refs if r.get("source") == "FIFA公式"), refs[0])
+            if lang == "en" and fr.get("url_en"):
+                u = fr["url_en"]
+            else:
+                u = fifa_localize(fr["url"], lang)
+            return u, ("match-centre" in fr["url"])
         return None, False
     return finder
 
@@ -417,6 +437,10 @@ table.s tbody tr:last-child td{border-bottom:none}
 .ko-sc{font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);flex-shrink:0}
 .ko-pens{font-size:10px;color:var(--muted);text-align:right;margin-top:1px}
 .ko-venue{font-size:9.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ko-card a.ko-rep{display:inline-block;margin-top:5px;background:var(--accent-soft);color:var(--accent-ink);
+  text-decoration:none;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;
+  white-space:nowrap}
+.ko-card a.ko-rep:hover{box-shadow:0 2px 7px rgba(14,143,132,.22)}
 /* 接続線: 横スタブ + ペアの縦結線（flex:1 で全カード等高なので縦線 height:100% が隣カード中心に届く）*/
 .ko-round:not(:first-of-type) .ko-match::before{content:"";position:absolute;right:100%;top:50%;width:18px;height:2px;background:var(--line)}
 .ko-round:not(:last-of-type) .ko-match:nth-child(odd)::after{content:"";position:absolute;left:100%;top:50%;width:18px;height:100%;
@@ -578,7 +602,8 @@ def _ko_slot(slot, lang):
     return esc(slot["label_ja"] if lang == "ja" else slot["label_en"]), False
 
 
-def ko_match(m, lang):
+def ko_match(m, lang, find_url_no=None):
+    L = STR[lang]
     sc = m.get("score")
     jp = lang == "ja" and (m["home"].get("team") == "日本" or m["away"].get("team") == "日本")
     rows = []
@@ -591,7 +616,19 @@ def ko_match(m, lang):
     head = (f'<div class="ko-head"><span class="ko-no">M{m["no"]}</span>'
             f'<span class="ko-dt">{esc(ko_dt(m["dt"], lang, m.get("venue")))}</span></div>')
     venue = f'<div class="ko-venue">{esc(m["city"])}</div>' if m.get("city") else ""
-    card = f'<div class="ko-card{" jp" if jp else ""}">{head}{"".join(rows)}{pens}{venue}</div>'
+    rep_html = ""
+    if sc and find_url_no:
+        url, mc = find_url_no(m["no"], lang)
+        if url:
+            if "/watch/" in url:
+                label, icon = L["video"], "▶"
+            elif mc:
+                label, icon = L["matchcentre"], "📄"
+            else:
+                label, icon = L["report"], "📄"
+            rep_html = (f'<a class="ko-rep" href="{esc(url)}" target="_blank" '
+                        f'rel="noopener">{icon} {esc(label)}</a>')
+    card = f'<div class="ko-card{" jp" if jp else ""}">{head}{"".join(rows)}{pens}{venue}{rep_html}</div>'
     return f'<div class="ko-match">{card}</div>'
 
 
@@ -623,23 +660,24 @@ def third_race_section(race, lang):
             f'<table><thead>{head}</thead><tbody>{"".join(trs)}</tbody></table></section>')
 
 
-def bracket_page(race, rounds, third, lang):
+def bracket_page(race, rounds, third, lang, find_url_no=None):
     L = STR[lang]
     cols = []
     for r in rounds:
         title = r["title_ja"] if lang == "ja" else r["title_en"]
-        cards = "".join(ko_match(m, lang) for m in r["matches"])
+        cards = "".join(ko_match(m, lang, find_url_no) for m in r["matches"])
         cols.append(f'<div class="ko-round"><h3>{esc(title)}'
                     f'<span class="ko-cnt">{len(r["matches"])}</span></h3>'
                     f'<div class="ko-col">{cards}</div></div>')
-    third_html = (f'<div class="ko-third"><h3>🥉 {esc(L["ko_third"])}</h3>{ko_match(third, lang)}</div>'
+    third_html = (f'<div class="ko-third"><h3>🥉 {esc(L["ko_third"])}</h3>'
+                  f'{ko_match(third, lang, find_url_no)}</div>'
                   if third else "")
     return (f'<p class="ko-intro">{esc(L["ko_intro"])}</p>'
             f'<div class="ko-scroll"><div class="bracket">{"".join(cols)}</div></div>{third_html}'
             f'{third_race_section(race, lang)}')
 
 
-def build_lang(lang, matches, table, find_url, conduct, fifa_rank, source, as_of, outdir, rounds, third, race):
+def build_lang(lang, matches, table, find_url, find_url_no, conduct, fifa_rank, source, as_of, outdir, rounds, third, race):
     L = STR[lang]
     grid_cards, stand_cards, link_cards, notes = [], [], [], []
     rmap = {}
@@ -702,7 +740,7 @@ def build_lang(lang, matches, table, find_url, conduct, fifa_rank, source, as_of
     (outdir / "links.html").write_text(shell(lang, "links.html", L["links_head"], links_body, as_of))
     # bracket (knockout)
     (outdir / "bracket.html").write_text(
-        shell(lang, "bracket.html", L["ko_head"], bracket_page(race, rounds, third, lang), as_of))
+        shell(lang, "bracket.html", L["ko_head"], bracket_page(race, rounds, third, lang, find_url_no), as_of))
 
 
 def main():
@@ -718,14 +756,15 @@ def main():
     gmatches = [m for m in matches if m.get("group")]   # グループ戦のみ（knockout 結果は bracket 専用）
     table = compute(gmatches)
     find_url = url_lookup(arts)
+    find_url_no = url_lookup_no(arts)
     import bracket
     rounds, third = bracket.build_rounds(matches, conduct, fifa_rank)
     race = bracket.third_place_race(matches, conduct, fifa_rank)
 
     DOCS.mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("")
-    build_lang("ja", gmatches, table, find_url, conduct, fifa_rank, source, as_of, DOCS, rounds, third, race)
-    build_lang("en", gmatches, table, find_url, conduct, fifa_rank, source, as_of, DOCS / "en", rounds, third, race)
+    build_lang("ja", gmatches, table, find_url, find_url_no, conduct, fifa_rank, source, as_of, DOCS, rounds, third, race)
+    build_lang("en", gmatches, table, find_url, find_url_no, conduct, fifa_rank, source, as_of, DOCS / "en", rounds, third, race)
     n_ko = sum(len(r["matches"]) for r in rounds) + (1 if third else 0)
     print(f"built docs/ (ja) + docs/en/ (en): index+standings+links+bracket  "
           f"({sum(1 for g in GROUP_ORDER if g in table)} groups, {len(gmatches)} group, {n_ko} KO)")

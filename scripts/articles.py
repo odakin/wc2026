@@ -67,9 +67,19 @@ def results_matches():
 def _covered(m, arts_matches):
     """results の試合 m を覆う articles ブロックがあるか判定する。
 
-    同 group・同 md ∧ 両チーム名が記事 title に含まれる ∧ 有効な url を持つ ref が
-    1 つ以上ある、 で「リンクあり」とみなす。 (group, md) だけだと同一節の複数試合を
-    区別できないため、 チーム名 (results.yaml と articles.yaml で統一表記) で照合する。"""
+    group stage = 同 group・同 md ∧ 両チーム名が記事 title に含まれる ∧ 有効な url を
+                  持つ ref が 1 つ以上ある。 (group, md) だけだと同一節の複数試合を
+                  区別できないため、 チーム名 (results.yaml と articles.yaml で統一表記)
+                  で照合する。
+    knockout    = no が一致 ∧ 有効な url を持つ ref が 1 つ以上ある (no は世界一意)。"""
+    if m.get("group") is None:
+        no = m.get("no")
+        if no is None:
+            return False
+        for a in arts_matches:
+            if a.get("no") == no and any(r.get("url") for r in (a.get("refs") or [])):
+                return True
+        return False
     home, away = m.get("home", ""), m.get("away", "")
     if not (home and away):
         return False
@@ -130,14 +140,17 @@ def validate(matches, rkeys, rmatches, today=None):
     #   猶予 (PENDING_GRACE_DAYS) を過ぎた未着は ⚠ で目立たせる (= 日本語記事が出ない試合かも
     #   → 動画②へフォールバック検討の合図) が、 それでも公開は止めない (2026-06-28)。
     for m in rmatches:
-        if not m.get("group"):   # knockout 結果 (group 無し・no が鍵) は当面リンク必須対象外
-            continue
         if _covered(m, matches):
             continue
         age = _match_age_days(m, today)
-        desc = (f"{m.get('group')}組 第{m.get('md')}節 "
-                f"{m.get('home')} {m.get('hg')}-{m.get('ag')} {m.get('away')} "
-                f"({m.get('date')})")
+        if m.get("group"):
+            desc = (f"{m.get('group')}組 第{m.get('md')}節 "
+                    f"{m.get('home')} {m.get('hg')}-{m.get('ag')} {m.get('away')} "
+                    f"({m.get('date')})")
+        else:
+            # knockout (group 無し、 no が鍵)
+            desc = (f"M{m.get('no')} {m.get('home')} {m.get('hg')}-{m.get('ag')} "
+                    f"{m.get('away')} ({m.get('date')})")
         if age >= PENDING_GRACE_DAYS:
             pending.append(f"⚠ 配信待ち({age}日経過): {desc} — リンク未着。 "
                            f"日本語記事が出ない試合かも → ハイライト動画②へのフォールバックを検討 (公開は止めない)")
@@ -161,8 +174,14 @@ def _selftest():
              "refs": [{"cat": "報道・公式", "title": "t", "url": "http://x", "source": "FIFA公式"}]}]
     b, p = validate(arts, {("K", 3)}, recent, today=today)
     assert not b and not p, (b, p)
-    # 4) knockout (group 無し) はリンク必須対象外
-    b, p = validate([], set(), [{"md": None, "date": "2026-07-01", "home": "A", "hg": 1, "ag": 0, "away": "B"}], today=today)
+    # 4a) knockout (group 無し・no が鍵) リンク無し → pending (group stage と同等扱い)
+    ko_res = [{"no": 76, "stage": "r32", "date": "2026-06-30", "home": "ブラジル", "hg": 2, "ag": 1, "away": "日本"}]
+    b, p = validate([], set(), ko_res, today=today)
+    assert not b and len(p) == 1 and "M76" in p[0], (b, p)
+    # 4b) knockout リンクあり (no で照合) → どちらにも出ない
+    ko_arts = [{"key": "M76-BRA-JPN", "no": 76, "title": "ブラジル 2-1 日本",
+                "refs": [{"cat": "報道・公式", "title": "t", "url": "http://y", "source": "FIFA公式"}]}]
+    b, p = validate(ko_arts, set(), ko_res, today=today)
     assert not b and not p, (b, p)
     # 5) URL 重複 → blocking
     dup = [{"key": "k1", "group": "A", "md": 1, "title": "X 1-0 Y",
@@ -171,7 +190,7 @@ def _selftest():
             "refs": [{"cat": "報道・公式", "title": "t", "url": "http://d", "source": "s"}]}]
     b, p = validate(dup, {("A", 1), ("A", 2)}, [], today=today)
     assert any("URL 重複" in x for x in b), b
-    print("✅ articles.py selftest OK (pending/blocking 分割・リンク欠落は非block・⚠昇格・knockout 除外・URL 重複)")
+    print("✅ articles.py selftest OK (pending/blocking 分割・リンク欠落は非block・⚠昇格・knockout pending・URL 重複)")
 
 
 def fmt_match(mt):
