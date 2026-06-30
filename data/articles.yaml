@@ -974,6 +974,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "日本語記事版が未配信のため動画にリンク(2026-06-29 09:31 JST時点)。EN動画 /en/watch/6dFyzSCghyabYGJRQk8RYB を検索インデックスで実在∧試合一致確認(タイトル『South Africa v Canada | Round of 32 | FIFA World Cup 2026™ | Highlights』、エウスタキオ90+2分)。スコア0-1はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)"
+  - key: M74-GER-PAR
+    "no": 74
+    stage: r32
+    date: 2026-06-29
+    title: "ドイツ 1-1 パラグアイ (PK 3-4)"
+    refs:
+      - cat: 報道・公式
+        title: "ドイツ v パラグアイ | ラウンド32 | 2026 FIFAワールドカップ™ | ハイライト"
+        url: "https://www.fifa.com/ja/watch/1ObqWjTvyAO5EaR5aAQYbQ"
+        source: FIFA公式
+        lang: ja
+        note: "日本語記事版が未配信のため動画にリンク(2026-06-30 09:31 JST時点)。EN動画 /en/watch/1ObqWjTvyAO5EaR5aAQYbQ を検索インデックスで実在∧試合一致確認(タイトル『Germany v Paraguay | Round of 32 | FIFA World Cup 2026™ | Highlights』)。スコア1-1・PK3-4パラグアイ勝利はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)"
   - key: M76-BRA-JPN
     "no": 76
     stage: r32
