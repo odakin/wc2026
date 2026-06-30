@@ -272,6 +272,18 @@ def _selftest():
     assert _winner_side({"hg": 1, "ag": 0}) == "home"
     assert _winner_side({"hg": 1, "ag": 1, "pens": [4, 2]}) == "home"
     assert _winner_side({"hg": 1, "ag": 1}) is None
+    # --- ツリー順 (= 接続線が正しく繋がる縦順) の回帰テスト ---
+    # propagate-knockout が R16 label を実チーム名化しても R32 葉順が変わらないこと。
+    # 期待順は KO_FEED の固定構造から決まる: M89(=74,77) M90(=73,75) M93(=83,84) M94(=81,82)
+    # M91(=76,78) M92(=79,80) M95(=86,88) M96(=85,87) — この R16 並びの feeders を平坦化したもの。
+    rounds, _ = build_rounds(
+        yaml.safe_load(FIXTURES.read_text(encoding="utf-8"))["matches"])
+    r32 = [m["no"] for m in next(r for r in rounds if r["stage"] == "r32")["matches"]]
+    r16 = [m["no"] for m in next(r for r in rounds if r["stage"] == "r16")["matches"]]
+    expected_r32 = [74, 77, 73, 75, 83, 84, 81, 82, 76, 78, 79, 80, 86, 88, 85, 87]
+    expected_r16 = [89, 90, 93, 94, 91, 92, 95, 96]
+    assert r32 == expected_r32, f"R32 葉順崩壊 (= ワープ bug 再混入?): {r32}"
+    assert r16 == expected_r16, f"R16 順崩壊: {r16}"
     print("bracket selftest ✅")
 
 
