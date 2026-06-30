@@ -435,7 +435,7 @@
 
 **📰 報道・公式**
 
-- [イングランド 0-0 ガーナ｜ハイライト動画](https://www.fifa.com/ja/watch/YMV6IJCxemtC0s8HtqPn3) — FIFA公式 / 日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/YMV6IJCxemtC0s8HtqPn3 (タイトル England v Ghana | Group L | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア0-0は FIFA+ESPN+Sky+Al Jazeera+CBS で確認
+- [イングランド 0-0 ガーナ｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/england-ghana-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-06-30 ② → ① upgrade sweep、検索 hit タイトル『イングランド 0-0 ガーナ | マッチレポートとハイライト』 で実在 ∧ 試合一致確認）
 
 ### パナマ 0-1 クロアチア（L組 / 第2節 / 2026-06-23）
 
