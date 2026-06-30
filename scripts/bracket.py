@@ -45,6 +45,21 @@ STAGE_TITLE = {
     "third": ("3位決定戦", "Third place"),
 }
 
+# FIFA 2026 公式ブラケットの feed 構造（= 各 KO 試合が「どの 2 つの前段試合の勝者から
+# 来るか」）。 **結果に依存しない大会の固定構造**。 描画の縦並び（ツリー順）はこの定数から
+# 導く。 fixtures の label を feeders の source にすると、 propagate-knockout が R32 結果を
+# R16 label に書き込んで実チーム名化した瞬間（"M74勝者 × M77勝者" → "パラグアイ × M77勝者"）
+# に feed 関係が失われ、 ツリー順が崩壊して接続線がワープする（= 2026-06-30 の bug）。
+# R32（73-88）は木の葉なので含めない。 third(103) は本線外（両 SF 敗者、 _assign は final から
+# しか辿らないので使われないが、 意味として記載）。
+KO_FEED = {
+    89: (74, 77), 90: (73, 75), 91: (76, 78), 92: (79, 80),
+    93: (83, 84), 94: (81, 82), 95: (86, 88), 96: (85, 87),
+    97: (89, 90), 98: (93, 94), 99: (91, 92), 100: (95, 96),
+    101: (97, 98), 102: (99, 100),
+    103: (101, 102), 104: (101, 102),
+}
+
 _GROUP_POS = re.compile(r"^([A-L])([1-4])$")
 _THIRD = re.compile(r"^3位\[([A-L/]+)\]$")
 _WINNER = re.compile(r"^M(\d+)勝者$")
@@ -168,14 +183,11 @@ def build_rounds(results_matches, conduct=None, fifa_rank=None):
         }
 
     # --- ブラケット木順（ペアが隣接 → flexbox で次ラウンドがペアの上下中央に揃う）---
-    # 各 KO 試合の 2 feeder（M<x>勝者 × M<y>勝者）から木を作り、 決勝から DFS して
-    # R32（葉）の縦順を決める。 上位ラウンドの順は配下葉位置の平均で導く。
-    feeders = {}
-    for f in ko:
-        ws = [int(mm.group(1)) for p in re.split(r"[×x✕]", f["label"])
-              for mm in [_WINNER.match(p.strip())] if mm]
-        if len(ws) == 2:
-            feeders[f["no"]] = ws
+    # KO_FEED（結果非依存の固定構造）から木を作り、 決勝から DFS して R32（葉）の縦順を
+    # 決める。 上位ラウンドの順は配下葉位置の平均で導く。 ⚠️ feeders を fixtures の label
+    # からパースすると、 propagate-knockout が R16 label を実チーム名に解決した瞬間に feed
+    # が失われツリー順が崩壊する（= ワープ bug）。 固定構造を source にして結果から切り離す。
+    feeders = {no: list(fs) for no, fs in KO_FEED.items() if no in built}
     leafpos, _c = {}, [0]
 
     def _assign(no):
