@@ -79,9 +79,6 @@
      ```
      python3 -c "import yaml; arts=yaml.safe_load(open('data/articles.yaml'))['matches']; [print(m.get('key'), '|', m.get('title')) for m in arts if (m.get('refs') or [{}])[0].get('url','').find('/watch/')>=0]"
      ```
-   - **試合終了直後の skip**: 各候補の試合終了から **1h 未満なら skip**（= FIFA 未配信時間帯。
-     試合 ~2h と見なし `fixtures.yaml` の `start_jst` + 2h で判定）。 これで次戦 R32 などの新規 ② が
-     入った直後の無駄打ちを抑える。
    - **WebSearch query**（両表記を必ず check。 FIFA はホーム/アウェイ表記を逆にすることがあるので
      片側だけだと取り逃す。 2026-06-30 sweep で M73 が「カナダ 1-0 南アフリカ」 タイトルだった実例あり）:
      - group: `site:fifa.com/ja "{home} {hg}-{ag} {away}" マッチレポート ハイライト`
