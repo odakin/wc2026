@@ -21,16 +21,27 @@
 ## 記事リンクの分離」 節が canonical SoT、 本ヘッダはそれを pointer 参照するだけ)。
 ##
 ## リンク優先順位 (本ヘッダが canonical SoT、 他 doc は本節を pointer 参照):
+##   3 段の tier 進行 ⓪ → ② → ①。 各試合は ja 側に存在する最上位 tier を採用する。
+##   FIFA は通常 ⓪→②→① の順で時間差配信するので、 試合直後は ⓪ や ②、 数時間〜半日で ① に昇格する。
+##   後段が配信されたら primary を必ず upgrade する (= 動画のまま記事を放置しない、 2026-06-30 違反 sweep 起点)。
+##
 ##   ① 日本語版マッチレポート記事 /ja/…/articles/<slug>-ja が配信済ならそれ
 ##     (Brave〔Claude in Chrome〕で実ページをナビゲートしライブ検証済、 2026-06-23、 実在 ∧ 試合一致〔h1見出し〕、 404 ゼロ)。
-##   ② 日本語版が未配信の試合は FIFA公式ハイライト動画 /ja/watch/<id> にリンク (英語記事より言語非依存の動画を優先、 2026-06-23 方針確定)。
-##     現在 ② は 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/ENG-GHA、 2026-06-30 snapshot、 ja 記事配信で随時消える)。
-##     ⚠️ ja 記事 upgrade は構造的に自動化されていない (= web-freshness は seminars サイト用、 articles.yaml 側
-##     の ② → ① 昇格 sweep は手動 + 定期 audit が必要、 2026-06-30 sweep で 7 件 NOR-SEN/SUI-CAN/BIH-QAT/
-##     CPV-KSA/URU-ESP/RSA-CAN/GER-PAR を一括昇格)。
+##   ② ① 未配信なら FIFA公式ハイライト動画 /ja/watch/<id> にリンク (英語記事より言語非依存の動画を優先、 2026-06-23 方針確定)。
 ##     動画 URL は web 検索で /en/watch/<id> の実在 ∧ 試合〔チーム・スコア〕一致を確認、
 ##     ja は同一 content ID を ja ロケール配信 (FIFA+ 標準)。
-##   マッチセンター (スタッツ頁) は使わない (レポートでも動画でもないため)。
+##   ⓪ ② も未配信 (= ja 側にレポートも動画も無い) なら **リンクを足さない**: 試合 entry を
+##     articles.yaml に書かない or refs を空のまま。 公開ページは結果スコアだけ表示し、 リンク
+##     button は出ない (= articles.py docstring「スコアと記事リンクの分離」 節、 best-effort)。
+##     未来試合 (まだ開催前) も ⓪ で扱う。 推測 URL を埋めない (= 死リンクの温床)。
+##
+##   現在 ② 止まりは 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/ENG-GHA、 2026-06-30 snapshot、
+##   ja 記事配信で随時 ① に昇格する)。
+##   ⚠️ Tier 進行 (⓪→②→①) は構造的に自動化されていない (= web-freshness は seminars サイト用、
+##   articles.yaml 側の upgrade sweep は手動 + 定期 audit が必要、 2026-06-30 sweep で 7 件
+##   NOR-SEN/SUI-CAN/BIH-QAT/CPV-KSA/URU-ESP/RSA-CAN/GER-PAR を一括 ② → ① 昇格)。
+##
+##   マッチセンター (スタッツ頁) は使わない (レポートでも動画でもないため、 ⓪ の方がマシ)。
 ##   en ページの URL 変換は build.py の fifa_localize() が決定論的に行う (/ja/→/en/、 記事は語尾 -ja 除去、
 ##   /watch/ は ID 不変)。 規則破れは ref の url_en で明示上書き。
 
