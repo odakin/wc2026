@@ -24,7 +24,10 @@
 ##   ① 日本語版マッチレポート記事 /ja/…/articles/<slug>-ja が配信済ならそれ
 ##     (Brave〔Claude in Chrome〕で実ページをナビゲートしライブ検証済、 2026-06-23、 実在 ∧ 試合一致〔h1見出し〕、 404 ゼロ)。
 ##   ② 日本語版が未配信の試合は FIFA公式ハイライト動画 /ja/watch/<id> にリンク (英語記事より言語非依存の動画を優先、 2026-06-23 方針確定)。
-##     現在 ② は 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/NOR-SEN/AUT-JOR、 snapshot 時点、 ja 記事配信で随時消える)。
+##     現在 ② は 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/ENG-GHA、 2026-06-30 snapshot、 ja 記事配信で随時消える)。
+##     ⚠️ ja 記事 upgrade は構造的に自動化されていない (= web-freshness は seminars サイト用、 articles.yaml 側
+##     の ② → ① 昇格 sweep は手動 + 定期 audit が必要、 2026-06-30 sweep で 7 件 NOR-SEN/SUI-CAN/BIH-QAT/
+##     CPV-KSA/URU-ESP/RSA-CAN/GER-PAR を一括昇格)。
 ##     動画 URL は web 検索で /en/watch/<id> の実在 ∧ 試合〔チーム・スコア〕一致を確認、
 ##     ja は同一 content ID を ja ロケール配信 (FIFA+ 標準)。
 ##   マッチセンター (スタッツ頁) は使わない (レポートでも動画でもないため)。
@@ -164,11 +167,11 @@ matches:
     title: "スイス 2-1 カナダ"
     refs:
       - cat: 報道・公式
-        title: "スイス 2-1 カナダ｜ハイライト動画"
-        url: "https://www.fifa.com/ja/watch/1KiU2uFEKhMDYVNebmF5Zg"
+        title: "スイス 2-1 カナダ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-canada-match-report-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/1KiU2uFEKhMDYVNebmF5Zg (タイトル Switzerland v Canada | Group B | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア2-1は FIFA+CBC+olympics.com で確認"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-06-30 ② 動画 fallback から ① ja 記事に upgrade、検索インデックスで実在∧試合一致〔タイトル『スイス 2-1 カナダ』〕確認）"
   - key: B-md3-BIH-QAT
     group: B
     md: 3
@@ -176,11 +179,11 @@ matches:
     title: "ボスニア・ヘルツェゴビナ 3-1 カタール"
     refs:
       - cat: 報道・公式
-        title: "ボスニア・ヘルツェゴビナ 3-1 カタール｜ハイライト動画"
-        url: "https://www.fifa.com/ja/watch/5CVV8X8QSnZDr6uKOh31ff"
+        title: "ボスニア・ヘルツェゴビナ 3-1 カタール｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/bosnia-and-herzegovina-qatar-highlights-match-report-ja"
         source: FIFA公式
         lang: ja
-        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版 /en/watch/5CVV8X8QSnZDr6uKOh31ff (タイトル Bosnia and Herzegovina v Qatar | Group B | Highlights) を検索インデックスで実在∧試合一致確認、ja は同一 content ID を ja ロケール配信。スコア3-1は FIFA+ESPN+FOX+サッカーキング+スポーツナビ で確認"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-06-30 ② 動画 fallback から ① ja 記事に upgrade、検索インデックスで実在∧試合一致〔タイトル『ボスニア・ヘルツェゴビナ 3-1 カタール』〕確認）"
   # ===== Group C =====
   - key: C-md1-BRA-MAR
     group: C
@@ -651,11 +654,11 @@ matches:
     title: "カーボベルデ 0-0 サウジアラビア"
     refs:
       - cat: 報道・公式
-        title: "カーボベルデ 0-0 サウジアラビア｜ハイライト動画"
-        url: "https://www.fifa.com/ja/watch/6cEIYSaBZmtelEG6H679Pu"
+        title: "カーボベルデ 0-0 サウジアラビア｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/articles/cabo-verde-saudi-arabia-match-report-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "英語版 /en/watch/6cEIYSaBZmtelEG6H679Pu (タイトル『Cabo Verde v Saudi Arabia | Group H | FIFA World Cup 2026™ | Highlights』) を検索インデックスで実在∧試合一致確認、動画IDは言語非依存。日本語記事版が未配信のためハイライト動画にリンク。スコア0-0はFIFA+ESPN+Fox Sports+Outlookで確認"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-06-30 ② 動画 fallback から ① ja 記事に upgrade、検索インデックスで実在∧試合一致確認、短 path 形式 /ja/articles/...）"
   - key: H-md3-URU-ESP
     group: H
     md: 3
@@ -663,11 +666,11 @@ matches:
     title: "ウルグアイ 0-1 スペイン"
     refs:
       - cat: 報道・公式
-        title: "ウルグアイ 0-1 スペイン｜ハイライト動画"
-        url: "https://www.fifa.com/ja/watch/2Iw0XHRZ4pZhQeVyekPApR"
+        title: "ウルグアイ 0-1 スペイン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/uruguay-spain-match-report-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "英語版 /en/watch/2Iw0XHRZ4pZhQeVyekPApR (タイトル『Uruguay v Spain | Group H | FIFA World Cup 2026™ | Highlights』) を検索インデックスで実在∧試合一致確認、動画IDは言語非依存。日本語記事版が未配信のためハイライト動画にリンク。スコア0-1(バエナ42分)はFIFA+ESPN+Al Jazeera+CBS+Outlookで確認"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-06-30 ② 動画 fallback から ① ja 記事に upgrade、検索インデックスで実在∧試合一致〔タイトル『ウルグアイ 0-1 スペイン』〕確認、スコア0-1バエナ42分）"
   # ===== Group I =====
   - key: I-md1-FRA-SEN
     group: I
@@ -712,11 +715,11 @@ matches:
     title: "ノルウェー 3-2 セネガル"
     refs:
       - cat: 報道・公式
-        title: "ノルウェー 3-2 セネガル｜ハイライト動画"
-        url: "https://www.fifa.com/ja/watch/2z83J5vynam1wsTQNemf5u"
+        title: "ノルウェー 3-2 セネガル｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/norway-senegal-match-report-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-06-30 ② 動画 fallback から ① ja 記事に upgrade、検索インデックスで実在∧試合一致確認）"
   - key: I-md3-NOR-FRA
     group: I
     md: 3
@@ -969,11 +972,11 @@ matches:
     title: "南アフリカ 0-1 カナダ"
     refs:
       - cat: 報道・公式
-        title: "南アフリカ v カナダ | ラウンド32 | 2026 FIFAワールドカップ™ | ハイライト"
-        url: "https://www.fifa.com/ja/watch/6dFyzSCghyabYGJRQk8RYB"
+        title: "南アフリカ 0-1 カナダ｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/south-africa-canada-review-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "日本語記事版が未配信のため動画にリンク(2026-06-29 09:31 JST時点)。EN動画 /en/watch/6dFyzSCghyabYGJRQk8RYB を検索インデックスで実在∧試合一致確認(タイトル『South Africa v Canada | Round of 32 | FIFA World Cup 2026™ | Highlights』、エウスタキオ90+2分)。スコア0-1はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-06-30 ② 動画 fallback から ① ja 記事に upgrade、検索インデックスで実在∧試合一致〔タイトル『カナダ 1-0 南アフリカ | マッチレポート＆ハイライト』、エウスタキオ90+2分〕確認）"
   - key: M74-GER-PAR
     "no": 74
     stage: r32
@@ -981,11 +984,11 @@ matches:
     title: "ドイツ 1-1 パラグアイ (PK 3-4)"
     refs:
       - cat: 報道・公式
-        title: "ドイツ v パラグアイ | ラウンド32 | 2026 FIFAワールドカップ™ | ハイライト"
-        url: "https://www.fifa.com/ja/watch/1ObqWjTvyAO5EaR5aAQYbQ"
+        title: "ドイツ 1-1 パラグアイ (PK: 3-4)｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-paraguay-review-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "日本語記事版が未配信のため動画にリンク(2026-06-30 09:31 JST時点)。EN動画 /en/watch/1ObqWjTvyAO5EaR5aAQYbQ を検索インデックスで実在∧試合一致確認(タイトル『Germany v Paraguay | Round of 32 | FIFA World Cup 2026™ | Highlights』)。スコア1-1・PK3-4パラグアイ勝利はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-06-30 ② 動画 fallback から ① ja 記事に upgrade、検索インデックスで実在∧試合一致〔タイトル『ドイツ 1-1 (PK: 3-4 ) パラグアイ | マッチレポートとハイライト』〕確認）"
   - key: M75-NED-MAR
     "no": 75
     stage: r32
