@@ -87,7 +87,7 @@ matches:
   - {"no": 87, stage: r32, label: "コロンビア × ガーナ",                       start_jst: "2026-07-04T10:30:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ"}
 
   # ============ KNOCKOUT — ラウンド16 (8 試合) ============
-  - {"no": 90, stage: r16, label: "カナダ × M75勝者", start_jst: "2026-07-05T02:00:00+09:00", venue: "NRG Stadium", city: "ヒューストン"}
+  - {"no": 90, stage: r16, label: "カナダ × モロッコ", start_jst: "2026-07-05T02:00:00+09:00", venue: "NRG Stadium", city: "ヒューストン"}
   - {"no": 89, stage: r16, label: "パラグアイ × M77勝者", start_jst: "2026-07-05T06:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア"}
   - {"no": 91, stage: r16, label: "ブラジル × M78勝者", start_jst: "2026-07-06T05:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)"}
   - {"no": 92, stage: r16, label: "M79勝者 × M80勝者", start_jst: "2026-07-06T09:00:00+09:00", venue: "Estadio Azteca", city: "メキシコシティ"}
