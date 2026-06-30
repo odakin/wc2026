@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 75 / リンク数: 83
+- 試合数: 76 / リンク数: 84
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -466,6 +466,12 @@
 **📰 報道・公式**
 
 - [ドイツ v パラグアイ | ラウンド32 | 2026 FIFAワールドカップ™ | ハイライト](https://www.fifa.com/ja/watch/1ObqWjTvyAO5EaR5aAQYbQ) — FIFA公式 / 日本語記事版が未配信のため動画にリンク(2026-06-30 09:31 JST時点)。EN動画 /en/watch/1ObqWjTvyAO5EaR5aAQYbQ を検索インデックスで実在∧試合一致確認(タイトル『Germany v Paraguay | Round of 32 | FIFA World Cup 2026™ | Highlights』)。スコア1-1・PK3-4パラグアイ勝利はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)
+
+### オランダ 1-1 モロッコ (PK 2-3)（2026-06-29）
+
+**📰 報道・公式**
+
+- [オランダ 1-1 モロッコ（PK：2-3） | マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-morocco-review-highlights-ja) — FIFA公式 / 検索インデックスで実在∧試合一致確認(タイトル『オランダ 1-1 モロッコ（PK：2-3） | マッチレポートとハイライト』)。英語版 .../articles/netherlands-morocco-review-highlights も同slug+-jaで導出。スコア1-1・PK3-2モロッコ勝利はFIFA+ESPN+Yahoo Sports+サッカーキングで確認(ガクポ72分→ディオプ90+1分、PK戦でサイバリが決勝・ブヌがサマービルを阻止)
 
 ### ブラジル 2-1 日本（2026-06-29）
 

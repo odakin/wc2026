@@ -986,6 +986,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "日本語記事版が未配信のため動画にリンク(2026-06-30 09:31 JST時点)。EN動画 /en/watch/1ObqWjTvyAO5EaR5aAQYbQ を検索インデックスで実在∧試合一致確認(タイトル『Germany v Paraguay | Round of 32 | FIFA World Cup 2026™ | Highlights』)。スコア1-1・PK3-4パラグアイ勝利はFIFA+ESPN+FOX Sportsで確認。jaは同一content IDをjaロケール配信(FIFA+標準)"
+  - key: M75-NED-MAR
+    "no": 75
+    stage: r32
+    date: 2026-06-29
+    title: "オランダ 1-1 モロッコ (PK 2-3)"
+    refs:
+      - cat: 報道・公式
+        title: "オランダ 1-1 モロッコ（PK：2-3） | マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/netherlands-morocco-review-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認(タイトル『オランダ 1-1 モロッコ（PK：2-3） | マッチレポートとハイライト』)。英語版 .../articles/netherlands-morocco-review-highlights も同slug+-jaで導出。スコア1-1・PK3-2モロッコ勝利はFIFA+ESPN+Yahoo Sports+サッカーキングで確認(ガクポ72分→ディオプ90+1分、PK戦でサイバリが決勝・ブヌがサマービルを阻止)"
   - key: M76-BRA-JPN
     "no": 76
     stage: r32
