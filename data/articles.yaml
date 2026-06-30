@@ -36,10 +36,14 @@
 ##     未来試合 (まだ開催前) も ⓪ で扱う。 推測 URL を埋めない (= 死リンクの温床)。
 ##
 ##   現在 ② 止まりは 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/ENG-GHA、 2026-06-30 snapshot、
-##   ja 記事配信で随時 ① に昇格する)。
-##   ⚠️ Tier 進行 (⓪→②→①) は構造的に自動化されていない (= web-freshness は seminars サイト用、
-##   articles.yaml 側の upgrade sweep は手動 + 定期 audit が必要、 2026-06-30 sweep で 7 件
-##   NOR-SEN/SUI-CAN/BIH-QAT/CPV-KSA/URU-ESP/RSA-CAN/GER-PAR を一括 ② → ① 昇格)。
+##   ja 記事配信で随時 ① に昇格する)。 ↑この list と件数は 30 分 cron の §6 sweep が自動 maintain する。
+##   Tier 進行 (⓪→②→①) は 2 段で自動化:
+##     ⓪→② = AUTO_UPDATE.md §3 backfill (= scripts/articles.py --check の pending list を毎 run 再探索、
+##             link 完全不在の試合を WebSearch で探す)
+##     ②→① = AUTO_UPDATE.md §6 upgrade sweep (= video-primary を毎 run WebSearch で再 audit、
+##             ja 記事配信を検出したら upgrade、 2026-06-30 設置)
+##   2026-06-30 初回手動 sweep で 7 件 (NOR-SEN/SUI-CAN/BIH-QAT/CPV-KSA/URU-ESP/RSA-CAN/GER-PAR) を
+##   ②→① 一括昇格、 以降は新規 ② が追加されてから ja 記事配信まで約 30 分〜数時間で自動 upgrade される。
 ##
 ##   マッチセンター (スタッツ頁) は使わない (レポートでも動画でもないため、 ⓪ の方がマシ)。
 ##   en ページの URL 変換は build.py の fifa_localize() が決定論的に行う (/ja/→/en/、 記事は語尾 -ja 除去、

@@ -15,7 +15,7 @@
 
 - このリポが clone 済み・`gh` 認証済（push 可）・PyYAML 利用可。
 - 期間: 大会の対象期間中のみ 30 分ごと。**停止日 = 2026-07-20**（W杯決勝 2026-07-19 の翌日）。
-  それ以降は自分で停止する（§6）。⚠️ 決勝トーナメントは 7 月まで続くので、停止日を前倒しして大会途中で止めないこと。
+  それ以降は自分で停止する（「終了」 セクション）。⚠️ 決勝トーナメントは 7 月まで続くので、停止日を前倒しして大会途中で止めないこと。
 
 ## このジョブの登録（再登録）
 
@@ -31,7 +31,7 @@
 
 ## 毎回の手順
 
-1. **期間チェック（最優先）**: 今が**停止日（2026-07-20）以降**なら §6 に従い停止して終了。
+1. **期間チェック（最優先）**: 今が**停止日（2026-07-20）以降**なら 「終了」 セクションに従い停止して終了。
    それ以前なら続行。
 2. **同期**: `git fetch` → clean かつ ff 可能なら `git pull --ff-only`。
    diverged/dirty なら surface して**この回は中断**（壊さない）。
@@ -53,12 +53,12 @@
    - **`"no"`（FIFA公式試合番号）も必ず付与**: `fixtures.yaml` の同カード（同 group + 同チーム対）の `no` をそのままコピー
      （= results と fixtures を no で join できる状態を保つ）。キーは **`no:` でなく `"no":` とクォート**する
      （PyYAML が `no:` を boolean False キーに解釈する YAML1.1 の罠）。fixtures に無い早期試合は触らない想定だが、
-     念のため §6 の検算ゲートで欠落・不一致を検出する。
+     念のため §7 の検算ゲートで欠落・不一致を検出する。
    - **決勝T（knockout）の結果は `winner:`（チーム名）も記録する**（= 延長・PK では score だけで勝者が
      出ないため）。**PK 戦は `winner` 必須** + `note` に「PK ○-○ で◯◯勝利」を 2 ソースで明記（hg/ag は
      延長終了時のスコア）。score 決着でも `winner` を付けると伝播が確実（無ければ hg/ag から導出、引き分け
      かつ `winner` 無しは未解決扱い）。knockout は `group` を付けない（順位計算対象外）。`winner` は home/away
-     のどちらかに一致させる。次ラウンドの対戦カードは §6 の伝播ステップが自動で埋めるので手で書かない。
+     のどちらかに一致させる。次ラウンドの対戦カードは §7 の伝播ステップが自動で埋めるので手で書かない。
    - **記事リンクは best-effort（見つかれば追記、無ければ配信待ちのまま先へ）**: FIFA公式リンクの URL を探して
      `data/articles.yaml` に追記（cat: 報道・公式 / source: FIFA公式）。 見つからなければ追記しないだけで、
      スコアは上で記録済み（= 順位は反映済）。そのリンクは次回 run の §3 backfill 候補として再探索される。
@@ -72,7 +72,43 @@
      `meta.tiebreak.conduct` に出典付きで追加。**逆に、後の節で同点が解消し criterion 1〜5 で
      決着したら、その組の conduct エントリは削除する**（追加するルールだけだと決着後も残って
      stale な順位注記になる。2026-06-28 に K組で実際に発生＝「(コンゴが上位)」が決着後も残存）。
-6. **再生成 + 公開**:
+6. **② → ① upgrade sweep（link 軸の毎 run 保守、 必ず §7 の rebuild より前に走らせる）**:
+   既存の video-primary entry（= ② tier）を全部走査して、 FIFA が後追いで ja マッチレポート記事を
+   配信していないか WebSearch で再 audit する。 配信されていれば自動で ②→① に upgrade。
+   - **対象列挙**（primary url が `/watch/` を含む match block を全部）:
+     ```
+     python3 -c "import yaml; arts=yaml.safe_load(open('data/articles.yaml'))['matches']; [print(m.get('key'), '|', m.get('title')) for m in arts if (m.get('refs') or [{}])[0].get('url','').find('/watch/')>=0]"
+     ```
+   - **試合終了直後の skip**: 各候補の試合終了から **1h 未満なら skip**（= FIFA 未配信時間帯。
+     試合 ~2h と見なし `fixtures.yaml` の `start_jst` + 2h で判定）。 これで次戦 R32 などの新規 ② が
+     入った直後の無駄打ちを抑える。
+   - **WebSearch query**（両表記を必ず check。 FIFA はホーム/アウェイ表記を逆にすることがあるので
+     片側だけだと取り逃す。 2026-06-30 sweep で M73 が「カナダ 1-0 南アフリカ」 タイトルだった実例あり）:
+     - group: `site:fifa.com/ja "{home} {hg}-{ag} {away}" マッチレポート ハイライト`
+       + `site:fifa.com/ja "{away} {ag}-{hg} {home}" マッチレポート ハイライト`
+     - knockout: 同上 + 必要に応じ「ラウンド32」/「準々決勝」 等を query に追加
+   - **必須 gate（= false positive 防止）**:
+     1. 検索結果の URL が `/ja/(...)/articles/{slug}-ja`（長 path）または `/ja/articles/{slug}-ja`（短 path）
+        の形であること。
+     2. その検索結果のタイトルに「{home} {hg}-{ag} {away}」 か「{away} {ag}-{hg} {home}」 が**含まれる**こと。
+     ⚠️ `fifa.com` は SPA なので HEAD 200 を全 URL に返す → URL 単独確認は無効。 **検索 hit のタイトル一致が
+     唯一の生死確認 gate**。 上 2 条件いずれか欠ければ apply しない。
+   - **apply**（gate 通過したら `articles.yaml` の該当 entry を書き換え）:
+     - `url`: 採用した ja 記事 URL
+     - `title`: 「{home} {hg}-{ag} {away}｜マッチレポート＆ハイライト」（PK 戦は `(PK x-y)` を含める、
+       例「ドイツ 1-1 パラグアイ (PK 3-4)｜マッチレポートとハイライト」）
+     - `note`: 「FIFA公式マッチレポート＋ハイライト（YYYY-MM-DD ② → ① upgrade sweep、
+       検索 hit タイトル『{hit title}』 で実在 ∧ 試合一致確認）」 で完全置換（古い動画 note は捨てる）
+   - **不一致 / 0 hit / WebSearch エラー**: そのまま video のまま放置（= **downgrade しない**、
+     次回 run で再 sweep される）。
+   - **ヘッダ自己 maintenance**: 1 件以上 upgrade した場合は `articles.yaml` ヘッダの
+     「現在 ② 止まりは N 試合 (XX/YY/...)」 の N と list、 snapshot 日付も更新する（= 次回 sweep 対象判定の
+     SoT になっているわけではないが、 ヘッダの記述と実態を一致させる）。
+   - ⚠️ **推測 URL 禁止**。 video のまま放置するのは安全側、 誤 upgrade は不可逆（= 死 URL を public に
+     出してしまう、 fifa_localize で en 側にも同型死 URL が伝播する）。 タイトル一致 gate を必ず通す。
+   - sweep が 0 件で済む run の方が普通（= 新規 ② が無ければ run skip と等価）。 1 件以上 upgrade した
+     run は commit に「articles: ② → ① sweep upgrade N 件 (...)」 を含めて他 session から見えるようにする。
+7. **再生成 + 公開**:
    - `python3 scripts/standings.py --write`（順位表 + `standings.md`）。
    - `python3 scripts/articles.py --write`（`articles.md`）。
    - **記事ゲート**: `python3 scripts/articles.py --check`。 blocking finding（ref 欄欠落・未知
@@ -94,13 +130,13 @@
    - **leak gate**: 差分を `group\.calendar|@gmail|@.*\.ac\.jp|/Users/` 等（個人情報・カレンダー ID・
      個人パス・内部 private リポ名）で grep し、ヒットしたら push 中止して surface（公開リポに出さない）。
    - commit + push（main）。GitHub Pages が自動反映。
-7. **何も新規が無い回**: それでも **死活打刻だけは必ず行う** —
+8. **何も新規が無い回**: それでも **死活打刻だけは必ず行う** —
    `python3 scripts/heartbeat.py --beat` → `heartbeat.json` のみを commit + push して終了。
    - これを毎回やることで、別マシンから `python3 scripts/heartbeat.py --check` でジョブの死活が判る
      （= no-op を理由に打刻を飛ばすと「試合が無いだけ」か「ジョブが死んだ」かが区別できなくなる。
      2026-06-26 に実際にこれで 6 試合を取りこぼした）。閾値超で `--check` は exit 1。
 
-## §6 終了（対象期間後 = 2026-07-20 以降）
+## 終了（対象期間後 = 2026-07-20 以降）
 
 停止日（2026-07-20）以降の最初の実行で、最後に最終結果を反映してから、自分（この自動更新ジョブ）を停止する。
 このジョブが **scheduled task** か **launchd cron** かで止め方が違う:
