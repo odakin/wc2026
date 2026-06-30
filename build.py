@@ -93,6 +93,28 @@ VENUE_TZ = {
     "SoFi Stadium": "America/Los_Angeles",     # Inglewood CA (LA)
 }
 
+# 開催スタジアム → 英語都市表記 (en ページで ko-venue / 試合カードの city を出すため)。
+# fixtures.yaml の city は日本語のみ ∴ venue を key に決定論的に英訳 (= 派生 SoT、
+# fixtures に city_en を冗長格納しない)。
+VENUE_CITY_EN = {
+    "AT&T Stadium": "Arlington (Dallas)",
+    "Arrowhead Stadium": "Kansas City",
+    "NRG Stadium": "Houston",
+    "BC Place": "Vancouver",
+    "BMO Field": "Toronto",
+    "Estadio Akron": "Zapopan (Guadalajara)",
+    "Estadio Azteca": "Mexico City",
+    "Estadio BBVA": "Guadalupe (Monterrey)",
+    "Gillette Stadium": "Foxborough (Boston)",
+    "Hard Rock Stadium": "Miami Gardens",
+    "Lincoln Financial Field": "Philadelphia",
+    "Mercedes-Benz Stadium": "Atlanta",
+    "MetLife Stadium": "East Rutherford (NY/NJ)",
+    "Levi's Stadium": "Santa Clara (SF)",
+    "Lumen Field": "Seattle",
+    "SoFi Stadium": "Inglewood (LA)",
+}
+
 # チーム名 → FIFA 公式チーム紹介ページの英語 slug。
 # URL は https://www.fifa.com/{ja|en}/tournaments/mens/worldcup/canadamexicousa2026/teams/<slug>
 # (Web 検索で確認した実 URL pattern。 同 pattern の article URL に
@@ -615,7 +637,10 @@ def ko_match(m, lang, find_url_no=None):
     pens = f'<div class="ko-pens">PK {sc["pens"][0]}-{sc["pens"][1]}</div>' if sc and sc.get("pens") else ""
     head = (f'<div class="ko-head"><span class="ko-no">M{m["no"]}</span>'
             f'<span class="ko-dt">{esc(ko_dt(m["dt"], lang, m.get("venue")))}</span></div>')
-    venue = f'<div class="ko-venue">{esc(m["city"])}</div>' if m.get("city") else ""
+    city_disp = m.get("city")
+    if lang == "en" and m.get("venue") in VENUE_CITY_EN:
+        city_disp = VENUE_CITY_EN[m["venue"]]
+    venue = f'<div class="ko-venue">{esc(city_disp)}</div>' if city_disp else ""
     rep_html = ""
     if sc and find_url_no:
         url, mc = find_url_no(m["no"], lang)
