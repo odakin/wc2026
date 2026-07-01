@@ -1028,3 +1028,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認(タイトル『ブラジル 2-1 日本 | マッチレポート＆ハイライト』)。英語版 .../articles/brazil-japan-review-highlights も同時確認。スコア2-1はFIFA(佐野29'/カゼミーロ55'/マルティネッリ90+6')"
+  - key: M78-CIV-NOR
+    "no": 78
+    stage: r32
+    date: 2026-06-30
+    title: "コートジボワール 1-2 ノルウェー"
+    refs:
+      - cat: 報道・公式
+        title: "コートジボワール 1-2 ノルウェー｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/cote-divoire-norway-review-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『コートジボワール 1-2 ノルウェー | マッチポートとハイライト | FIFAワールドカップ2026』、ヌーサ39分・ハーランド86分でノルウェー勝ち越し、ディアロ74分）。英語版 .../articles/cote-divoire-norway-review-highlights も同slug+-jaで導出。スコア1-2はFIFA記事+日経+Yahoo(GOAL/サッカーマガジンWeb)で確認"

@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 76 / リンク数: 84
+- 試合数: 77 / リンク数: 85
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -478,3 +478,9 @@
 **📰 報道・公式**
 
 - [ブラジル 2-1 日本 | マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-japan-review-highlights-ja) — FIFA公式 / 検索インデックスで実在∧試合一致確認(タイトル『ブラジル 2-1 日本 | マッチレポート＆ハイライト』)。英語版 .../articles/brazil-japan-review-highlights も同時確認。スコア2-1はFIFA(佐野29'/カゼミーロ55'/マルティネッリ90+6')
+
+### コートジボワール 1-2 ノルウェー（2026-06-30）
+
+**📰 報道・公式**
+
+- [コートジボワール 1-2 ノルウェー｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/cote-divoire-norway-review-highlights-ja) — FIFA公式 / 検索インデックスで実在∧試合一致確認（タイトル『コートジボワール 1-2 ノルウェー | マッチポートとハイライト | FIFAワールドカップ2026』、ヌーサ39分・ハーランド86分でノルウェー勝ち越し、ディアロ74分）。英語版 .../articles/cote-divoire-norway-review-highlights も同slug+-jaで導出。スコア1-2はFIFA記事+日経+Yahoo(GOAL/サッカーマガジンWeb)で確認
