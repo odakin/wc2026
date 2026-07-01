@@ -1040,3 +1040,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『コートジボワール 1-2 ノルウェー | マッチポートとハイライト | FIFAワールドカップ2026』、ヌーサ39分・ハーランド86分でノルウェー勝ち越し、ディアロ74分）。英語版 .../articles/cote-divoire-norway-review-highlights も同slug+-jaで導出。スコア1-2はFIFA記事+日経+Yahoo(GOAL/サッカーマガジンWeb)で確認"
+  - key: M79-MEX-ECU
+    "no": 79
+    stage: r32
+    date: 2026-06-30
+    title: "メキシコ 2-0 エクアドル"
+    refs:
+      - cat: 報道・公式
+        title: "メキシコ 2-0 エクアドル｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-ecuador-review-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『メキシコ 2-0 エクアドル | マッチレポート＆ハイライト』）。キニョネス22分・ヒメネス31分でメキシコが前半2-0、40年ぶりのW杯knockout勝利。スコアはFIFA記事+ESPN+Yahoo Sports複数ソースで確認"
