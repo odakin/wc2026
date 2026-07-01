@@ -35,7 +35,7 @@
 ##     button は出ない (= articles.py docstring「スコアと記事リンクの分離」 節、 best-effort)。
 ##     未来試合 (まだ開催前) も ⓪ で扱う。 推測 URL を埋めない (= 死リンクの温床)。
 ##
-##   現在 ② 止まりは 4 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR、 2026-06-30 snapshot、
+##   現在 ② 止まりは 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/FRA-SWE、 2026-07-01 snapshot、
 ##   ja 記事配信で随時 ① に昇格する)。 ↑この list と件数は 30 分 cron の §6 sweep が自動 maintain する。
 ##   Tier 進行 (⓪→②→①) は 2 段で自動化:
 ##     ⓪→② = AUTO_UPDATE.md §3 backfill (= scripts/articles.py --check の pending list を毎 run 再探索、
@@ -1028,6 +1028,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認(タイトル『ブラジル 2-1 日本 | マッチレポート＆ハイライト』)。英語版 .../articles/brazil-japan-review-highlights も同時確認。スコア2-1はFIFA(佐野29'/カゼミーロ55'/マルティネッリ90+6')"
+  - key: M77-FRA-SWE
+    "no": 77
+    stage: r32
+    date: 2026-06-30
+    title: "フランス 3-0 スウェーデン"
+    refs:
+      - cat: 報道・公式
+        title: "フランス 3-0 スウェーデン｜ハイライト動画"
+        url: "https://www.fifa.com/ja/watch/SQUgNGrNai36KI7q8vHo6"
+        source: FIFA公式
+        lang: ja
+        note: "日本語マッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版動画 /en/watch/SQUgNGrNai36KI7q8vHo6（検索タイトル『France v Sweden | Round of 32 | FIFA World Cup 2026』）で動画ID実在∧試合一致確認。エムバペ45分・バルコラ53分・エムバペ74分"
   - key: M78-CIV-NOR
     "no": 78
     stage: r32
