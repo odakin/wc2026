@@ -483,7 +483,7 @@
 
 **📰 報道・公式**
 
-- [フランス 3-0 スウェーデン｜ハイライト動画](https://www.fifa.com/ja/watch/SQUgNGrNai36KI7q8vHo6) — FIFA公式 / 日本語マッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）。英語版動画 /en/watch/SQUgNGrNai36KI7q8vHo6（検索タイトル『France v Sweden | Round of 32 | FIFA World Cup 2026』）で動画ID実在∧試合一致確認。エムバペ45分・バルコラ53分・エムバペ74分
+- [フランス 3-0 スウェーデン｜マッチレポートとハイライト](https://www.fifa.com/ja/articles/france-sweden-review-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-01 ② → ① upgrade sweep、検索 hit タイトル『フランス 3-0 スウェーデン | マッチレポートとハイライト | FIFAワールドカップ2026』で実在∧試合一致確認）
 
 ### コートジボワール 1-2 ノルウェー（2026-06-30）
 
