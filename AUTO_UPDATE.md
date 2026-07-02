@@ -46,6 +46,15 @@
    （FIFA 公式 + ESPN / Sky Sports / Wikipedia / 各国紙のいずれか）で一致確認。
    - **中断・進行中・1 ソースのみ → 記録しない**（次回に回す）。スコアを憶測で埋めない。
 5. **スコアを追記**（確定したものだけ・**記事リンクの有無に関わらず即記録する**）:
+   - **「確定」の操作的定義（必須ゲート）**: 記録してよいのは **2 独立ソースが「試合終了」
+     （FT / Full Time / 試合終了 / Final）を明示**している結果だけ。ライブスコア表示（経過分表示・
+     LIVE バッジ・"HT" 等のあるページ）から読んだスコアは、たとえ大差でも**最終結果として記録しない**。
+     **決勝T は特に**: 90 分同点なら必ず延長→PK に進むので、「勝者 + 決着方法（90分 / 延長 / PK）」まで
+     特定できてから記録する（ソースがスコアだけで決着方法に触れていない knockout 結果は未確定と見なす）。
+     ⚠ 実事故 2 件: M76 = kickoff+75分（後半途中）の「0-1」を最終記録→revert（2026-06-30）、
+     M82 = kickoff+113分（延長突入直後）に古いライブスコア「0-2」を最終記録→伝播が M94 に誤チームを
+     焼き込み（2026-07-02）。「早く載せたい」より「終わってから載せる」— 30 分後の次 run で拾えば十分。
+     物理下限（kickoff+105分 未満は FT 不可能等）は §7 の finality gate が機械強制する。
    - スコアと記事リンクは分離: リンク未着でも `results.yaml` にスコアを記録 → `standings.py` 経由で
      順位表・公開サイトに即反映。原則の正本は [`scripts/articles.py`](scripts/articles.py) docstring。
    - `data/results.yaml` の `matches:` に 1 行追記（schema: `{"no", group, md, date(現地開催日), home, away, hg, ag, note?}`、
@@ -116,6 +125,11 @@
    - **試合番号ゲート（必須）**: `python3 scripts/check-match-numbers.py`。
      finding（result の `no` 欠落・重複、fixtures との `no` 不一致）が出たら **exit 1**。
      その場合は §5 に戻って `no` を正す（fixtures の同カードの no と一致させる）。番号がズレたまま公開しない。
+   - **finality gate（必須、伝播より前）**: `python3 scripts/check-result-finality.py`。
+     新規追記した result が「試合が物理的に終わり得ない時刻」（kickoff+105分 未満、PK 決着なら
+     +145分 未満）の記録なら **exit 1** = 試合中のライブスコアを最終結果として書いた疑い。
+     その entry を `results.yaml` から外して先へ進み、FT を 2 ソース確認してから次 run で記録する
+     （§5 の「確定」定義が一次防御、本 gate は物理下限の機械 backstop）。
    - **決勝T 伝播（knockout の対戦カード自動進行）**: `python3 scripts/propagate-knockout.py --apply`。
      script 内蔵のブラケット構造 SoT（`BRACKET_SLOTS`）⊕ results から R16 以降の `fixtures.yaml` の
      label を毎回**再導出**して現 label と比較する（冪等 + 自己修復: results を後から訂正すれば誤伝播
