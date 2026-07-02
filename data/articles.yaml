@@ -35,7 +35,7 @@
 ##     button は出ない (= articles.py docstring「スコアと記事リンクの分離」 節、 best-effort)。
 ##     未来試合 (まだ開催前) も ⓪ で扱う。 推測 URL を埋めない (= 死リンクの温床)。
 ##
-##   現在 ② 止まりは 4 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR、 2026-07-01 sweep 後 snapshot、
+##   現在 ② 止まりは 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/USA-BIH、 2026-07-03 snapshot、
 ##   ja 記事配信で随時 ① に昇格する)。 ↑この list と件数は 30 分 cron の §6 sweep が自動 maintain する。
 ##   Tier 進行 (⓪→②→①) は 2 段で自動化:
 ##     ⓪→② = AUTO_UPDATE.md §3 backfill (= scripts/articles.py --check の pending list を毎 run 再探索、
@@ -1076,6 +1076,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『イングランド 2-1 コンゴ | マッチレポートとハイライト』）。シペンガ7分先制→ケーン75・86分2得点で逆転勝利。スコア2-1はFIFA記事+Goal.com Japan+flashscore.co.jpで確認"
+  - key: M81-USA-BIH
+    "no": 81
+    stage: r32
+    date: 2026-07-01
+    title: "アメリカ合衆国 2-0 ボスニア・ヘルツェゴビナ"
+    refs:
+      - cat: 報道・公式
+        title: "アメリカ合衆国 2-0 ボスニア・ヘルツェゴビナ｜ハイライト"
+        url: "https://www.fifa.com/ja/watch/5C4EUTQtunUpC47YeP9Uj1"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/5C4EUTQtunUpC47YeP9Uj1 の検索タイトル『Highlights USA v Bosnia and Herzegovina | Round of 32』で実在∧試合一致確認。スコア2-0はESPN+NBCニュース2ソース確認済）"
   - key: M82-BEL-SEN
     "no": 82
     stage: r32
