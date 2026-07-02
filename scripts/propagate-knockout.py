@@ -30,8 +30,8 @@
     2. 無ければ hg/ag の大きい方。
     3. 引き分け (hg==ag) で winner 無し → **未解決** (= PK の勝者未記録)。 slot を維持し ⚠ で surface。
 
-冪等: 同じ results に対し何度走らせても同じ fixtures になる (= 解決済み side は実チーム名なので
-   slot regex に当たらず不変)。 未解決の feeder は slot のまま残る (= 早すぎる埋めをしない)。
+冪等: 同じ results に対し何度走らせても同じ fixtures になる (= label は常に BRACKET_SLOTS ⊕ results の
+   純関数として再導出され、 一致していれば no-op)。 未解決の feeder は slot のまま残る (= 早すぎる埋めをしない)。
 
 整形保持: PyYAML の dump は flow-style inline dict とコメントを壊すため、 該当行を
    **surgical text 置換** する (= `label: "<old>"` → `label: "<new>"` のみ、 他は touch しない)。
@@ -52,8 +52,6 @@ ROOT = Path(__file__).resolve().parent.parent
 FIXTURES = ROOT / "data" / "fixtures.yaml"
 RESULTS = ROOT / "data" / "results.yaml"
 
-# slot 表記を持つ決勝T stage (r32 は既に実チームなので no-op だが、 一般性のため含める)。
-KNOCKOUT_STAGES = {"r32", "r16", "qf", "sf", "third", "final"}
 SLOT_RE = re.compile(r"^M(\d+)(勝者|敗者)$")
 SEP = " × "  # label のチーム区切り (全角 × の前後 space)
 
