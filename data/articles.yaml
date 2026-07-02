@@ -1076,3 +1076,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『イングランド 2-1 コンゴ | マッチレポートとハイライト』）。シペンガ7分先制→ケーン75・86分2得点で逆転勝利。スコア2-1はFIFA記事+Goal.com Japan+flashscore.co.jpで確認"
+  - key: M82-BEL-SEN
+    "no": 82
+    stage: r32
+    date: 2026-07-01
+    title: "ベルギー 3-2 セネガル"
+    refs:
+      - cat: 報道・公式
+        title: "ベルギー 3-2 セネガル｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-senegal-review-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『ベルギー 3-2 セネガル | マッチレポートとハイライト』）。ディアラ25分・サル51分で2-0も、ルカク86分・ティーレマンス89分で同点、延長125分PKで3-2逆転。スコア3-2はFIFA記事+ESPN 2ソース確認"

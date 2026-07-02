@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 80 / リンク数: 88
+- 試合数: 81 / リンク数: 89
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -502,3 +502,9 @@
 **📰 報道・公式**
 
 - [イングランド 2-1 コンゴ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/england-congo-dr-review-highlights-ja) — FIFA公式 / 検索インデックスで実在∧試合一致確認（タイトル『イングランド 2-1 コンゴ | マッチレポートとハイライト』）。シペンガ7分先制→ケーン75・86分2得点で逆転勝利。スコア2-1はFIFA記事+Goal.com Japan+flashscore.co.jpで確認
+
+### ベルギー 3-2 セネガル（2026-07-01）
+
+**📰 報道・公式**
+
+- [ベルギー 3-2 セネガル｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/belgium-senegal-review-highlights-ja) — FIFA公式 / 検索インデックスで実在∧試合一致確認（タイトル『ベルギー 3-2 セネガル | マッチレポートとハイライト』）。ディアラ25分・サル51分で2-0も、ルカク86分・ティーレマンス89分で同点、延長125分PKで3-2逆転。スコア3-2はFIFA記事+ESPN 2ソース確認
