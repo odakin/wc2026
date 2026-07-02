@@ -117,10 +117,14 @@
      finding（result の `no` 欠落・重複、fixtures との `no` 不一致）が出たら **exit 1**。
      その場合は §5 に戻って `no` を正す（fixtures の同カードの no と一致させる）。番号がズレたまま公開しない。
    - **決勝T 伝播（knockout の対戦カード自動進行）**: `python3 scripts/propagate-knockout.py --apply`。
-     記録済み knockout 結果から、次ラウンドの `fixtures.yaml` の slot label（`M<no>勝者`/`M<no>敗者`）を
-     実チーム名に決定論的に解決する（冪等。R32 結果→R16、R16 結果→QF、… と 1 段ずつ自動で埋まる）。
+     script 内蔵のブラケット構造 SoT（`BRACKET_SLOTS`）⊕ results から R16 以降の `fixtures.yaml` の
+     label を毎回**再導出**して現 label と比較する（冪等 + 自己修復: results を後から訂正すれば誤伝播
+     済みの label も自動で直る = 2026-07-02 M82 誤記録→M94 焼き込み事故の再発防止。R32 結果→R16、
+     R16 結果→QF、… と 1 段ずつ自動で埋まる）。
      **変更があれば `data/fixtures.yaml` を commit に含める**（build はこの後なので bracket に反映される）。
-     ⚠ 出力に「引き分けだが winner 未記録」警告が出たら §5 に戻り PK 勝者を `winner:` に追記して再実行。
+     ⚠ 出力に「winner 未記録」「winner がチーム名不一致」警告が出たら §5 に戻り results を正して再実行。
+     ⚠ 既に実チームで埋まっていたカードの**訂正**が dry 出力に出るのは results 訂正の正常な追従。
+       ただし心当たりの無い訂正なら apply 前に results.yaml の直近変更（git log）を確認する。
    - `python3 build.py`（日英 docs 再生成）。
    - **死活打刻（必須）**: `python3 scripts/heartbeat.py --beat`。`heartbeat.json` を今の時刻で更新する
      （= ジョブが生きている証跡。`commit` に必ず含める）。
