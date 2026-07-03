@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 84 / リンク数: 92
+- 試合数: 85 / リンク数: 93
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -526,3 +526,9 @@
 **📰 報道・公式**
 
 - [スペイン 3-0 オーストリア｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-austria-match-report-highlights-ja) — FIFA公式 / 検索インデックスで実在∧試合一致確認（タイトル『スペイン 3-0 オーストリア | マッチレポートとハイライト』）。オヤルサバル36・89分・ポロ66分でスペインが完勝。スコア3-0はFIFA記事+Yahoo Sports+CBS Sports 3ソース確認
+
+### スイス 2-0 アルジェリア（2026-07-02）
+
+**📰 報道・公式**
+
+- [スイス 2-0 アルジェリア｜ハイライト](https://www.fifa.com/ja/watch/6la26pHrweIQnxNsHSFR28) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/6la26pHrweIQnxNsHSFR28 の検索タイトル『Switzerland v Algeria | Round of 32 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認。スコア2-0はゲキサカ+SOCCER DIGEST 2ソース確認済）
