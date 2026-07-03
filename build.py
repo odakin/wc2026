@@ -196,7 +196,9 @@ STR = {
         "ko_head": "決勝トーナメント",
         "ko_intro": ("ノックアウト全 32 試合のブラケット。 グループ確定後に各スロットへ実チームが入る"
                      "（確定した組から順に表示、 未確定はスロット名のまま）。 時刻は JST。 スコア・PK は"
-                     "試合消化後に反映。 横スクロールで全ラウンド。 🇯🇵 日本が絡む試合は枠を強調。"),
+                     "試合消化後に反映。 横スクロールで全ラウンド。 🇯🇵 日本が絡む試合は枠を強調。"
+                     " 📺 = 未消化試合の日本の地上波放映予定（表示なし = 未発表。 DAZN は全試合配信・"
+                     "NHK BS4K は全試合放送）。"),
         "ko_third": "3位決定戦",
         "tp_head": "🥉 ベスト3位の行方",
         "tp_sub": ("各組3位 12 チームのうち <b>上位 8（全体の 2/3）</b> が決勝T進出、 残り 4 は敗退。"
@@ -459,6 +461,8 @@ table.s tbody tr:last-child td{border-bottom:none}
 .ko-sc{font-weight:800;font-variant-numeric:tabular-nums;color:var(--ink);flex-shrink:0}
 .ko-pens{font-size:10px;color:var(--muted);text-align:right;margin-top:1px}
 .ko-venue{font-size:9.5px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ko-tv{font-size:9.5px;color:var(--accent-ink);margin-top:2px;white-space:nowrap}
+.ko-tv.none{color:var(--muted)}
 .ko-card a.ko-rep{display:inline-block;margin-top:5px;background:var(--accent-soft);color:var(--accent-ink);
   text-decoration:none;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;
   white-space:nowrap}
@@ -641,6 +645,14 @@ def ko_match(m, lang, find_url_no=None):
     if lang == "en" and m.get("venue") in VENUE_CITY_EN:
         city_disp = VENUE_CITY_EN[m["venue"]]
     venue = f'<div class="ko-venue">{esc(city_disp)}</div>' if city_disp else ""
+    # 日本の地上波放映予定 (ja のみ)。 結果反映後 (= 消化済み) は「予定」でないので消える。
+    # tv "なし" = 地上波なし確定 / field 無し = 未発表 → 表示しない (fixtures.yaml ヘッダ参照)。
+    tv_html = ""
+    if lang == "ja" and not sc and m.get("tv"):
+        if m["tv"] == "なし":
+            tv_html = '<div class="ko-tv none">📺 地上波なし</div>'
+        else:
+            tv_html = f'<div class="ko-tv">📺 {esc(m["tv"])}</div>'
     rep_html = ""
     if sc and find_url_no:
         url, mc = find_url_no(m["no"], lang)
@@ -653,7 +665,7 @@ def ko_match(m, lang, find_url_no=None):
                 label, icon = L["report"], "📄"
             rep_html = (f'<a class="ko-rep" href="{esc(url)}" target="_blank" '
                         f'rel="noopener">{icon} {esc(label)}</a>')
-    card = f'<div class="ko-card{" jp" if jp else ""}">{head}{"".join(rows)}{pens}{venue}{rep_html}</div>'
+    card = f'<div class="ko-card{" jp" if jp else ""}">{head}{"".join(rows)}{pens}{venue}{tv_html}{rep_html}</div>'
     return f'<div class="ko-match">{card}</div>'
 
 

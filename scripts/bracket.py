@@ -178,6 +178,7 @@ def build_rounds(results_matches, conduct=None, fifa_rank=None):
         built[f["no"]] = {
             "no": f["no"], "stage": f["stage"],
             "dt": f.get("start_jst", ""), "venue": f.get("venue", ""), "city": f.get("city", ""),
+            "tv": f.get("tv"),
             "home": home, "away": away, "score": score,
             "winner": win_side if (win_side and home.get("team") and away.get("team")) else None,
         }

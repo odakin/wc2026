@@ -1,6 +1,5 @@
 ## 2026 FIFA World Cup — 試合日程 SoT (single source of truth)
-## このファイルが正本。カレンダー登録は scripts/gen-plan.py がここからプランを生成し、
-## Claude が MCP create_event/update_event で Claude入力 カレンダーに反映する。
+## このファイルが正本。個人カレンダー登録機構 (別 private リポ) と公開サイト build の共有 SoT。
 ##
 ## 時刻: 日本時間 (JST=UTC+9)。start_jst は ISO8601 (+09:00)。
 ## データ出典: 英語版 Wikipedia 各グループ/knockout ページ (UTC offset 一次ソース)
@@ -11,6 +10,10 @@
 ## stage: group | r32 | r16 | qf | sf | third | final
 ## jp: true = 日本が確定で絡む試合 (タイトルに 🇯🇵)
 ## reconcile: existing = 既にカレンダーに別途登録済 (重複作成しない、update で標準化)
+## tv: 日本の地上波放送局 (NHK総合 / 日テレ系 / フジ系)。 "なし" = 地上波放送なし (BS4K/DAZN のみ)、
+##   field 無し = 未発表。 決勝T 分は 2026-07-03 に Goal.com 地上波一覧 + キックオフカレンダーの
+##   2 ソース突合で記入 (一致分のみ。 未発表 = M97/M100)。 発表され次第ここに追記すると、
+##   個人カレンダーの description と公開サイトの放映予定表示の両方に反映される。
 
 meta:
   tournament: "2026 FIFA World Cup"
@@ -81,33 +84,33 @@ matches:
   - {"no": 81, stage: r32, label: "アメリカ合衆国 × ボスニア・ヘルツェゴビナ",  start_jst: "2026-07-02T09:00:00+09:00", venue: "Levi's Stadium", city: "サンタクララ(SF)"}
   - {"no": 84, stage: r32, label: "スペイン × オーストリア",                   start_jst: "2026-07-03T04:00:00+09:00", venue: "SoFi Stadium", city: "イングルウッド(LA)"}
   - {"no": 83, stage: r32, label: "ポルトガル × クロアチア",                   start_jst: "2026-07-03T08:00:00+09:00", venue: "BMO Field", city: "トロント"}
-  - {"no": 85, stage: r32, label: "スイス × アルジェリア",                     start_jst: "2026-07-03T12:00:00+09:00", venue: "BC Place", city: "バンクーバー"}
-  - {"no": 88, stage: r32, label: "オーストラリア × エジプト",                 start_jst: "2026-07-04T03:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)"}
-  - {"no": 86, stage: r32, label: "アルゼンチン × カーボベルデ",               start_jst: "2026-07-04T07:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ"}
-  - {"no": 87, stage: r32, label: "コロンビア × ガーナ",                       start_jst: "2026-07-04T10:30:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ"}
+  - {"no": 85, stage: r32, label: "スイス × アルジェリア",                     start_jst: "2026-07-03T12:00:00+09:00", venue: "BC Place", city: "バンクーバー", tv: "NHK総合"}
+  - {"no": 88, stage: r32, label: "オーストラリア × エジプト",                 start_jst: "2026-07-04T03:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)", tv: "NHK総合"}
+  - {"no": 86, stage: r32, label: "アルゼンチン × カーボベルデ",               start_jst: "2026-07-04T07:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ", tv: "日テレ系"}
+  - {"no": 87, stage: r32, label: "コロンビア × ガーナ",                       start_jst: "2026-07-04T10:30:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ", tv: "なし"}
 
   # ============ KNOCKOUT — ラウンド16 (8 試合) ============
-  - {"no": 90, stage: r16, label: "カナダ × モロッコ", start_jst: "2026-07-05T02:00:00+09:00", venue: "NRG Stadium", city: "ヒューストン"}
-  - {"no": 89, stage: r16, label: "パラグアイ × フランス", start_jst: "2026-07-05T06:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア"}
-  - {"no": 91, stage: r16, label: "ブラジル × ノルウェー", start_jst: "2026-07-06T05:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)"}
-  - {"no": 92, stage: r16, label: "メキシコ × イングランド", start_jst: "2026-07-06T09:00:00+09:00", venue: "Estadio Azteca", city: "メキシコシティ"}
-  - {"no": 93, stage: r16, label: "ポルトガル × スペイン", start_jst: "2026-07-07T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)"}
-  - {"no": 94, stage: r16, label: "アメリカ合衆国 × ベルギー", start_jst: "2026-07-07T09:00:00+09:00", venue: "Lumen Field", city: "シアトル"}
-  - {"no": 95, stage: r16, label: "M86勝者 × M88勝者", start_jst: "2026-07-08T01:00:00+09:00", venue: "Mercedes-Benz Stadium", city: "アトランタ"}
-  - {"no": 96, stage: r16, label: "M85勝者 × M87勝者", start_jst: "2026-07-08T05:00:00+09:00", venue: "BC Place", city: "バンクーバー"}
+  - {"no": 90, stage: r16, label: "カナダ × モロッコ", start_jst: "2026-07-05T02:00:00+09:00", venue: "NRG Stadium", city: "ヒューストン", tv: "NHK総合"}
+  - {"no": 89, stage: r16, label: "パラグアイ × フランス", start_jst: "2026-07-05T06:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア", tv: "日テレ系"}
+  - {"no": 91, stage: r16, label: "ブラジル × ノルウェー", start_jst: "2026-07-06T05:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)", tv: "NHK総合"}
+  - {"no": 92, stage: r16, label: "メキシコ × イングランド", start_jst: "2026-07-06T09:00:00+09:00", venue: "Estadio Azteca", city: "メキシコシティ", tv: "なし"}
+  - {"no": 93, stage: r16, label: "ポルトガル × スペイン", start_jst: "2026-07-07T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)", tv: "日テレ系"}
+  - {"no": 94, stage: r16, label: "アメリカ合衆国 × ベルギー", start_jst: "2026-07-07T09:00:00+09:00", venue: "Lumen Field", city: "シアトル", tv: "フジ系"}
+  - {"no": 95, stage: r16, label: "M86勝者 × M88勝者", start_jst: "2026-07-08T01:00:00+09:00", venue: "Mercedes-Benz Stadium", city: "アトランタ", tv: "なし"}
+  - {"no": 96, stage: r16, label: "M85勝者 × M87勝者", start_jst: "2026-07-08T05:00:00+09:00", venue: "BC Place", city: "バンクーバー", tv: "NHK総合"}
 
   # ============ KNOCKOUT — 準々決勝 (4 試合) ============
   - {"no": 97,  stage: qf, label: "M89勝者 × M90勝者", start_jst: "2026-07-10T05:00:00+09:00", venue: "Gillette Stadium", city: "フォックスボロ(ボストン)"}
-  - {"no": 98,  stage: qf, label: "M93勝者 × M94勝者", start_jst: "2026-07-11T04:00:00+09:00", venue: "SoFi Stadium", city: "イングルウッド(LA)"}
-  - {"no": 99,  stage: qf, label: "M91勝者 × M92勝者", start_jst: "2026-07-12T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ"}
+  - {"no": 98,  stage: qf, label: "M93勝者 × M94勝者", start_jst: "2026-07-11T04:00:00+09:00", venue: "SoFi Stadium", city: "イングルウッド(LA)", tv: "フジ系"}
+  - {"no": 99,  stage: qf, label: "M91勝者 × M92勝者", start_jst: "2026-07-12T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ", tv: "NHK総合"}
   - {"no": 100, stage: qf, label: "M95勝者 × M96勝者", start_jst: "2026-07-12T10:00:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ"}
 
   # ============ KNOCKOUT — 準決勝 (2 試合) ============
-  - {"no": 101, stage: sf, label: "M97勝者 × M98勝者",  start_jst: "2026-07-15T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)"}
-  - {"no": 102, stage: sf, label: "M99勝者 × M100勝者", start_jst: "2026-07-16T04:00:00+09:00", venue: "Mercedes-Benz Stadium", city: "アトランタ"}
+  - {"no": 101, stage: sf, label: "M97勝者 × M98勝者",  start_jst: "2026-07-15T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)", tv: "日テレ系"}
+  - {"no": 102, stage: sf, label: "M99勝者 × M100勝者", start_jst: "2026-07-16T04:00:00+09:00", venue: "Mercedes-Benz Stadium", city: "アトランタ", tv: "NHK総合"}
 
   # ============ KNOCKOUT — 3位決定戦 (1 試合) ============
-  - {"no": 103, stage: third, label: "M101敗者 × M102敗者", start_jst: "2026-07-19T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ"}
+  - {"no": 103, stage: third, label: "M101敗者 × M102敗者", start_jst: "2026-07-19T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ", tv: "NHK総合"}
 
   # ============ KNOCKOUT — 決勝 (1 試合) ============
-  - {"no": 104, stage: final, label: "M101勝者 × M102勝者", start_jst: "2026-07-20T04:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NJ)"}
+  - {"no": 104, stage: final, label: "M101勝者 × M102勝者", start_jst: "2026-07-20T04:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NJ)", tv: "NHK総合"}

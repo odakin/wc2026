@@ -10,7 +10,7 @@ private な doc パスを file 本文 / commit message に一切書かない。`
 FIFA レポート URL はすべて公開情報。カレンダー登録機構（個人の calendarId 等）は**別の private リポ**にある。
 
 ## 構造
-- `data/` = SoT（生事実）。`fixtures.yaml`（日程）/ `results.yaml`（結果）/ `articles.yaml`（リンク）。
+- `data/` = SoT（生事実）。`fixtures.yaml`（日程 + 日本の地上波 `tv:`〔決勝T、ヘッダ参照〕）/ `results.yaml`（結果）/ `articles.yaml`（リンク）。
   `fixtures.yaml` と `results.yaml` は **`"no"`（FIFA公式試合番号 1-104）を共有 join key** にする（突合は名前一致でなく no）。
   キーは必ず `"no":` とクォート（PyYAML が `no:` を boolean False キーに解釈する YAML1.1 の罠）。
 - `scripts/standings.py` = **順位アルゴリズムの正本**（`rank_group` / FIFA 2026 tiebreak）+ `standings.md` 生成。
