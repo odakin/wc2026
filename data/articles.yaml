@@ -1100,3 +1100,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『ベルギー 3-2 セネガル | マッチレポートとハイライト』）。ディアラ25分・サル51分で2-0も、ルカク86分・ティーレマンス89分で同点、延長125分PKで3-2逆転。スコア3-2はFIFA記事+ESPN 2ソース確認"
+  - key: M83-POR-CRO
+    "no": 83
+    stage: r32
+    date: 2026-07-02
+    title: "ポルトガル 2-1 クロアチア"
+    refs:
+      - cat: 報道・公式
+        title: "ポルトガル 2-1 クロアチア｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-croatia-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『ポルトガル 2-1 クロアチア | マッチレポート＆ハイライト | FIFAワールドカップ2026』）。ペリシッチ先制→ロナウドPK同点→ラモス決勝ヘッド、クロアチア終盤弾はVAR取消。スコア2-1はFIFA記事+日本経済新聞 2ソース確認"
