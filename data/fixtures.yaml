@@ -91,7 +91,7 @@ matches:
   - {"no": 89, stage: r16, label: "パラグアイ × フランス", start_jst: "2026-07-05T06:00:00+09:00", venue: "Lincoln Financial Field", city: "フィラデルフィア"}
   - {"no": 91, stage: r16, label: "ブラジル × ノルウェー", start_jst: "2026-07-06T05:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NY/NJ)"}
   - {"no": 92, stage: r16, label: "メキシコ × イングランド", start_jst: "2026-07-06T09:00:00+09:00", venue: "Estadio Azteca", city: "メキシコシティ"}
-  - {"no": 93, stage: r16, label: "M83勝者 × スペイン", start_jst: "2026-07-07T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)"}
+  - {"no": 93, stage: r16, label: "ポルトガル × スペイン", start_jst: "2026-07-07T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)"}
   - {"no": 94, stage: r16, label: "アメリカ合衆国 × ベルギー", start_jst: "2026-07-07T09:00:00+09:00", venue: "Lumen Field", city: "シアトル"}
   - {"no": 95, stage: r16, label: "M86勝者 × M88勝者", start_jst: "2026-07-08T01:00:00+09:00", venue: "Mercedes-Benz Stadium", city: "アトランタ"}
   - {"no": 96, stage: r16, label: "M85勝者 × M87勝者", start_jst: "2026-07-08T05:00:00+09:00", venue: "BC Place", city: "バンクーバー"}
