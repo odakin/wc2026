@@ -1112,3 +1112,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『ポルトガル 2-1 クロアチア | マッチレポート＆ハイライト | FIFAワールドカップ2026』）。ペリシッチ先制→ロナウドPK同点→ラモス決勝ヘッド、クロアチア終盤弾はVAR取消。スコア2-1はFIFA記事+日本経済新聞 2ソース確認"
+  - key: M84-ESP-AUT
+    "no": 84
+    stage: r32
+    date: 2026-07-02
+    title: "スペイン 3-0 オーストリア"
+    refs:
+      - cat: 報道・公式
+        title: "スペイン 3-0 オーストリア｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-austria-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『スペイン 3-0 オーストリア | マッチレポートとハイライト』）。オヤルサバル36・89分・ポロ66分でスペインが完勝。スコア3-0はFIFA記事+Yahoo Sports+CBS Sports 3ソース確認"
