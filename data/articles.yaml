@@ -1148,6 +1148,18 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『アルゼンチン 3-2（延長） カーボベルデ | マッチレポート＆ハイライト』）。メッシ29分先制→延長111分ロメロ決勝ヘッドで3-2。スコア3-2はYahoo Sports+NBC Sports 2ソース確認済"
+  - key: M87-COL-GHA
+    "no": 87
+    stage: r32
+    date: 2026-07-03
+    title: "コロンビア 1-0 ガーナ"
+    refs:
+      - cat: 報道・公式
+        title: "コロンビア 1-0 ガーナ｜ハイライト"
+        url: "https://www.fifa.com/ja/watch/4JaxdQNgyF6wsiYLbU0p2m"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/4JaxdQNgyF6wsiYLbU0p2m の検索タイトル『Colombia v Ghana | Round of 32 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認）"
   - key: M88-AUS-EGY
     "no": 88
     stage: r32
