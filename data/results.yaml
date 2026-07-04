@@ -20,7 +20,7 @@ meta:
   stage: knockout
   as_of: "2026-07-05"          # JST スナップショット日
   date_basis: "現地(北米)開催日"
-  note: "グループステージ全72試合完了。決勝トーナメント進行中。R32全16試合完了。R16: M90 カナダ0-3モロッコ(7/4現地)。M89(パラグアイ×フランス)は未開始(JST 06:00開始予定)。"
+  note: "グループステージ全72試合完了。決勝トーナメント進行中。R32全16試合完了。R16: M89 パラグアイ0-1フランス(7/4現地)、M90 カナダ0-3モロッコ(7/4現地)。"
   # FIFA 2026 tiebreak の criterion 6 (フェアプレー/規律点) と 7 (FIFAランク)。
   # criterion 1-5 (直接対決 + 全体得失差/総得点) で決着しない組のみ、 FIFA公式順位の裏取りとして記録する。
   # conduct = team conduct (fair play) points = カード減点 (高い方=上位)。
@@ -153,3 +153,4 @@ matches:
   - {"no": 88, date: 2026-07-03, home: オーストラリア, away: エジプト, hg: 1, ag: 1, winner: エジプト, note: "アシュール13分先制(エジプト)、ハニーOG55分で同点(オーストラリア)。延長無得点、PK戦4-2でエジプト勝利しR16進出(Outlook India+Yahoo Sports 2ソース確認)(AT&Tスタジアム/アーリントン)"}
   - {"no": 87, date: 2026-07-03, home: コロンビア, away: ガーナ, hg: 1, ag: 0, winner: コロンビア, note: "アリアス14分の先制点のみで90分決着。コロンビアがR16進出(Olympics.com+Yahoo Sports 2ソース確認)(Arrowhead Stadium/カンザスシティ)"}
   - {"no": 90, date: 2026-07-04, home: カナダ, away: モロッコ, hg: 0, ag: 3, winner: モロッコ, note: "ウナヒ後半2ゴール(FKアシストから先制・82分追加点)、ラヒミが追加時間に3点目。カナダはW杯初のR16勝利の翌戦で敗退。90分3-0決着(Yahoo Sports+Outlook India 2ソース確認)(NRGスタジアム/ヒューストン)"}
+  - {"no": 89, date: 2026-07-04, home: パラグアイ, away: フランス, hg: 0, ag: 1, winner: フランス, note: "エムバペがPK70分で先制・唯一のゴール。フランスが90分1-0完封勝利でR16進出。延長・PK戦なし(ESPN+Al Jazeera 2ソース確認)(Lincoln Financial Field/フィラデルフィア)"}

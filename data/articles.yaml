@@ -1172,3 +1172,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『オーストラリア 1-1 エジプト（PK：2-4） | マッチレポート＆ハイライト』）。アシュール13分先制(エジプト)→ハニーOG55分で同点(オーストラリア)、延長無得点、PK戦4-2でエジプト勝利(AT&Tスタジアム/アーリントン)"
+  - key: M90-CAN-MAR
+    "no": 90
+    stage: r16
+    date: 2026-07-04
+    title: "カナダ 0-3 モロッコ"
+    refs:
+      - cat: 報道・公式
+        title: "カナダ 0-3 モロッコ｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/canada-morocco-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『カナダ 0-3 モロッコ | マッチレポートとハイライト | FIFAワールドカップ2026』）。ウナヒ後半2ゴール(FKアシストから先制・82分追加点)、ラヒミが追加時間に3点目。モロッコ完勝(NRGスタジアム/ヒューストン)"
