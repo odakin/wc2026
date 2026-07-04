@@ -12,7 +12,8 @@
 ## reconcile: existing = 既にカレンダーに別途登録済 (重複作成しない、update で標準化)
 ## tv: 日本の地上波放送局 (NHK総合 / 日テレ系 / フジ系)。 "なし" = 地上波放送なし (BS4K/DAZN のみ)、
 ##   field 無し = 未発表。 決勝T 分は 2026-07-03 に Goal.com 地上波一覧 + キックオフカレンダーの
-##   2 ソース突合で記入 (一致分のみ。 未発表 = M97/M100)。 発表され次第ここに追記すると、
+##   2 ソース突合で記入 (一致分のみ)。 2026-07-05 に Goal.com + footballchannel.jp の再突合で
+##   QF 4 試合を全確定 (M97/M100 = 地上波なし = BS4K/DAZN のみ)。 発表され次第ここに追記すると、
 ##   個人カレンダーの description と公開サイトの放映予定表示の両方に反映される。
 
 meta:
@@ -100,10 +101,10 @@ matches:
   - {"no": 96, stage: r16, label: "スイス × コロンビア", start_jst: "2026-07-08T05:00:00+09:00", venue: "BC Place", city: "バンクーバー", tv: "NHK総合"}
 
   # ============ KNOCKOUT — 準々決勝 (4 試合) ============
-  - {"no": 97,  stage: qf, label: "M89勝者 × モロッコ", start_jst: "2026-07-10T05:00:00+09:00", venue: "Gillette Stadium", city: "フォックスボロ(ボストン)"}
+  - {"no": 97,  stage: qf, label: "M89勝者 × モロッコ", start_jst: "2026-07-10T05:00:00+09:00", venue: "Gillette Stadium", city: "フォックスボロ(ボストン)", tv: "なし"}
   - {"no": 98,  stage: qf, label: "M93勝者 × M94勝者", start_jst: "2026-07-11T04:00:00+09:00", venue: "SoFi Stadium", city: "イングルウッド(LA)", tv: "フジ系"}
   - {"no": 99,  stage: qf, label: "M91勝者 × M92勝者", start_jst: "2026-07-12T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ", tv: "NHK総合"}
-  - {"no": 100, stage: qf, label: "M95勝者 × M96勝者", start_jst: "2026-07-12T10:00:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ"}
+  - {"no": 100, stage: qf, label: "M95勝者 × M96勝者", start_jst: "2026-07-12T10:00:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ", tv: "なし"}
 
   # ============ KNOCKOUT — 準決勝 (2 試合) ============
   - {"no": 101, stage: sf, label: "M97勝者 × M98勝者",  start_jst: "2026-07-15T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)", tv: "日テレ系"}
