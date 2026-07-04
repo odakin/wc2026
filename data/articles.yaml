@@ -1148,3 +1148,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『アルゼンチン 3-2（延長） カーボベルデ | マッチレポート＆ハイライト』）。メッシ29分先制→延長111分ロメロ決勝ヘッドで3-2。スコア3-2はYahoo Sports+NBC Sports 2ソース確認済"
+  - key: M88-AUS-EGY
+    "no": 88
+    stage: r32
+    date: 2026-07-03
+    title: "オーストラリア 1-1 エジプト (PK 2-4)"
+    refs:
+      - cat: 報道・公式
+        title: "オーストラリア 1-1 エジプト（PK：2-4）｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/australia-egypt-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『オーストラリア 1-1 エジプト（PK：2-4） | マッチレポート＆ハイライト』）。アシュール13分先制(エジプト)→ハニーOG55分で同点(オーストラリア)、延長無得点、PK戦4-2でエジプト勝利(AT&Tスタジアム/アーリントン)"
