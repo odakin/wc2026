@@ -97,7 +97,7 @@ matches:
   - {"no": 93, stage: r16, label: "ポルトガル × スペイン", start_jst: "2026-07-07T04:00:00+09:00", venue: "AT&T Stadium", city: "アーリントン(ダラス)", tv: "日テレ系"}
   - {"no": 94, stage: r16, label: "アメリカ合衆国 × ベルギー", start_jst: "2026-07-07T09:00:00+09:00", venue: "Lumen Field", city: "シアトル", tv: "フジ系"}
   - {"no": 95, stage: r16, label: "アルゼンチン × エジプト", start_jst: "2026-07-08T01:00:00+09:00", venue: "Mercedes-Benz Stadium", city: "アトランタ", tv: "なし"}
-  - {"no": 96, stage: r16, label: "スイス × M87勝者", start_jst: "2026-07-08T05:00:00+09:00", venue: "BC Place", city: "バンクーバー", tv: "NHK総合"}
+  - {"no": 96, stage: r16, label: "スイス × コロンビア", start_jst: "2026-07-08T05:00:00+09:00", venue: "BC Place", city: "バンクーバー", tv: "NHK総合"}
 
   # ============ KNOCKOUT — 準々決勝 (4 試合) ============
   - {"no": 97,  stage: qf, label: "M89勝者 × M90勝者", start_jst: "2026-07-10T05:00:00+09:00", venue: "Gillette Stadium", city: "フォックスボロ(ボストン)"}
