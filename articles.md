@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 85 / リンク数: 93
+- 試合数: 86 / リンク数: 94
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -532,3 +532,9 @@
 **📰 報道・公式**
 
 - [スイス 2-0 アルジェリア｜ハイライト](https://www.fifa.com/ja/watch/6la26pHrweIQnxNsHSFR28) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/6la26pHrweIQnxNsHSFR28 の検索タイトル『Switzerland v Algeria | Round of 32 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認。スコア2-0はゲキサカ+SOCCER DIGEST 2ソース確認済）
+
+### アルゼンチン 3-2 カーボベルデ（2026-07-03）
+
+**📰 報道・公式**
+
+- [アルゼンチン 3-2（延長） カーボベルデ｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-cabo-verde-match-report-highlights-ja) — FIFA公式 / 検索インデックスで実在∧試合一致確認（タイトル『アルゼンチン 3-2（延長） カーボベルデ | マッチレポート＆ハイライト』）。メッシ29分先制→延長111分ロメロ決勝ヘッドで3-2。スコア3-2はYahoo Sports+NBC Sports 2ソース確認済

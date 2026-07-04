@@ -1136,3 +1136,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/6la26pHrweIQnxNsHSFR28 の検索タイトル『Switzerland v Algeria | Round of 32 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認。スコア2-0はゲキサカ+SOCCER DIGEST 2ソース確認済）"
+  - key: M86-ARG-CPV
+    "no": 86
+    stage: r32
+    date: 2026-07-03
+    title: "アルゼンチン 3-2 カーボベルデ"
+    refs:
+      - cat: 報道・公式
+        title: "アルゼンチン 3-2（延長） カーボベルデ｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-cabo-verde-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『アルゼンチン 3-2（延長） カーボベルデ | マッチレポート＆ハイライト』）。メッシ29分先制→延長111分ロメロ決勝ヘッドで3-2。スコア3-2はYahoo Sports+NBC Sports 2ソース確認済"
