@@ -507,7 +507,7 @@
 
 **📰 報道・公式**
 
-- [アメリカ合衆国 2-0 ボスニア・ヘルツェゴビナ｜ハイライト](https://www.fifa.com/ja/watch/5C4EUTQtunUpC47YeP9Uj1) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/5C4EUTQtunUpC47YeP9Uj1 の検索タイトル『Highlights USA v Bosnia and Herzegovina | Round of 32』で実在∧試合一致確認。スコア2-0はESPN+NBCニュース2ソース確認済）
+- [アメリカ合衆国 2-0 ボスニア・ヘルツェゴビナ｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-bosnia-and-herzegovina-review-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-04 ②→① upgrade sweep、検索hit タイトル『アメリカ 2-0 ボスニア・ヘルツェゴビナ | マッチレポートとハイライト』で実在∧試合一致確認）
 
 ### ベルギー 3-2 セネガル（2026-07-01）
 
