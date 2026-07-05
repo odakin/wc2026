@@ -555,7 +555,7 @@
 
 **📰 報道・公式**
 
-- [パラグアイ vs フランス｜ハイライト](https://www.fifa.com/ja/watch/6cm1kVkhlVgrFkP3Cdiqoh) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/6cm1kVkhlVgrFkP3Cdiqoh の検索タイトル『Paraguay v France | Round of 16 | FIFA World Cup 2026™』で実在∧試合一致確認）
+- [パラグアイ 0-1 フランス｜マッチレポート＆ハイライト](https://www.fifa.com/ja/articles/paraguay-france-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-05 ② → ① upgrade sweep、検索 hit タイトル『パラグアイ 0-1 フランス | マッチレポート＆ハイライト | FIFAワールドカップ2026』で実在∧試合一致確認）
 
 ### カナダ 0-3 モロッコ（2026-07-04）
 
