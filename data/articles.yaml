@@ -1196,3 +1196,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『カナダ 0-3 モロッコ | マッチレポートとハイライト | FIFAワールドカップ2026』）。ウナヒ後半2ゴール(FKアシストから先制・82分追加点)、ラヒミが追加時間に3点目。モロッコ完勝(NRGスタジアム/ヒューストン)"
+  - key: M91-BRA-NOR
+    "no": 91
+    stage: r16
+    date: 2026-07-05
+    title: "ブラジル 1-2 ノルウェー"
+    refs:
+      - cat: 報道・公式
+        title: "ブラジル 1-2 ノルウェー｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-norway-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "検索インデックスで実在∧試合一致確認（タイトル『ブラジル 1-2 ノルウェー | マッチレポート＆ハイライト』）。ノルウェーがブラジルを撃破、R16（MetLifeスタジアム/イーストラザフォード）"
