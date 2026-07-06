@@ -104,7 +104,7 @@ matches:
 
   # ============ KNOCKOUT — 準々決勝 (4 試合) ============
   - {"no": 97,  stage: qf, label: "フランス × モロッコ", start_jst: "2026-07-10T05:00:00+09:00", venue: "Gillette Stadium", city: "フォックスボロ(ボストン)", tv: "なし"}
-  - {"no": 98,  stage: qf, label: "M93勝者 × M94勝者", start_jst: "2026-07-11T04:00:00+09:00", venue: "SoFi Stadium", city: "イングルウッド(LA)", tv: "フジ系"}
+  - {"no": 98,  stage: qf, label: "スペイン × M94勝者", start_jst: "2026-07-11T04:00:00+09:00", venue: "SoFi Stadium", city: "イングルウッド(LA)", tv: "フジ系"}
   - {"no": 99,  stage: qf, label: "ノルウェー × イングランド", start_jst: "2026-07-12T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ", tv: "NHK総合"}
   - {"no": 100, stage: qf, label: "M95勝者 × M96勝者", start_jst: "2026-07-12T10:00:00+09:00", venue: "Arrowhead Stadium", city: "カンザスシティ", tv: "なし"}
 
