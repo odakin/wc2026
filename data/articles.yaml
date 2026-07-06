@@ -1220,3 +1220,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-07 ② → ① upgrade sweep、検索インデックスで日本語版 URL 実在確認（タイトル 'Fifa' は SPA indexing 制限）、英語版記事タイトル『Mexico 2-3 England | Match report & highlights』で試合一致確認）"
+  - key: M93-POR-ESP
+    "no": 93
+    stage: r16
+    date: 2026-07-06
+    title: "ポルトガル 0-1 スペイン"
+    refs:
+      - cat: 報道・公式
+        title: "ポルトガル 0-1 スペイン｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/portugal-spain-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-07 M93 backfill、検索 hit タイトル『ポルトガル 0-1 スペイン | マッチレポート＆ハイライト』で実在∧試合一致確認）"
