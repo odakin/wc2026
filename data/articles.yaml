@@ -1208,3 +1208,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "検索インデックスで実在∧試合一致確認（タイトル『ブラジル 1-2 ノルウェー | マッチレポート＆ハイライト』）。ノルウェーがブラジルを撃破、R16（MetLifeスタジアム/イーストラザフォード）"
+  - key: M92-MEX-ENG
+    "no": 92
+    stage: r16
+    date: 2026-07-05
+    title: "メキシコ 2-3 イングランド"
+    refs:
+      - cat: 報道・公式
+        title: "メキシコ 2-3 イングランド｜ハイライト"
+        url: "https://www.fifa.com/ja/watch/UtO24MbZ8ce7YLpu6NMsM"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/UtO24MbZ8ce7YLpu6NMsM の検索タイトル『Mexico v England | Round of 16 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認）"
