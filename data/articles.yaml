@@ -35,7 +35,7 @@
 ##     button は出ない (= articles.py docstring「スコアと記事リンクの分離」 節、 best-effort)。
 ##     未来試合 (まだ開催前) も ⓪ で扱う。 推測 URL を埋めない (= 死リンクの温床)。
 ##
-##   現在 ② 止まりは 6 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/SUI-ALG/COL-GHA、 2026-07-05 snapshot、
+##   現在 ② 止まりは 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/SUI-ALG、 2026-07-07 snapshot、
 ##   ja 記事配信で随時 ① に昇格する)。 ↑この list と件数は 30 分 cron の §6 sweep が自動 maintain する。
 ##   Tier 進行 (⓪→②→①) は 2 段で自動化:
 ##     ⓪→② = AUTO_UPDATE.md §3 backfill (= scripts/articles.py --check の pending list を毎 run 再探索、
@@ -1155,11 +1155,11 @@ matches:
     title: "コロンビア 1-0 ガーナ"
     refs:
       - cat: 報道・公式
-        title: "コロンビア 1-0 ガーナ｜ハイライト"
-        url: "https://www.fifa.com/ja/watch/4JaxdQNgyF6wsiYLbU0p2m"
+        title: "コロンビア 1-0 ガーナ｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-ghana-match-report-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/4JaxdQNgyF6wsiYLbU0p2m の検索タイトル『Colombia v Ghana | Round of 32 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認）"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-07 ② → ① upgrade sweep、検索インデックスで日本語版 URL 実在確認（タイトル 'Fifa' は SPA indexing 制限）、英語版記事タイトル『Colombia 1-0 Ghana | Match report & highlights』で試合一致確認）"
   - key: M88-AUS-EGY
     "no": 88
     stage: r32
@@ -1215,8 +1215,8 @@ matches:
     title: "メキシコ 2-3 イングランド"
     refs:
       - cat: 報道・公式
-        title: "メキシコ 2-3 イングランド｜ハイライト"
-        url: "https://www.fifa.com/ja/watch/UtO24MbZ8ce7YLpu6NMsM"
+        title: "メキシコ 2-3 イングランド｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-england-match-report-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/UtO24MbZ8ce7YLpu6NMsM の検索タイトル『Mexico v England | Round of 16 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認）"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-07 ② → ① upgrade sweep、検索インデックスで日本語版 URL 実在確認（タイトル 'Fifa' は SPA indexing 制限）、英語版記事タイトル『Mexico 2-3 England | Match report & highlights』で試合一致確認）"

@@ -543,7 +543,7 @@
 
 **📰 報道・公式**
 
-- [コロンビア 1-0 ガーナ｜ハイライト](https://www.fifa.com/ja/watch/4JaxdQNgyF6wsiYLbU0p2m) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/4JaxdQNgyF6wsiYLbU0p2m の検索タイトル『Colombia v Ghana | Round of 32 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認）
+- [コロンビア 1-0 ガーナ｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/colombia-ghana-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-07 ② → ① upgrade sweep、検索インデックスで日本語版 URL 実在確認（タイトル 'Fifa' は SPA indexing 制限）、英語版記事タイトル『Colombia 1-0 Ghana | Match report & highlights』で試合一致確認）
 
 ### オーストラリア 1-1 エジプト (PK 2-4)（2026-07-03）
 
@@ -573,4 +573,4 @@
 
 **📰 報道・公式**
 
-- [メキシコ 2-3 イングランド｜ハイライト](https://www.fifa.com/ja/watch/UtO24MbZ8ce7YLpu6NMsM) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/UtO24MbZ8ce7YLpu6NMsM の検索タイトル『Mexico v England | Round of 16 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認）
+- [メキシコ 2-3 イングランド｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/mexico-england-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-07 ② → ① upgrade sweep、検索インデックスで日本語版 URL 実在確認（タイトル 'Fifa' は SPA indexing 制限）、英語版記事タイトル『Mexico 2-3 England | Match report & highlights』で試合一致確認）
