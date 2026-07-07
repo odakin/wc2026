@@ -3,7 +3,7 @@
 
 # 2026 FIFA World Cup — 試合ごとの良記事・リンク集
 
-- 試合数: 94 / リンク数: 102
+- 試合数: 95 / リンク数: 103
 - 試合ごとに、報道・分析・海外反応・掲示板の良リンクを束ねる。結果の生事実は results.yaml が SoT。
 
 ### メキシコ 2-0 南アフリカ（A組 / 第1節 / 2026-06-11）
@@ -586,3 +586,9 @@
 **📰 報道・公式**
 
 - [アメリカ合衆国 1-4 ベルギー｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-belgium-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-07 M94 backfill、検索 hit タイトル『アメリカ 1-4 ベルギー』で実在∧試合一致確認、スコア1-3→1-4訂正と同時追加）
+
+### アルゼンチン 3-2 エジプト（2026-07-07）
+
+**📰 報道・公式**
+
+- [アルゼンチン 3-2 エジプト｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-egypt-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-08 M95 backfill、検索 hit タイトル『【マッチレポート】2点差から奇跡の大逆転！王者アルゼンチンが土壇場の3連続ゴールで8強へ』で実在確認。アルゼンチンが0-2から3連続ゴールで3-2逆転しQF進出の記述により試合一致確認）

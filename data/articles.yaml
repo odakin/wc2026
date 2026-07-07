@@ -1244,3 +1244,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-07 M94 backfill、検索 hit タイトル『アメリカ 1-4 ベルギー』で実在∧試合一致確認、スコア1-3→1-4訂正と同時追加）"
+  - key: M95-ARG-EGY
+    "no": 95
+    stage: r16
+    date: 2026-07-07
+    title: "アルゼンチン 3-2 エジプト"
+    refs:
+      - cat: 報道・公式
+        title: "アルゼンチン 3-2 エジプト｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-egypt-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-08 M95 backfill、検索 hit タイトル『【マッチレポート】2点差から奇跡の大逆転！王者アルゼンチンが土壇場の3連続ゴールで8強へ』で実在確認。アルゼンチンが0-2から3連続ゴールで3-2逆転しQF進出の記述により試合一致確認）"
