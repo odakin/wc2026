@@ -1232,3 +1232,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-07 M93 backfill、検索 hit タイトル『ポルトガル 0-1 スペイン | マッチレポート＆ハイライト』で実在∧試合一致確認）"
+  - key: M94-USA-BEL
+    "no": 94
+    stage: r16
+    date: 2026-07-06
+    title: "アメリカ合衆国 1-4 ベルギー"
+    refs:
+      - cat: 報道・公式
+        title: "アメリカ合衆国 1-4 ベルギー｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-belgium-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-07 M94 backfill、検索 hit タイトル『アメリカ 1-4 ベルギー』で実在∧試合一致確認、スコア1-3→1-4訂正と同時追加）"
