@@ -531,7 +531,7 @@
 
 **📰 報道・公式**
 
-- [スイス 2-0 アルジェリア｜ハイライト](https://www.fifa.com/ja/watch/6la26pHrweIQnxNsHSFR28) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/6la26pHrweIQnxNsHSFR28 の検索タイトル『Switzerland v Algeria | Round of 32 | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認。スコア2-0はゲキサカ+SOCCER DIGEST 2ソース確認済）
+- [【マッチレポート】スイスがアルジェリアに完勝でラウンド16進出](https://www.fifa.com/ja/articles/switzerland-algeria-match-report-highlights-ja) — FIFA公式 / FIFA公式日本語マッチレポート記事（②→①アップグレード。Google検索でタイトル実在確認済、2026-07-08）
 
 ### アルゼンチン 3-2 カーボベルデ（2026-07-03）
 
