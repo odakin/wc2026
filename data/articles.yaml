@@ -1256,3 +1256,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-08 M95 backfill、検索 hit タイトル『【マッチレポート】2点差から奇跡の大逆転！王者アルゼンチンが土壇場の3連続ゴールで8強へ』で実在確認。アルゼンチンが0-2から3連続ゴールで3-2逆転しQF進出の記述により試合一致確認）"
+  - key: M96-SUI-COL
+    "no": 96
+    stage: r16
+    date: 2026-07-07
+    title: "スイス 0-0 コロンビア (PK 4-3)"
+    refs:
+      - cat: 報道・公式
+        title: "スイス 0-0 コロンビア (PK 4-3)｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-08 M96 backfill、検索 hit タイトル『スイス 0-0 (PK:5-4) コロンビア | マッチレポートとハイライト | FIFAワールドカップ2026』で実在∧試合一致確認。PK スコアは FIFA タイトル表示「5-4」に対しESPN・テレ東・Goal.com等複数独立ソースが4-3を報告、詳細記述と一致する4-3を採用）"
