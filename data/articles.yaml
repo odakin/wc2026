@@ -1280,3 +1280,15 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-10 ② → ① upgrade sweep、検索 hit タイトル『フランス 2-0 モロッコ | マッチレポート＆ハイライト』で実在 ∧ 試合一致確認）"
+  - key: M98-ESP-BEL
+    "no": 98
+    stage: qf
+    date: 2026-07-10
+    title: "スペイン 2-1 ベルギー"
+    refs:
+      - cat: 報道・公式
+        title: "スペイン 2-1 ベルギー｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-belgium-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-11 M98 backfill、検索 hit タイトル『スペイン 2-1 ベルギー | マッチレポートとハイライト』で実在∧試合一致確認）"
