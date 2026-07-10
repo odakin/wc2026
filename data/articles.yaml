@@ -35,7 +35,7 @@
 ##     button は出ない (= articles.py docstring「スコアと記事リンクの分離」 節、 best-effort)。
 ##     未来試合 (まだ開催前) も ⓪ で扱う。 推測 URL を埋めない (= 死リンクの温床)。
 ##
-##   現在 ② 止まりは 5 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR/FRA-MAR、 2026-07-10 snapshot、SUI-ALG は ① 昇格済、
+##   現在 ② 止まりは 4 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR、 2026-07-10 snapshot、FRA-MAR は ① 昇格済、SUI-ALG は ① 昇格済、
 ##   ja 記事配信で随時 ① に昇格する)。 ↑この list と件数は 30 分 cron の §6 sweep が自動 maintain する。
 ##   Tier 進行 (⓪→②→①) は 2 段で自動化:
 ##     ⓪→② = AUTO_UPDATE.md §3 backfill (= scripts/articles.py --check の pending list を毎 run 再探索、
@@ -1275,8 +1275,8 @@ matches:
     title: "フランス 2-0 モロッコ"
     refs:
       - cat: 報道・公式
-        title: "フランス 2-0 モロッコ｜ハイライト動画"
-        url: "https://www.fifa.com/ja/watch/5hMWkQ5zuaopBunGPcLez5"
+        title: "フランス 2-0 モロッコ｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-morocco-match-report-highlights-ja"
         source: FIFA公式
         lang: ja
-        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）（EN版 /en/watch/5hMWkQ5zuaopBunGPcLez5 タイトル『France v Morocco | Quarter-final | FIFA World Cup 2026™』で実在∧試合一致確認）"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-10 ② → ① upgrade sweep、検索 hit タイトル『フランス 2-0 モロッコ | マッチレポート＆ハイライト』で実在 ∧ 試合一致確認）"

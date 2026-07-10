@@ -603,4 +603,4 @@
 
 **📰 報道・公式**
 
-- [フランス 2-0 モロッコ｜ハイライト動画](https://www.fifa.com/ja/watch/5hMWkQ5zuaopBunGPcLez5) — FIFA公式 / 日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）（EN版 /en/watch/5hMWkQ5zuaopBunGPcLez5 タイトル『France v Morocco | Quarter-final | FIFA World Cup 2026™』で実在∧試合一致確認）
+- [フランス 2-0 モロッコ｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-morocco-match-report-highlights-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-10 ② → ① upgrade sweep、検索 hit タイトル『フランス 2-0 モロッコ | マッチレポート＆ハイライト』で実在 ∧ 試合一致確認）
