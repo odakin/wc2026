@@ -35,7 +35,7 @@
 ##     button は出ない (= articles.py docstring「スコアと記事リンクの分離」 節、 best-effort)。
 ##     未来試合 (まだ開催前) も ⓪ で扱う。 推測 URL を埋めない (= 死リンクの温床)。
 ##
-##   現在 ② 止まりは 4 試合 (CIV-ECU/IRN-NZL/KSA-URU/AUT-JOR、 2026-07-10 snapshot、FRA-MAR は ① 昇格済、SUI-ALG は ① 昇格済、
+##   現在 ② 止まりは 3 試合 (IRN-NZL/KSA-URU/AUT-JOR、 2026-07-10 snapshot、CIV-ECU/FRA-MAR/SUI-ALG は ① 昇格済、
 ##   ja 記事配信で随時 ① に昇格する)。 ↑この list と件数は 30 分 cron の §6 sweep が自動 maintain する。
 ##   Tier 進行 (⓪→②→①) は 2 段で自動化:
 ##     ⓪→② = AUTO_UPDATE.md §3 backfill (= scripts/articles.py --check の pending list を毎 run 再探索、
@@ -362,14 +362,14 @@ matches:
     group: E
     md: 1
     date: 2026-06-14
-    title: "コートジボワール 1-0 エクアドル"
+    title: "コートジボワール 1-0 エクアドル｜マッチレポート＆ハイライト"
     refs:
       - cat: 報道・公式
-        title: "コートジボワール 1-0 エクアドル｜ハイライト動画"
-        url: "https://www.fifa.com/ja/watch/4P79SuyJHO3ZGVuRYxjots"
+        title: "コートジボワール 1-0 エクアドル｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/cote-d-ivoire-ecuador-highlights-match-report-ja"
         source: FIFA公式
         lang: ja
-        note: "日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）"
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-10 ② → ① upgrade sweep、検索 hit タイトル『コートジボワール 1-0 エクアドル | マッチレポート＆ハイライト』で実在 ∧ 試合一致確認）"
   - key: E-md2-GER-CIV
     group: E
     md: 2

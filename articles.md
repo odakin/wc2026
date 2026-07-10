@@ -156,11 +156,11 @@
 
 - [ドイツ 7-1 キュラソー｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/germany-curacao-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト
 
-### コートジボワール 1-0 エクアドル（E組 / 第1節 / 2026-06-14）
+### コートジボワール 1-0 エクアドル｜マッチレポート＆ハイライト（E組 / 第1節 / 2026-06-14）
 
 **📰 報道・公式**
 
-- [コートジボワール 1-0 エクアドル｜ハイライト動画](https://www.fifa.com/ja/watch/4P79SuyJHO3ZGVuRYxjots) — FIFA公式 / 日本語のマッチレポート記事が未配信のためハイライト動画にリンク（FIFA+）
+- [コートジボワール 1-0 エクアドル｜マッチレポート＆ハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/cote-d-ivoire-ecuador-highlights-match-report-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-10 ② → ① upgrade sweep、検索 hit タイトル『コートジボワール 1-0 エクアドル | マッチレポート＆ハイライト』で実在 ∧ 試合一致確認）
 
 ### ドイツ 2-1 コートジボワール（E組 / 第2節 / 2026-06-20）
 
