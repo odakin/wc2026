@@ -1292,3 +1292,16 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-11 M98 backfill、検索 hit タイトル『スペイン 2-1 ベルギー | マッチレポートとハイライト』で実在∧試合一致確認）"
+
+  - key: "M99-NOR-ENG"
+    "no": 99
+    date: 2026-07-11
+    stage: qf
+    title: "ノルウェー 1-2 イングランド"
+    refs:
+      - cat: "報道・公式"
+        title: "ノルウェー 1-2 イングランド｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/norway-england-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-12 backfill、検索 hit タイトル『ノルウェー1-2 イングランド | マッチレポートとハイライト | FIFAワールドカップ2026』で実在∧試合一致確認）"
