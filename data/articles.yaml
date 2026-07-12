@@ -1305,3 +1305,16 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-12 backfill、検索 hit タイトル『ノルウェー1-2 イングランド | マッチレポートとハイライト | FIFAワールドカップ2026』で実在∧試合一致確認）"
+
+  - key: "M100-ARG-SUI"
+    "no": 100
+    date: 2026-07-11
+    stage: qf
+    title: "アルゼンチン 3-1 スイス"
+    refs:
+      - cat: "報道・公式"
+        title: "アルゼンチン 3-1 スイス｜マッチレポート＆ハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/argentina-switzerland-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-12 backfill、検索 hit タイトル『【マッチレポート】メッシがW杯通算10アシスト目！アルゼンチン…』で実在∧試合一致確認）"
