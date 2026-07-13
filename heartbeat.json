@@ -1,6 +1,6 @@
 {
-  "last_run_utc": "2026-07-13T21:34:31Z",
-  "last_run_jst": "2026-07-14 06:34 JST",
+  "last_run_utc": "2026-07-13T22:03:23Z",
+  "last_run_jst": "2026-07-14 07:03 JST",
   "interval_min": 30,
   "note": "wc2026 自動更新ジョブの死活 heartbeat。毎回（no-op 含む）打刻され commit される。",
   "as_of": "2026-07-12",
