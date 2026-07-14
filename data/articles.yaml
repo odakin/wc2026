@@ -1318,3 +1318,16 @@ matches:
         source: FIFA公式
         lang: ja
         note: "FIFA公式マッチレポート＋ハイライト（2026-07-12 backfill、検索 hit タイトル『【マッチレポート】メッシがW杯通算10アシスト目！アルゼンチン…』で実在∧試合一致確認）"
+
+  - key: "M101-FRA-ESP"
+    "no": 101
+    date: 2026-07-14
+    stage: sf
+    title: "フランス 0-2 スペイン"
+    refs:
+      - cat: 報道・公式
+        title: "フランス 0-2 スペイン｜マッチレポートとハイライト"
+        url: "https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-spain-match-report-highlights-ja"
+        source: FIFA公式
+        lang: ja
+        note: "FIFA公式マッチレポート＋ハイライト（2026-07-15 backfill、検索 hit タイトル『【マッチレポート】スペインがフランスを完封で下して2度目のワールドカップ決勝へ！』で実在∧試合一致確認）"
