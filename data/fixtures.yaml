@@ -113,7 +113,7 @@ matches:
   - {"no": 102, stage: sf, label: "イングランド × アルゼンチン", start_jst: "2026-07-16T04:00:00+09:00", venue: "Mercedes-Benz Stadium", city: "アトランタ", tv: "NHK総合"}
 
   # ============ KNOCKOUT — 3位決定戦 (1 試合) ============
-  - {"no": 103, stage: third, label: "M101敗者 × M102敗者", start_jst: "2026-07-19T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ", tv: "NHK総合"}
+  - {"no": 103, stage: third, label: "フランス × M102敗者", start_jst: "2026-07-19T06:00:00+09:00", venue: "Hard Rock Stadium", city: "マイアミガーデンズ", tv: "NHK総合"}
 
   # ============ KNOCKOUT — 決勝 (1 試合) ============
-  - {"no": 104, stage: final, label: "M101勝者 × M102勝者", start_jst: "2026-07-20T04:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NJ)", tv: "NHK総合"}
+  - {"no": 104, stage: final, label: "スペイン × M102勝者", start_jst: "2026-07-20T04:00:00+09:00", venue: "MetLife Stadium", city: "イーストラザフォード(NJ)", tv: "NHK総合"}
