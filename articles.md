@@ -639,4 +639,4 @@
 
 **📰 報道・公式**
 
-- [フランス vs イングランド | 3位決定戦 | FIFAワールドカップ2026 | ハイライト](https://www.fifa.com/ja/watch/7tq7bBkX3Rywetdz4Z3UOn) — FIFA公式 / FIFA公式ハイライト動画（日本語記事版が未配信のため動画にリンク。英語版 /en/watch/7tq7bBkX3Rywetdz4Z3UOn タイトル『France v England | Third Place | FIFA World Cup 2026™ | Highlights』で実在∧試合一致確認）
+- [フランス 4-6 イングランド｜マッチレポートとハイライト](https://www.fifa.com/ja/tournaments/mens/worldcup/canadamexicousa2026/articles/france-england-report-highlights-bronze-final-ja) — FIFA公式 / FIFA公式マッチレポート＋ハイライト（2026-07-19 ② → ① upgrade sweep、検索 hit タイトル『【マッチレポート】合計10発の乱打戦！6ゴールのイングランドがフランス撃破で3位に』で実在 ∧ 試合一致確認）
