@@ -82,7 +82,8 @@ def main():
 
     try:
         head_text = subprocess.run(
-            ["git", "-C", str(ROOT), "show", "HEAD:data/results.yaml"],
+            # cat-file --filters = worktree と同じ中身で読む (git show は git-crypt 等の filter を通さない)
+            ["git", "-C", str(ROOT), "cat-file", "--filters", "HEAD:data/results.yaml"],
             capture_output=True, text=True, check=True).stdout
     except subprocess.CalledProcessError:
         print("⚠ HEAD の results.yaml を取得できず (初回 commit?) → gate skip (fail-open)", file=sys.stderr)
